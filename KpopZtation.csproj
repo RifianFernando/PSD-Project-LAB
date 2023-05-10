@@ -132,8 +132,7 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\Connect.cs" />
-    <Compile Include="Repository\LoginRepository.cs" />
-    <Compile Include="Repository\RegisterRepository.cs" />
+    <Compile Include="Repository\CustomerRepository.cs" />
     <Compile Include="View\LoginPage.aspx.cs">
       <DependentUpon>LoginPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
