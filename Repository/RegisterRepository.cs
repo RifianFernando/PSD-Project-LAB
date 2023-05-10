@@ -12,7 +12,7 @@ namespace KpopZtation.Repository
 
         public static bool FindUniqueEmail(String Email)
         {
-            Customer EmailData = (from E in db.Customers where Email.Equals(E.CustomerEmail) select E).FirstOrDefault();
+            Customer EmailData = (from EmailDatas in db.Customers where Email.Equals(EmailDatas.CustomerEmail) select EmailDatas).FirstOrDefault();
             if (EmailData == null)
             {
                 return false;
