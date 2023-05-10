@@ -1,4 +1,5 @@
-﻿using System;
+﻿using KpopZtation.Controller;
+using System;
 
 namespace KpopZtation.View
 {
@@ -13,8 +14,14 @@ namespace KpopZtation.View
         {
             String Email = LoginEmail.Text;
             String Password = LoginPassword.Text;
-            
-            WarningLoginEmail.Text = 
+
+            WarningLoginEmail.Text = LoginController.ValidateEmailLogin(Email);
+            WarningLoginPassword.Text = LoginController.ValidatePasswordLogin(Email,Password);
+            bool checkError = WarningLoginEmail.Text.Equals("") && WarningLoginPassword.Text.Equals("");
+            if (checkError)
+            {
+                Response.Redirect("RegisterPage.aspx");
+            }
         }
     }
 }

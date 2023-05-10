@@ -1,4 +1,5 @@
-﻿using System;
+﻿using KpopZtation.Repository;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -6,7 +7,7 @@ using System.Web;
 namespace KpopZtation.Controller
 {
     public class RegisterController
-    {
+    { 
         public static String ValidateRegisterName(String RegName)
         {
             if (RegName.Equals(""))
@@ -25,7 +26,7 @@ namespace KpopZtation.Controller
             {
                 return "Email must be filled!";
             }
-            else if (Connect.FindUniqueEmail(RegEmail) == true)
+            else if (CustomerRepository.FindUniqueEmail(RegEmail) == true)
             {
                 return "Email has been registered!";
             }
@@ -74,5 +75,13 @@ namespace KpopZtation.Controller
             }
             return "";
         }
+
+        public static String AddCustomer(String Name, String Email, String Gender, String Address, String Password)
+        {
+            CustomerRepository.InsertCustomer(Name, Email, Gender, Address, Password);
+            return "Register Success!";
+        }
+
+
     }
 }

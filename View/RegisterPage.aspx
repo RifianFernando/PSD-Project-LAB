@@ -40,6 +40,8 @@
             <asp:Label ID="WarningPassword" runat="server" Text="" ForeColor="Red"></asp:Label><br />
             <br />
             <asp:Button ID="Register" runat="server" Text="Button" OnClick="Register_Click" />
+            <asp:Label ID="SuccessLabel" runat="server" Text="" ForeColor="Green"></asp:Label><br />
+
         </div>
     </form>
 </body>
