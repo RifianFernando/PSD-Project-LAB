@@ -94,6 +94,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\LoginController.cs" />
+    <Compile Include="Controller\RegisterController.cs" />
     <Compile Include="Model\Album.cs">
       <DependentUpon>KpopDatabaseModel.tt</DependentUpon>
     </Compile>
@@ -129,6 +130,7 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\Connect.cs" />
+    <Compile Include="Repository\RegisterRepository.cs" />
     <Compile Include="View\RegisterPage.aspx.cs">
       <DependentUpon>RegisterPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
