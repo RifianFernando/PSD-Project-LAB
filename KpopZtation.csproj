@@ -96,6 +96,7 @@
   <ItemGroup>
     <Compile Include="Controller\LoginController.cs" />
     <Compile Include="Controller\RegisterController.cs" />
+    <Compile Include="Factory\CustomerFactory.cs" />
     <Compile Include="Model\Album.cs">
       <DependentUpon>KpopDatabaseModel.tt</DependentUpon>
     </Compile>
