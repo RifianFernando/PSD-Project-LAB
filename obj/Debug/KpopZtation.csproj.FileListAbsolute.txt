@@ -1,0 +1,2 @@
+D:\DATA E\Semester 4\Pattern Software Design\Project\PSD-Project-LAB\obj\Debug\KpopZtation.csproj.AssemblyReference.cache
+D:\DATA E\Semester 4\Pattern Software Design\Project\PSD-Project-LAB\obj\Debug\KpopZtation.csproj.CoreCompileInputs.cache

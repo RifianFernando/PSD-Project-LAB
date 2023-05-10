@@ -43,7 +43,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -67,12 +75,76 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\KpopDatabase.mdf" />
+    <Content Include="App_Data\KpopDatabase_log.ldf">
+      <DependentUpon>KpopDatabase.mdf</DependentUpon>
+    </Content>
+    <Content Include="Model\KpopDatabaseModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>KpopDatabaseModel.Context.cs</LastGenOutput>
+      <DependentUpon>KpopDatabaseModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Model\KpopDatabaseModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>KpopDatabaseModel.edmx</DependentUpon>
+      <LastGenOutput>KpopDatabaseModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="View\RegisterPage.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\LoginController.cs" />
+    <Compile Include="Model\Album.cs">
+      <DependentUpon>KpopDatabaseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Artist.cs">
+      <DependentUpon>KpopDatabaseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Cart.cs">
+      <DependentUpon>KpopDatabaseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Customer.cs">
+      <DependentUpon>KpopDatabaseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\KpopDatabaseModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KpopDatabaseModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\KpopDatabaseModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KpopDatabaseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\KpopDatabaseModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KpopDatabaseModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\TransactionDetail.cs">
+      <DependentUpon>KpopDatabaseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\TransactionHeader.cs">
+      <DependentUpon>KpopDatabaseModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\Connect.cs" />
+    <Compile Include="View\RegisterPage.aspx.cs">
+      <DependentUpon>RegisterPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\RegisterPage.aspx.designer.cs">
+      <DependentUpon>RegisterPage.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EntityDeploy Include="Model\KpopDatabaseModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>KpopDatabaseModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Model\KpopDatabaseModel.edmx.diagram">
+      <DependentUpon>KpopDatabaseModel.edmx</DependentUpon>
+    </Content>
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -81,6 +153,10 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

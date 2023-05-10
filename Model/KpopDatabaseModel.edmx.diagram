@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="0de6a80869b442788c88287f8a0965a7" Name="Diagram1" ZoomLevel="59">
+        <EntityTypeShape EntityType="KpopDatabaseModel.Album" Width="1.5" PointX="6.5" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="KpopDatabaseModel.Artist" Width="1.5" PointX="6.5" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="KpopDatabaseModel.Customer" Width="1.5" PointX="1.125" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="KpopDatabaseModel.TransactionHeader" Width="1.5" PointX="3.625" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="KpopDatabaseModel.Cart" Width="1.5" PointX="3.5" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="KpopDatabaseModel.TransactionDetail" Width="1.5" PointX="3.625" PointY="3.625" IsExpanded="true" />
+        <AssociationConnector Association="KpopDatabaseModel.FK__Album__ArtistID__2A4B4B5E" ManuallyRouted="false" />
+        <AssociationConnector Association="KpopDatabaseModel.FK__Cart__AlbumID__30F848ED" ManuallyRouted="false" >
+        </AssociationConnector>
+        <AssociationConnector Association="KpopDatabaseModel.FK__Transacti__Album__2E1BDC42" ManuallyRouted="false" />
+        <AssociationConnector Association="KpopDatabaseModel.FK__Cart__CustomerID__300424B4" ManuallyRouted="false" />
+        <AssociationConnector Association="KpopDatabaseModel.FK__Transacti__Custo__25869641" ManuallyRouted="false" />
+        <AssociationConnector Association="KpopDatabaseModel.FK__Transacti__Trans__2D27B809" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
