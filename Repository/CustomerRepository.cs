@@ -11,25 +11,28 @@ namespace KpopZtation.Repository
     {
         public static KpopDatabaseEntities db = Connect.getInstance();
 
-        public static String InsertCustomer(String Name, String Email, String Gender, String Address, String Password)
+        public static String InsertCustomer(Customer user)
         {
-            Customer C = CustomerFactory.createCustomer(Name,Email,Password,Gender,Address,"Customer");
-            db.Customers.Add(C);
+            db.Customers.Add(user);
             db.SaveChanges();
             return null;
         }
+
         public static bool FindUniqueEmail(String Email)
         {
-            Customer EmailData = (from EmailDatas in db.Customers where Email.Equals(EmailDatas.CustomerEmail) select EmailDatas).FirstOrDefault();
+            Customer EmailData = (from email in db.Customers where Email.Equals(email.CustomerEmail) select email).FirstOrDefault();
+
             if (EmailData == null)
             {
                 return false;
             }
+
             return true;
         }
         public static bool FindLoginEmail(String Email)
         {
             String LoginEmail = (from Emails in db.Customers where Email.Equals(Emails.CustomerEmail) select Emails.CustomerEmail).FirstOrDefault();
+
             if(LoginEmail == null)
             {
                 return false;
@@ -38,11 +41,14 @@ namespace KpopZtation.Repository
             {
                 return true;
             }
+
             return false;
         }
+
         public static bool FindLoginPassword(String Email, String Password)
         {
             String LoginPassword = (from Passwords in db.Customers where Email.Equals(Passwords.CustomerEmail) select Passwords.CustomerPassword).FirstOrDefault();
+
             if (LoginPassword == null)
             {
                 return false;
@@ -51,6 +57,7 @@ namespace KpopZtation.Repository
             {
                 return true;
             }
+
             return false;
         }
     }

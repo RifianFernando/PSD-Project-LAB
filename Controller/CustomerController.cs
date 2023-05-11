@@ -1,4 +1,4 @@
-﻿using KpopZtation.Repository;
+﻿using KpopZtation.Handler;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,7 +27,7 @@ namespace KpopZtation.Controller
             {
                 return "Email must be filled!";
             }
-            else if (CustomerRepository.FindUniqueEmail(RegEmail) == true)
+            else if (CustomerHandler.FindUniqueEmail(RegEmail) == true)
             {
                 return "Email has been registered!";
             }
@@ -79,7 +79,8 @@ namespace KpopZtation.Controller
 
         public static String AddCustomer(String Name, String Email, String Gender, String Address, String Password)
         {
-            CustomerRepository.InsertCustomer(Name, Email, Gender, Address, Password);
+            CustomerHandler.insertCustomer(Name, Email, Gender, Address, Password);
+
             return "Register Success!";
         }
 
@@ -89,7 +90,7 @@ namespace KpopZtation.Controller
             {
                 return "Email must not be empty";
             }
-            else if (!CustomerRepository.FindLoginEmail(Email))
+            else if (!CustomerHandler.FindLoginEmail(Email))
             {
                 return "Email does not exist";
             }
@@ -101,7 +102,7 @@ namespace KpopZtation.Controller
             {
                 return "Password must not be empty";
             }
-            else if (!CustomerRepository.FindLoginPassword(Email, Password))
+            else if (!CustomerHandler.FindLoginPassword(Email, Password))
             {
                 return "Password does not match";
             }

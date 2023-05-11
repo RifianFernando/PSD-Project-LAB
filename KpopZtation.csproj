@@ -98,6 +98,7 @@
   <ItemGroup>
     <Compile Include="Controller\CustomerController.cs" />
     <Compile Include="Factory\CustomerFactory.cs" />
+    <Compile Include="Handler\CustomerHandler.cs" />
     <Compile Include="Model\Album.cs">
       <DependentUpon>KpopDatabaseModel.tt</DependentUpon>
     </Compile>
