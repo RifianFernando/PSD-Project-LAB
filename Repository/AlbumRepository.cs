@@ -19,5 +19,11 @@ namespace KpopZtation.Repository
             return null;
         }
 
+        public static Album GetDataById(int ID)
+        {
+            return (from data in db.Albums where ID == data.AlbumID select data).FirstOrDefault();
+        }
+
+
     }
 }

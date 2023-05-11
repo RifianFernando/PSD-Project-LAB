@@ -18,5 +18,26 @@ namespace KpopZtation.Repository
             return null;
         }
 
+        public static Artist GetDataById(int ID)
+        {
+            return (from data in db.Artists where ID == data.ArtistID select data).FirstOrDefault();
+        }
+
+        public static String DeleteArtist(Artist a)
+        {
+            db.Artists.Remove(a);
+            db.SaveChanges();
+
+            return null;
+        }
+
+        public static String UpdateArtist(Artist a, String NewName, String NewImage)
+        {
+            a.ArtistName = NewName;
+            a.ArtistImage = NewImage;
+            db.SaveChanges();
+
+            return null;
+        }
     }
 }
