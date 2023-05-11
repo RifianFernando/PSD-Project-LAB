@@ -1,0 +1,30 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="NavigationBar.master.cs" Inherits="KpopZtation.View.NavigationBar" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                <div>
+                    <ul>
+                        <li><a>Home</a></li>
+                        <li><a>Login</a></li>
+                        <li><a>Register</a></li>
+                        <li><a>Cart</a></li>
+                        <li>Transaction</li>
+                        <li>Update Profile</li>
+                        <li></li>
+                    </ul>
+                </div>
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>

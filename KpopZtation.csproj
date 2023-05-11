@@ -140,6 +140,13 @@
     <Compile Include="View\LoginPage.aspx.designer.cs">
       <DependentUpon>LoginPage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="View\NavigationBar.Master.cs">
+      <DependentUpon>NavigationBar.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\NavigationBar.Master.designer.cs">
+      <DependentUpon>NavigationBar.Master</DependentUpon>
+    </Compile>
     <Compile Include="View\RegisterPage.aspx.cs">
       <DependentUpon>RegisterPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -157,6 +164,7 @@
       <DependentUpon>KpopDatabaseModel.edmx</DependentUpon>
     </Content>
     <None Include="packages.config" />
+    <Content Include="View\NavigationBar.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
