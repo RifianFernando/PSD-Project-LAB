@@ -8,7 +8,7 @@ namespace KpopZtation.Factory
 {
     public class CustomerFactory
     {
-        public static Customer createCustomer(String name, String email, String password, String gender, String address, String role)
+        public static Customer CreateCustomer(String name, String email, String password, String gender, String address, String role)
         {
             Customer c = new Customer();
 

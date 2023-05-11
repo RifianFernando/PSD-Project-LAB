@@ -22,7 +22,7 @@ namespace KpopZtation.View
             String AlbumStock = InsertAlbumStock.Text;
             String AlbumImage = InsertAlbumImage.Text;
 
-
+            
 
         }
     }
