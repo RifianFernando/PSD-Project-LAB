@@ -1,7 +1,50 @@
-﻿body {
-    margin:0;
+﻿* {
+    margin: 0;
 }
 
-.navbar{
+.list {
+    list-style: none;
+}
 
+.list li {
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+.list li a:hover {
+    color: darkorchid;
+}
+
+a {
+    font-weight: bold;
+    font-size: 20px;
+    color: antiquewhite;
+    text-decoration: none;
+}
+
+h1, li, button {
+    font-weight: bold;
+    font-size: 25px;
+    color: antiquewhite;
+    text-decoration: none;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 8%;
+    background: rgba(51, 170, 51, 0);
+}
+
+button {
+    padding: 10px 25px;
+    background-color: black;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+}
+
+button:hover {
+    color: rgb(41, 228, 218);
 }
