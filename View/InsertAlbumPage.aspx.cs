@@ -18,7 +18,7 @@ namespace KpopZtation.View
         {
             String AlbumName = InsertAlbumName.Text;
             String AlbumDesc = InsertAlbumDescription.Text;
-            String AlbumPriceString = InsertAlbumDescription.Text;
+            String AlbumPrice = InsertAlbumPrice.Text;
             String AlbumStock = InsertAlbumStock.Text;
             String AlbumImage = InsertAlbumImage.Text;
 

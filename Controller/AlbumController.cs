@@ -34,7 +34,11 @@ namespace KpopZtation.Controller
         }
         public static String ValidateAlbumPrice(String AlbumPriceString)
         {
-            int AlbumPrice = Int32.Parse(AlbumPriceString);
+            if (AlbumPriceString.Equals(""))
+            {
+                return "Album Price must not be empty";
+            }
+            int AlbumPrice = int.Parse(AlbumPriceString);
             if (AlbumPrice < 100000 || AlbumPrice > 1000000)
             {
                 return "Album Price must range betweeen 100000 to 1000000";
@@ -42,27 +46,25 @@ namespace KpopZtation.Controller
             return "";
         }
         
-        public static String ValidateAlbumStock(String RegAddress)
+        public static String ValidateAlbumStock(String AlbumStockString)
         {
-            if (RegAddress.Equals(""))
+            if (AlbumStockString == null)
             {
                 return "Address must be filled!";
             }
-            else if (!RegAddress.EndsWith("Street"))
+
+            int AlbumStock= int.Parse(AlbumStockString);
+            if (AlbumStock != 0)
             {
                 return "The address must ends with street";
             }
             return "";
         }
-        public static String ValidateAlbumImage(String RegPassword)
+        public static String ValidateAlbumImage(String AlbumImage)
         {
-            if (RegPassword.Equals(""))
+            if (AlbumImage.Equals(""))
             {
-                return " Password must be filled!";
-            }
-            else if (!RegPassword.Any(char.IsLetter) || !RegPassword.Any(char.IsDigit))
-            {
-                return "Password must be alphanumeric";
+                return " Album Image must be filled!";
             }
             return "";
         }
