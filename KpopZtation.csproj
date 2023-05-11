@@ -105,6 +105,7 @@
     <Compile Include="Handler\AlbumHandler.cs" />
     <Compile Include="Handler\ArtistHandler.cs" />
     <Compile Include="Handler\CustomerHandler.cs" />
+    <Compile Include="Middleware\SessionMiddleware.cs" />
     <Compile Include="Model\Album.cs">
       <DependentUpon>KpopDatabaseModel.tt</DependentUpon>
     </Compile>
