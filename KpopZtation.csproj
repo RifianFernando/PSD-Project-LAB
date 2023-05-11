@@ -98,8 +98,11 @@
   <ItemGroup>
     <Compile Include="Controller\AlbumController.cs" />
     <Compile Include="Controller\CustomerController.cs" />
+    <Compile Include="Factory\AlbumFactory.cs" />
+    <Compile Include="Factory\ArtistFactory.cs" />
     <Compile Include="Factory\CustomerFactory.cs" />
     <Compile Include="Handler\AlbumHandler.cs" />
+    <Compile Include="Handler\ArtistHandler.cs" />
     <Compile Include="Handler\CustomerHandler.cs" />
     <Compile Include="Model\Album.cs">
       <DependentUpon>KpopDatabaseModel.tt</DependentUpon>
@@ -136,6 +139,7 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\AlbumRepository.cs" />
+    <Compile Include="Repository\ArtistRepository.cs" />
     <Compile Include="Repository\Connect.cs" />
     <Compile Include="Repository\CustomerRepository.cs" />
     <Compile Include="View\InsertAlbumPage.aspx.cs">
