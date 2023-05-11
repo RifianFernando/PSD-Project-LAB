@@ -24,6 +24,24 @@ namespace KpopZtation.Repository
             return (from data in db.Albums where ID == data.AlbumID select data).FirstOrDefault();
         }
 
+        public static String DeleteAlbum(Album ab)
+        {
+            db.Albums.Remove(ab);
+            db.SaveChanges();
 
+            return null;
+        }
+
+        public static String UpdateAlbum(Album ab, int NewArtID, String NewName, String NewImage, int NewPrice, int NewStock, String NewDesc)
+        {
+            ab.ArtistID = NewArtID;
+            ab.AlbumName = NewName;
+            ab.AlbumImage = NewImage;
+            ab.AlbumPrice = NewPrice;
+            ab.AlbumStock = NewStock;
+            ab.AlbumDescription = NewDesc;
+
+            return null;
+        }
     }
 }
