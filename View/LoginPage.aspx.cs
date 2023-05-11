@@ -14,7 +14,6 @@ namespace KpopZtation.View
         {
             String Email = LoginEmail.Text;
             String Password = LoginPassword.Text;
-
             WarningLoginEmail.Text = CustomerController.ValidateEmailLogin(Email);
             WarningLoginPassword.Text = CustomerController.ValidatePasswordLogin(Email,Password);
             bool checkError = WarningLoginEmail.Text.Equals("") && WarningLoginPassword.Text.Equals("");

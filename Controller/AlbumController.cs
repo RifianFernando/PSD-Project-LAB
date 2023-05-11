@@ -68,5 +68,12 @@ namespace KpopZtation.Controller
             }
             return "";
         }
+
+        public static String AddAlbum(String AlbumName, String AlbumDesc, String AlbumPrice, String AlbumStock, String AlbumImage)
+        {
+            
+            return "Album Added Successfully!";
+
+        }
     }
 }

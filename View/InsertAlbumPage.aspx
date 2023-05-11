@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/View/NavigationBar.Master" AutoEventWireup="true" CodeBehind="InsertAlbumPage.aspx.cs" Inherits="KpopZtation.View.InsertAlbumPage" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server" >
     <div>
             <h1>Insert Album Page</h1>
             <br />
@@ -27,10 +27,10 @@
             <br />
 
             <asp:Label ID="LabelImage" runat="server" Text="Album Image"></asp:Label><br />
-            <asp:TextBox ID="InsertAlbumImage" runat="server"></asp:TextBox><br />
+            <asp:FileUpload id="FileUpload" runat="server" />
             <asp:Label ID="WarningAlbumImage" runat="server" Text="" ForeColor="Red"></asp:Label><br />
             <br />
-            <input type="file"><br /><br />
+            
             
             <asp:Button ID="InsertAlbumButton" runat="server" Text="Insert Album" OnClick="InsertAlbumButton_Click"/><br />
             <asp:Label ID="SuccessLabel" runat="server" Text="" ForeColor="Green"></asp:Label><br />
