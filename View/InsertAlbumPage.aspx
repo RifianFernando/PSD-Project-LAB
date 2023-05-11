@@ -3,7 +3,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div>
-            <h1>Register</h1>
+            <h1>Insert Album Page</h1>
             <br />
 
             <asp:Label ID="LabelName" runat="server" Text="Album Name"></asp:Label><br />

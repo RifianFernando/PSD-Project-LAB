@@ -16,6 +16,11 @@ namespace KpopZtation.View
 
         protected void InsertAlbumButton_Click(object sender, EventArgs e)
         {
+            String AlbumName = InsertAlbumName.Text;
+            String AlbumDesc = InsertAlbumDescription.Text;
+            String AlbumPrice = InsertAlbumDescription.Text;
+            String AlbumStock = InsertAlbumStock.Text;
+            String AlbumImage = InsertAlbumImage.Text;
 
         }
     }
