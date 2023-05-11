@@ -95,8 +95,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controller\LoginController.cs" />
-    <Compile Include="Controller\RegisterController.cs" />
+    <Compile Include="Controller\CustomerController.cs" />
     <Compile Include="Factory\CustomerFactory.cs" />
     <Compile Include="Model\Album.cs">
       <DependentUpon>KpopDatabaseModel.tt</DependentUpon>
