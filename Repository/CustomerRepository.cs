@@ -15,6 +15,7 @@ namespace KpopZtation.Repository
         {
             db.Customers.Add(user);
             db.SaveChanges();
+
             return null;
         }
 

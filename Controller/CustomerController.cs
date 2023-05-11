@@ -95,7 +95,7 @@ namespace KpopZtation.Controller
             {
                 String genderValue = InsertGenderValue(Gender);
                 
-                CustomerHandler.insertCustomer(Name, Email, genderValue, Address, Password);
+                CustomerHandler.InsertCustomer(Name, Email, genderValue, Address, Password);
 
                 return "Register Success!";
             }

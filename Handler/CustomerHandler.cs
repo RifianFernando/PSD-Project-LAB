@@ -10,7 +10,7 @@ namespace KpopZtation.Handler
 {
     public class CustomerHandler
     {
-        public static void insertCustomer(String name, String email, String gender, String address, String password)
+        public static void InsertCustomer(String name, String email, String gender, String address, String password)
         {
             Customer user = CustomerFactory.CreateCustomer(name, email, password, gender, address, "Customer");
 

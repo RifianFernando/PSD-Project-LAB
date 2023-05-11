@@ -6,14 +6,13 @@ using System.Web;
 
 namespace KpopZtation.Repository
 {
-    public class AlbumRepository
+    public class ArtistRepository
     {
+        public static KpopDatabaseEntities db = Connect.getInstance();
 
-        public static KpopDatabaseEntities db = new KpopDatabaseEntities();
-
-        public static String InsertAlbum(Album album)
+        public static String InsertArtist(Artist artist)
         {
-            db.Albums.Add(album);
+            db.Artists.Add(artist);
             db.SaveChanges();
 
             return null;
