@@ -1,5 +1,6 @@
 ﻿using KpopZtation.Controller;
 using System;
+using System.Web;
 
 namespace KpopZtation.View
 {
@@ -16,10 +17,18 @@ namespace KpopZtation.View
             String Password = LoginPassword.Text;
             WarningLoginEmail.Text = CustomerController.ValidateEmailLogin(Email);
             WarningLoginPassword.Text = CustomerController.ValidatePasswordLogin(Email,Password);
-            bool checkError = WarningLoginEmail.Text.Equals("") && WarningLoginPassword.Text.Equals("");
-            if (checkError)
+            bool isValid = WarningLoginEmail.Text.Equals("") && WarningLoginPassword.Text.Equals("");
+            if (isValid)
             {
-                Response.Redirect("RegisterPage.aspx");
+                Session["User"] = Email;
+                HttpCookie userCookie = new HttpCookie("userCookie");
+                userCookie.Value = Email.ToString();
+                userCookie.Expires = DateTime.Now.AddDays(7);
+                Response.Cookies.Add(userCookie);
+            }
+            else
+            {
+
             }
         }
     }

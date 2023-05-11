@@ -20,6 +20,33 @@ namespace KpopZtation.Handler
             return;
         }
 
+        public static void DeleteAlbum(int ID)
+        {
+            Album ab = AlbumRepository.GetDataById(ID);
 
+            AlbumRepository.DeleteAlbum(ab);
+
+            return;
+        }
+
+        public static void UpdateAlbum(int ID, int NewArtID, String NewName, String NewImage, int NewPrice, int NewStock, String NewDesc)
+        {
+            Album ab = AlbumRepository.GetDataById(ID);
+
+            AlbumRepository.UpdateAlbum(ab, NewArtID, NewName, NewImage, NewPrice, NewStock, NewDesc);
+
+            return;
+        }
+
+        public static void AlbumQuantityPurchase(int ID, int Purchase, int NewArtID, String NewName, String NewImage, int NewPrice, String NewDesc)
+        {
+            Album ab = AlbumRepository.GetDataById(ID);
+
+            int stockLeft = ab.AlbumStock - Purchase;
+
+            AlbumRepository.UpdateAlbum(ab, NewArtID, NewName, NewImage, NewPrice, stockLeft, NewDesc);
+
+            return;
+        }
     }
 }
