@@ -22,17 +22,18 @@ namespace KpopZtation.View
             String RegAddress = RegisterAddress.Text;
             String RegPassword = RegisterPassword.Text;
 
-            WarningName.Text = RegisterController.ValidateRegisterName(RegName);
-            WarningEmail.Text = RegisterController.ValidateRegisterEmail(RegEmail);
-            WarningGender.Text = RegisterController.ValidateRegisterGenderSelect(RegGender);
-            WarningAddress.Text = RegisterController.ValidateRegisterAddress(RegAddress);
-            WarningPassword.Text = RegisterController.ValidateRegisterPassword(RegPassword);
-            String RegGenderString = RegisterController.InsertGenderValue(RegGender);
+            WarningName.Text = CustomerController.ValidateRegisterName(RegName);
+            WarningEmail.Text = CustomerController.ValidateRegisterEmail(RegEmail);
+            WarningGender.Text = CustomerController.ValidateRegisterGenderSelect(RegGender);
+            WarningAddress.Text = CustomerController.ValidateRegisterAddress(RegAddress);
+            WarningPassword.Text = CustomerController.ValidateRegisterPassword(RegPassword);
+            
+            String RegGenderString = CustomerController.InsertGenderValue(RegGender);
             
             bool checkWarning = WarningName.Text.Equals("") && WarningEmail.Text.Equals("") && WarningGender.Text.Equals("") && WarningAddress.Text.Equals("") && WarningPassword.Text.Equals("");
             if (checkWarning)
             {
-                SuccessLabel.Text = RegisterController.AddCustomer(RegName,RegEmail,RegGenderString,RegAddress,RegPassword);
+                SuccessLabel.Text = CustomerController.AddCustomer(RegName,RegEmail,RegGenderString,RegAddress,RegPassword);
                 Response.Redirect("Login.aspx");
             }
 
