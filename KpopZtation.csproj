@@ -99,6 +99,7 @@
     <Compile Include="Controller\AlbumController.cs" />
     <Compile Include="Controller\CustomerController.cs" />
     <Compile Include="Factory\CustomerFactory.cs" />
+    <Compile Include="Handler\AlbumHandler.cs" />
     <Compile Include="Handler\CustomerHandler.cs" />
     <Compile Include="Model\Album.cs">
       <DependentUpon>KpopDatabaseModel.tt</DependentUpon>
