@@ -20,5 +20,22 @@ namespace KpopZtation.Handler
             return;
         }
 
+        public static void DeleteArtist(int ID)
+        {
+            Artist a = ArtistRepository.GetDataById(ID);
+
+            ArtistRepository.DeleteArtist(a);
+
+            return;
+        }
+
+        public static void UpdateArtist(int ID, String NewName, String NewImage)
+        {
+            Artist a = ArtistRepository.GetDataById(ID);
+
+            ArtistRepository.UpdateArtist(a, NewName, NewImage);
+
+            return;
+        }
     }
 }
