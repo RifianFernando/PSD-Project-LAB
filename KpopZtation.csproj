@@ -89,6 +89,7 @@
       <DependentUpon>KpopDatabaseModel.edmx</DependentUpon>
       <LastGenOutput>KpopDatabaseModel.cs</LastGenOutput>
     </Content>
+    <Content Include="Styling\Navbar.css" />
     <Content Include="View\LoginPage.aspx" />
     <Content Include="View\RegisterPage.aspx" />
     <Content Include="Web.config" />
