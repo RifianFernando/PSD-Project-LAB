@@ -22,12 +22,13 @@ namespace KpopZtation.View
             String AlbumDesc = InsertAlbumDescription.Text;
             String AlbumPrice = InsertAlbumPrice.Text;
             String AlbumImage = FileUpload.FileName;
+            int ImageSize = FileUpload.PostedFile.ContentLength;
             String AlbumStock = InsertAlbumStock.Text;
 
             WarningAlbumName.Text = AlbumController.ValidateAlbumName(AlbumName);
             WarningAlbumDescription.Text = AlbumController.ValidateAlbumDescription(AlbumDesc);
             WarningAlbumPrice.Text = AlbumController.ValidateAlbumPrice(AlbumPrice);
-            WarningAlbumImage.Text = AlbumController.ValidateAlbumImage(AlbumImage);
+            WarningAlbumImage.Text = AlbumController.ValidateAlbumImage(AlbumImage, ImageSize);
             WarningAlbumStock.Text = AlbumController.ValidateAlbumStock(AlbumStock);
 
 

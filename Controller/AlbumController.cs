@@ -67,32 +67,38 @@ namespace KpopZtation.Controller
 
             return "";
         }
-        public static String ValidateAlbumImage(String AlbumImage)
+        public static String ValidateAlbumImage(String AlbumImage, int ImageSize)
         {
             if (AlbumImage.Equals(""))
             {
                 return " Album Image must be filled!";
             }
+            else if (ImageSize > 2097152)
+            {
+                return "File size must be less than 2MB!";
+            }
 
             return "";
         }
 
-        public static String AddAlbum(String AlbumName, String AlbumDesc, String AlbumPrice, String AlbumStock, String AlbumImage)
+        public static String AddAlbum(String AlbumName, String AlbumDesc, String AlbumPrice, String AlbumStock, String AlbumImage, int ImageSize)
         {
             string name = ValidateAlbumName(AlbumName);
             string desc = ValidateAlbumDescription(AlbumDesc);
             string price = ValidateAlbumPrice(AlbumPrice);
             string stock = ValidateAlbumStock(AlbumStock);
-            string image = ValidateAlbumImage(AlbumImage);
+            string image = ValidateAlbumImage(AlbumImage, ImageSize);
 
             bool validate = name.Equals("") && desc.Equals("") && price.Equals("") && stock.Equals("") && image.Equals("");
 
             if(validate == true)
             {
-                
+                return "Album Added Successfully!";
             }
-
-            return "Album Added Successfully!";
+            else
+            {
+                return "Failed to add album!";
+            }
         }
     }
 }

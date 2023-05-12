@@ -11,34 +11,34 @@
 </head>
 <body>
     <form id="form1" runat="server">
+        <div class="navbar">
+            <h2 class="navbar-title">KpopZtation</h2>
+            <ul>
+                <li>
+                    <a href="">Home</a>
+                </li>
+                <li>
+                    <a href="">Login</a>
+                </li>
+                <li>
+                    <a href="">Register</a>
+                </li>
+                <li>
+                    <a href="">Cart</a>
+                </li>
+                <li>
+                    <a href="">Transaction</a>
+                </li>
+                <li>
+                    <a href="">Update Profile</a>
+                </li>
+                <li>
+                    <a href="">Logout</a>
+                </li>
+            </ul>
+        </div>
         <div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-                <div class="navbar">
-                    <h2 class="navbar-title">KpopZtation</h2>
-                    <ul>
-                        <li>
-                            <a href="">Home</a>
-                        </li>
-                        <li>
-                            <a href="">Login</a>
-                        </li>
-                        <li>
-                            <a href="">Register</a>
-                        </li>
-                        <li>
-                            <a href="">Cart</a>
-                        </li>
-                        <li>
-                            <a href="">Transaction</a>
-                        </li>
-                        <li>
-                            <a href="">Update Profile</a>
-                        </li>
-                        <li>
-                            <a href="">Logout</a>
-                        </li>
-                    </ul>
-                </div>
             </asp:ContentPlaceHolder>
         </div>
     </form>
