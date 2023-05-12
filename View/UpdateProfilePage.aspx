@@ -13,16 +13,16 @@
             <br />
 
             <asp:Label ID="LabelEmail" runat="server" Text="Email"></asp:Label><br />
-            <asp:TextBox ID="UpdateEmail" runat="server"></asp:TextBox><br />
+            <asp:TextBox ID="UpdateEmail" runat="server" ></asp:TextBox><br />
             <asp:Label ID="WarningEmail" runat="server" Text="" ForeColor="Red"></asp:Label><br />
             <br />
 
-            <asp:Label ID="LabelGender" runat="server" Text="Gender"></asp:Label><br />
+            <asp:Label ID="LabelGender" runat="server" Text="Gender" ></asp:Label><br />
             <asp:RadioButtonList id="UpdateGender" runat="server">
                 <asp:ListItem>Male</asp:ListItem>
                 <asp:ListItem>Female</asp:ListItem>
             </asp:RadioButtonList>
-            <asp:Label ID="WarningGender" runat="server" Text="" ForeColor="Red"></asp:Label><br />
+            <asp:Label ID="WarningGender" runat="server" Text="" ForeColor="Red" ></asp:Label><br />
             <br />
 
             <asp:Label ID="LabelAddress" runat="server" Text="Address"></asp:Label><br />

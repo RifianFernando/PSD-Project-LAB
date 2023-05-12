@@ -11,8 +11,7 @@ namespace KpopZtation.View
 {
     public partial class UpdateProfilePage : System.Web.UI.Page
     {
-        
-
+       
         protected void Page_Load(object sender, EventArgs e)
         {
             String Email = Session["User"].ToString();
@@ -37,14 +36,14 @@ namespace KpopZtation.View
             String UserEmail = Session["User"].ToString();
 
             WarningName.Text = CustomerController.ValidateRegisterName(Name);
-            WarningEmail.Text = CustomerController.ValidateUpdateEmail(Email, UserEmail);
+            WarningEmail.Text = CustomerController.ValidateUpdateEmail(Email,UserEmail);
             WarningGender.Text = CustomerController.ValidateRegisterGenderSelect(Gender);
             WarningAddress.Text = CustomerController.ValidateRegisterAddress(Address);
             WarningPassword.Text = CustomerController.ValidateRegisterPassword(Password);
 
             int ID = CustomerController.GetIdByEmail(UserEmail);
 
-            SuccessLabel.Text = CustomerController.UpdateCustomerProfile(ID, Name, Email, UserEmail, Gender, Address, Password);
+            SuccessLabel.Text = Name + CustomerController.UpdateCustomerProfile(ID, Name, Email, UserEmail, Gender, Address, Password);
         }
     }
 }
