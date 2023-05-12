@@ -11,10 +11,6 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-            </asp:ContentPlaceHolder>
-        </div>
         <div class="navbar">
                     <h2 class="navbar-title">KpopZtation</h2>
                     <ul>
@@ -42,5 +38,9 @@
                     </ul>
                 </div>
     </form>
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
 </body>
 </html>
