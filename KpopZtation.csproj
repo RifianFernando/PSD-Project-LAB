@@ -189,13 +189,6 @@
     <Compile Include="View\RegisterPage.aspx.designer.cs">
       <DependentUpon>RegisterPage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="View\Test.Master.cs">
-      <DependentUpon>Test.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="View\Test.Master.designer.cs">
-      <DependentUpon>Test.Master</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="Model\KpopDatabaseModel.edmx">
@@ -207,7 +200,6 @@
     </Content>
     <None Include="packages.config" />
     <Content Include="View\NavigationBar.Master" />
-    <Content Include="View\Test.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
