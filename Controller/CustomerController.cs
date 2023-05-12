@@ -178,5 +178,15 @@ namespace KpopZtation.Controller
         {
             return CustomerHandler.GetIdByEmail(Email);
         }
+
+        public static bool ValidateAdmin(String Email)
+        {
+            String Role = CustomerHandler.GetRoleByEmail(Email);
+            if ( Role == "Admin")
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }
