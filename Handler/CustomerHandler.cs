@@ -58,5 +58,9 @@ namespace KpopZtation.Handler
         {
             return CustomerRepository.GetIdByEmail(Email);
         }
+        public static String GetRoleByEmail(String Email)
+        {
+            return CustomerRepository.GetDataById(CustomerRepository.GetIdByEmail(Email)).CustomerRole.ToString();
+        }
     }
 }
