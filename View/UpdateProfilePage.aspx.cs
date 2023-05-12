@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using KpopZtation.Middleware;
 
 namespace KpopZtation.View
 {
@@ -15,15 +16,18 @@ namespace KpopZtation.View
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            SessionMiddleware.isLogin(Page);
             String Email = Session["User"].ToString();
 
             Customer c = CustomerController.GetDataById(CustomerController.GetIdByEmail(Email));
-
-            UpdateName.Text = c.CustomerName;
-            UpdateEmail.Text = c.CustomerEmail;
-            UpdateGender.Items.FindByText(c.CustomerGender).Selected = true;
-            UpdateAddress.Text = c.CustomerAddress;
-            UpdatePassword.Text = c.CustomerPassword;
+            if (!IsPostBack)
+            {
+                UpdateName.Text = c.CustomerName;
+                UpdateEmail.Text = c.CustomerEmail;
+                UpdateGender.Items.FindByText(c.CustomerGender).Selected = true;
+                UpdateAddress.Text = c.CustomerAddress;
+                UpdatePassword.Text = c.CustomerPassword;
+            }
         }
 
         protected void SaveUpdateButton_Click(object sender, EventArgs e)
