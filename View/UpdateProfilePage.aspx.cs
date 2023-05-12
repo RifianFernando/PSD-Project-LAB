@@ -11,8 +11,6 @@ namespace KpopZtation.View
 {
     public partial class UpdateProfilePage : System.Web.UI.Page
     {
-        
-
         protected void Page_Load(object sender, EventArgs e)
         {
             String Email = Session["User"].ToString();
