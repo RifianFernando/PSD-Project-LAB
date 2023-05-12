@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using KpopZtation.Controller;
 using KpopZtation.Middleware;
 
 namespace KpopZtation.View
@@ -22,6 +23,14 @@ namespace KpopZtation.View
             String AlbumPrice = InsertAlbumPrice.Text;
             String AlbumImage = FileUpload.FileName;
             String AlbumStock = InsertAlbumStock.Text;
+
+            WarningAlbumName.Text = AlbumController.ValidateAlbumName(AlbumName);
+            WarningAlbumDescription.Text = AlbumController.ValidateAlbumDescription(AlbumDesc);
+            WarningAlbumPrice.Text = AlbumController.ValidateAlbumPrice(AlbumPrice);
+            WarningAlbumImage.Text = AlbumController.ValidateAlbumImage(AlbumImage);
+            WarningAlbumStock.Text = AlbumController.ValidateAlbumStock(AlbumStock);
+
+
         }
     }
 }

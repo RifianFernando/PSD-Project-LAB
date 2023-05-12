@@ -85,19 +85,19 @@ namespace KpopZtation.Controller
             String address = ValidateRegisterAddress(Address);
             String password = ValidateRegisterPassword(Password);
 
-            bool validate = name.Equals("") || email.Equals("") || gender.Equals("") || address.Equals("") || password.Equals("");
+            bool validate = name.Equals("") && email.Equals("") && gender.Equals("") && address.Equals("") && password.Equals("");
 
             if (validate == true)
             {
-                return "Register Failed!";
-            }
-            else
-            {
                 String genderValue = InsertGenderValue(Gender);
-                
+
                 CustomerHandler.InsertCustomer(Name, Email, genderValue, Address, Password);
 
                 return "Register Success!";
+            }
+            else
+            {
+                return "Register Failed!";
             }
         }
 

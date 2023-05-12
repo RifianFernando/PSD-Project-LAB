@@ -18,6 +18,7 @@ namespace KpopZtation.Controller
             {
                 return "Album Name must be less than 50 characters!";
             }
+
             return "";
         }
         public static String ValidateAlbumDescription(String AlbumDescription)
@@ -30,6 +31,7 @@ namespace KpopZtation.Controller
             {
                 return "Album Description must be less than 255 characters!";
             }
+
             return "";
         }
         public static String ValidateAlbumPrice(String AlbumPriceString)
@@ -38,11 +40,14 @@ namespace KpopZtation.Controller
             {
                 return "Album Price must not be empty";
             }
+
             int AlbumPrice = int.Parse(AlbumPriceString);
+
             if (AlbumPrice < 100000 || AlbumPrice > 1000000)
             {
                 return "Album Price must range betweeen 100000 to 1000000";
             }
+
             return "";
         }
         
@@ -53,11 +58,13 @@ namespace KpopZtation.Controller
                 return "Address must be filled!";
             }
 
-            int AlbumStock= int.Parse(AlbumStockString);
+            int AlbumStock = int.Parse(AlbumStockString);
+
             if (AlbumStock != 0)
             {
                 return "The address must ends with street";
             }
+
             return "";
         }
         public static String ValidateAlbumImage(String AlbumImage)
@@ -66,14 +73,26 @@ namespace KpopZtation.Controller
             {
                 return " Album Image must be filled!";
             }
+
             return "";
         }
 
         public static String AddAlbum(String AlbumName, String AlbumDesc, String AlbumPrice, String AlbumStock, String AlbumImage)
         {
-            
-            return "Album Added Successfully!";
+            string name = ValidateAlbumName(AlbumName);
+            string desc = ValidateAlbumDescription(AlbumDesc);
+            string price = ValidateAlbumPrice(AlbumPrice);
+            string stock = ValidateAlbumStock(AlbumStock);
+            string image = ValidateAlbumImage(AlbumImage);
 
+            bool validate = name.Equals("") && desc.Equals("") && price.Equals("") && stock.Equals("") && image.Equals("");
+
+            if(validate == true)
+            {
+                
+            }
+
+            return "Album Added Successfully!";
         }
     }
 }

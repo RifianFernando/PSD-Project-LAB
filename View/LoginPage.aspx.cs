@@ -16,9 +16,12 @@ namespace KpopZtation.View
         {
             String Email = LoginEmail.Text;
             String Password = LoginPassword.Text;
+
             WarningLoginEmail.Text = CustomerController.ValidateEmailLogin(Email);
             WarningLoginPassword.Text = CustomerController.ValidatePasswordLogin(Email,Password);
+
             bool isValid = WarningLoginEmail.Text.Equals("") && WarningLoginPassword.Text.Equals("");
+
             if (isValid)
             {
                 Session["User"] = Email;
