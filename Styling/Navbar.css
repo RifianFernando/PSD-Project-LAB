@@ -33,14 +33,16 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px 8%;
-    background: rgba(51, 170, 51, 0);
+    padding: 10px;
+    background-color: gray;
 }
 
 button {
+    border-style: none;
+    border-color: inherit;
+    border-width: medium;
     padding: 10px 25px;
     background-color: black;
-    border: none;
     border-radius: 40px;
     cursor: pointer;
 }

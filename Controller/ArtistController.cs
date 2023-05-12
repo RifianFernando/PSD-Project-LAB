@@ -28,7 +28,7 @@ namespace KpopZtation.Controller
                 return "Image must be chosen!";
             }else if(ImageSize > 2097152)
             {
-                return "max file size is 2 mb!";
+                return "File size must be less than 2MB!";
             }
             return "";
         }
