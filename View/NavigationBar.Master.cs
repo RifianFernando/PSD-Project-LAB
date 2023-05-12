@@ -10,9 +10,9 @@ namespace KpopZtation.View
 {
     public partial class NavigationBar : System.Web.UI.MasterPage
     {
-        protected String Page_Load(object sender, EventArgs e)
+        private string Cookie;
+        protected void Page_Load(object sender, EventArgs e)
         {
-            String Cookie;
             if (Session["User"] != null)
             {
                 String Email = Session["User"].ToString();
@@ -25,11 +25,11 @@ namespace KpopZtation.View
                 {
                     Cookie = "Customer";
                 }
-                return Cookie;
             }
-            Cookie = "Guest";
-
-            return Cookie;
+            else
+            {
+                Cookie = "Guest";
+            }
         }
     }
 }
