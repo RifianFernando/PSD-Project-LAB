@@ -39,5 +39,24 @@ namespace KpopZtation.Handler
 
             return password;
         }
+
+        public static void UpdateProfile(int ID, String Name, String Email, String Gender, String Address, String Password)
+        {
+            Customer c = CustomerRepository.GetDataById(ID);
+
+            CustomerRepository.UpdateProfile(c, Name, Email, Gender, Address, Password);
+
+            return;
+        }
+
+        public static Customer GetDataById(int ID)
+        {
+            return CustomerRepository.GetDataById(ID);
+        }
+
+        public static int GetIdByEmail(String Email)
+        {
+            return CustomerRepository.GetIdByEmail(Email);
+        }
     }
 }

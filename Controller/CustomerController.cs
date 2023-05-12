@@ -1,4 +1,5 @@
 ﻿using KpopZtation.Handler;
+using KpopZtation.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -126,5 +127,56 @@ namespace KpopZtation.Controller
             return "";
         }
 
+        public static String ValidateUpdateEmail(String UpdtEmail, String OldEmail)
+        {
+            if (UpdtEmail.Equals(""))
+            {
+                return "Email must be filled!";
+            }
+            else if (UpdtEmail.Equals(OldEmail))
+            {
+                return ("");
+            }
+            else if (CustomerHandler.FindUniqueEmail(UpdtEmail) == true)
+            {
+                return "Email has been registered!";
+            }
+
+            return "";
+        }
+
+        public static String UpdateCustomerProfile(int ID, String Name, String Email, String OldEmail, int Gender, String Address, String Password)
+        {
+            String name = ValidateRegisterName(Name);
+            String email = ValidateUpdateEmail(Email, OldEmail);
+            String gender = ValidateRegisterGenderSelect(Gender);
+            String address = ValidateRegisterAddress(Address);
+            String password = ValidateRegisterPassword(Password);
+
+            bool validate = name.Equals("") && email.Equals("") && gender.Equals("") && address.Equals("") && password.Equals("");
+
+            if (validate == true)
+            {
+                String genderValue = InsertGenderValue(Gender);
+
+                CustomerHandler.UpdateProfile(ID, Name, Email, genderValue, Address, Password);
+
+                return "Profile has been saved!";
+            }
+            else
+            {
+                return "Update failed!";
+            }
+        }
+
+        public static Customer GetDataById(int ID)
+        {
+            return CustomerHandler.GetDataById(ID);
+        }
+
+        public static int GetIdByEmail(String Email)
+        {
+            return CustomerHandler.GetIdByEmail(Email);
+        }
     }
 }

@@ -61,5 +61,28 @@ namespace KpopZtation.Repository
 
             return false;
         }
+
+        public static Customer GetDataById(int ID)
+        {
+            return (from data in db.Customers where ID == data.CustomerID select data).FirstOrDefault();
+        }
+
+        public static int GetIdByEmail(String Email)
+        {
+            return (from data in db.Customers where Email.Equals(data.CustomerEmail) select data.CustomerID).FirstOrDefault();
+        }
+
+        public static String UpdateProfile(Customer c, String NewName, String NewEmail, String NewGender, String NewAddress, String NewPassword)
+        {
+            c.CustomerName = NewName;
+            c.CustomerEmail = NewEmail;
+            c.CustomerGender = NewGender;
+            c.CustomerAddress = NewAddress;
+            c.CustomerPassword = NewPassword;
+
+            db.SaveChanges();
+
+            return null;
+        }
     }
 }
