@@ -91,6 +91,7 @@
     </Content>
     <Content Include="SQLQueryGabungan.sql" />
     <Content Include="Styling\Navbar.css" />
+    <Content Include="View\ArtistDetailPage.aspx" />
     <Content Include="View\InsertAlbumPage.aspx" />
     <Content Include="View\InsertArtistPage.aspx" />
     <Content Include="View\LoginPage.aspx" />
@@ -146,6 +147,13 @@
     <Compile Include="Repository\ArtistRepository.cs" />
     <Compile Include="Repository\Connect.cs" />
     <Compile Include="Repository\CustomerRepository.cs" />
+    <Compile Include="View\ArtistDetailPage.aspx.cs">
+      <DependentUpon>ArtistDetailPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\ArtistDetailPage.aspx.designer.cs">
+      <DependentUpon>ArtistDetailPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="View\InsertAlbumPage.aspx.cs">
       <DependentUpon>InsertAlbumPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -181,6 +189,13 @@
     <Compile Include="View\RegisterPage.aspx.designer.cs">
       <DependentUpon>RegisterPage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="View\Test.Master.cs">
+      <DependentUpon>Test.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Test.Master.designer.cs">
+      <DependentUpon>Test.Master</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="Model\KpopDatabaseModel.edmx">
@@ -192,6 +207,7 @@
     </Content>
     <None Include="packages.config" />
     <Content Include="View\NavigationBar.Master" />
+    <Content Include="View\Test.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

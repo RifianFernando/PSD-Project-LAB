@@ -14,10 +14,10 @@ namespace KpopZtation.Controller
             {
                 return "Artist Name must not be empty";
             }
-            //else if (!ArtistHandler.FindUniqueArtist(Name))
-            //{
-            //    return "Artist name already exist";
-            //}
+            else if (!ArtistHandler.FindUniqueArtist(Name))
+            {
+                return "Artist name already exist";
+            }
             return "";
         }
         public static String ValidateArtistImage(String ArtistImage,int ImageSize)
