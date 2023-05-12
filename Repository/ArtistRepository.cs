@@ -18,6 +18,15 @@ namespace KpopZtation.Repository
             return null;
         }
 
+        public static bool ValidateUniqueArtistName(String Name)
+        {
+            Artist UniqueArtistName = (from data in db.Artists where Name.Equals(data.ArtistName) select data).FirstOrDefault();
+            if(UniqueArtistName == null)
+            {
+                return true;
+            }
+            return false;
+        }
         public static Artist GetDataById(int ID)
         {
             return (from data in db.Artists where ID == data.ArtistID select data).FirstOrDefault();

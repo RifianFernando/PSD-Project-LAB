@@ -99,6 +99,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\AlbumController.cs" />
+    <Compile Include="Controller\ArtistController.cs" />
     <Compile Include="Controller\CustomerController.cs" />
     <Compile Include="Factory\AlbumFactory.cs" />
     <Compile Include="Factory\ArtistFactory.cs" />

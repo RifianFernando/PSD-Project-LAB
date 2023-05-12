@@ -1,4 +1,5 @@
-﻿using System;
+﻿using KpopZtation.Controller;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,6 +13,16 @@ namespace KpopZtation.View
         protected void Page_Load(object sender, EventArgs e)
         {
 
+        }
+
+        protected void InsertArtistButton_Click(object sender, EventArgs e)
+        {
+            String ArtistName = InsertArtistName.Text;
+            String ArtistImage = InsertArtistImage.FileName;
+            int ImageSize = InsertArtistImage.PostedFile.ContentLength;
+
+            WarningArtistName.Text = ArtistController.ValidateArtistName(ArtistName);
+            WarningArtistImage.Text = ArtistController.ValidateArtistImage(ArtistImage,ImageSize);
         }
     }
 }

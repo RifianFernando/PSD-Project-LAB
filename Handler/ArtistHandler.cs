@@ -37,5 +37,9 @@ namespace KpopZtation.Handler
 
             return;
         }
+        public static bool FindUniqueArtist(String Name)
+        {
+            return ArtistRepository.ValidateUniqueArtistName(Name);
+        }
     }
 }
