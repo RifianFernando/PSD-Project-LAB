@@ -18,14 +18,29 @@
         <nav>
         <ul class="list">
             <li><a href="#">Home</a></li>
-            <li><a href="../View/LoginPage.aspx">Login</a></li>
-            <li><a href="../View/RegisterPage.aspx">Register</a></li>
-            <li><a href="#">Cart</a></li>
-            <li><a href="#">Transaction</a></li>
-            <li><a href="#">Update Profile</a></li>
+
+            <li id="ListItem1" Visible="false">
+                <a href="#">Cart</a>
+            </li>
+            <li id="ListItem2" Visible="false">
+                <a href="#">Transaction</a>
+            </li>
+            <li id="ListItem3" Visible="false">
+                <a href="#">Update Profile</a>
+            </li>
         </ul>
+            
         </nav>
-        <a class="cta" href="#"><button>Logout</button></a>
+        <a class="cta" href="../View/LoginPage.aspx">
+            <asp:Label ID="Label1" runat="server" Text="Label">
+                Login
+            </asp:Label>
+        </a>
+        <a class="cta" href="../View/RegisterPage.aspx">
+            <asp:Label ID="Label2" runat="server" Text="Label">
+                Register
+            </asp:Label>
+        </a>
         </header>
         </div>
             <div>
