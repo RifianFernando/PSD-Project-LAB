@@ -29,6 +29,8 @@ namespace KpopZtation.View
                 userCookie.Value = Email.ToString();
                 userCookie.Expires = DateTime.Now.AddDays(7);
                 Response.Cookies.Add(userCookie);
+
+                Response.Redirect("HomePage.aspx");
             }
             else
             {
