@@ -3,10 +3,11 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div>
+        <h1>Artist Kpopz List</h1>
         <asp:DataList runat="server">
             <ItemTemplate>
-                <div class="container">
-
+                <div class="card-container">
+                    <div class> </div>
                 </div>
             </ItemTemplate>
         </asp:DataList>
