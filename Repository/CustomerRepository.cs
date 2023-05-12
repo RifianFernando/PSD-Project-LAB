@@ -79,8 +79,7 @@ namespace KpopZtation.Repository
             c.CustomerGender = NewGender;
             c.CustomerAddress = NewAddress;
             c.CustomerPassword = NewPassword;
-
-
+            
             db.SaveChanges();
 
             return null;

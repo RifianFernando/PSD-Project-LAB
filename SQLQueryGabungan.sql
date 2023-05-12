@@ -15,7 +15,8 @@ create table TransactionHeader(
 	FOREIGN KEY (CustomerID) REFERENCES Customer (CustomerID) ON UPDATE CASCADE ON DELETE CASCADE
 )
 
-
+INSERT INTO Customer VALUES ('Rifian', 'RifianAdmin@gmail.com', 'lipi123', 'Male', 'Kanting Lorong Street', 'Admin');
+INSERT INTO Customer VALUES ('Glennix, 'GlennixAdmin@gmail.com', 'GG123', 'Male', 'Green Garden Street', 'Admin');
 CREATE TABLE Artist (
 	ArtistID INT PRIMARY KEY IDENTITY(5000000, 1) NOT NULL,
 	ArtistName VARCHAR(50) NOT NULL,
@@ -49,3 +50,6 @@ CREATE TABLE TransactionDetail(
     FOREIGN KEY(TransactionID) REFERENCES TransactionHeader(TransactionID) ON UPDATE CASCADE ON DELETE CASCADE,
     FOREIGN KEY(AlbumID) REFERENCES Album(AlbumID) ON UPDATE CASCADE ON DELETE CASCADE
 )
+
+INSERT INTO Customer VALUES ('Rifian', 'RifianAdmin@gmail.com', 'lipi123', 'Male', 'Kanting Lorong Street', 'Admin');
+INSERT INTO Customer VALUES ('Glennix', 'GlennixAdmin@gmail.com', 'GG123', 'Male', 'Green Garden Street', 'Admin');
