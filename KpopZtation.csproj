@@ -92,6 +92,7 @@
     <Content Include="SQLQueryGabungan.sql" />
     <Content Include="Styling\Navbar.css" />
     <Content Include="View\InsertAlbumPage.aspx" />
+    <Content Include="View\InsertArtistPage.aspx" />
     <Content Include="View\LoginPage.aspx" />
     <Content Include="View\RegisterPage.aspx" />
     <Content Include="Web.config" />
@@ -105,6 +106,7 @@
     <Compile Include="Handler\AlbumHandler.cs" />
     <Compile Include="Handler\ArtistHandler.cs" />
     <Compile Include="Handler\CustomerHandler.cs" />
+    <Compile Include="Middleware\SessionMiddleware.cs" />
     <Compile Include="Model\Album.cs">
       <DependentUpon>KpopDatabaseModel.tt</DependentUpon>
     </Compile>
@@ -149,6 +151,13 @@
     </Compile>
     <Compile Include="View\InsertAlbumPage.aspx.designer.cs">
       <DependentUpon>InsertAlbumPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\InsertArtistPage.aspx.cs">
+      <DependentUpon>InsertArtistPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\InsertArtistPage.aspx.designer.cs">
+      <DependentUpon>InsertArtistPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\LoginPage.aspx.cs">
       <DependentUpon>LoginPage.aspx</DependentUpon>

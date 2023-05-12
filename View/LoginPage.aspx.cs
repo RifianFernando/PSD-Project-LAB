@@ -1,6 +1,7 @@
 ﻿using KpopZtation.Controller;
 using System;
 using System.Web;
+using KpopZtation.Middleware;
 
 namespace KpopZtation.View
 {
@@ -15,7 +16,6 @@ namespace KpopZtation.View
         {
             String Email = LoginEmail.Text;
             String Password = LoginPassword.Text;
-
             WarningLoginEmail.Text = CustomerController.ValidateEmailLogin(Email);
             WarningLoginPassword.Text = CustomerController.ValidatePasswordLogin(Email,Password);
             bool isValid = WarningLoginEmail.Text.Equals("") && WarningLoginPassword.Text.Equals("");
