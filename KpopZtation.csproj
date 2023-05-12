@@ -89,6 +89,7 @@
       <DependentUpon>KpopDatabaseModel.edmx</DependentUpon>
       <LastGenOutput>KpopDatabaseModel.cs</LastGenOutput>
     </Content>
+    <Content Include="SQLQueryGabungan.sql" />
     <Content Include="Styling\Navbar.css" />
     <Content Include="View\InsertAlbumPage.aspx" />
     <Content Include="View\LoginPage.aspx" />
