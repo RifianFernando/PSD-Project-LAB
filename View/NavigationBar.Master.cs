@@ -24,6 +24,8 @@ namespace KpopZtation.View
                 else
                 {
                     Cookie = "Customer";
+
+                    
                 }
             }
             else
