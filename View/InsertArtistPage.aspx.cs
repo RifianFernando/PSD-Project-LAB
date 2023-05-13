@@ -36,7 +36,7 @@ namespace KpopZtation.View
                 {
                     Directory.CreateDirectory(FolderDirectory);
                 }
-                        
+
                 InsertArtistImage.SaveAs(ImageFolder);
             }
         }
