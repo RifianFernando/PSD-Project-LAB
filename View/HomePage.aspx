@@ -7,24 +7,8 @@
 
         <h1>Home Page</h1>
         <br />
-
-        <table style="width: 50vw" border="1">
-            <thead>
-                <tr>
-                    <th>Image</th>
-                    <th>Name</th>
-                </tr>
-            </thead>
-            <tbody>
-                <%foreach (var art in artists)
-                    { %>
-                <tr>
-                    <td><asp:Image ID="ArtistImage" runat="server" ImageUrl="../Artist/<%= art %>"/></td>
-                    <td><%= art.ArtistName%></td>
-                </tr>
-                <%}%>
-            </tbody>
-        </table>
+        <asp:Label ID="ArtistName" runat="server" Text="Label"></asp:Label>
+        <asp:Image ID="ArtistImage" runat="server"/>
 
     </div>
 

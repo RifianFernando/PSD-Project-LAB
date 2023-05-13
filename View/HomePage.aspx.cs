@@ -16,6 +16,12 @@ namespace KpopZtation.View
         protected void Page_Load(object sender, EventArgs e)
         {
             artists = ArtistController.GetAllArtistData();
+            foreach(var Art in artists)
+            {
+                String UrlImage = "../Assets/Artists/" + Art.ArtistImage;
+                ArtistImage.ImageUrl = UrlImage;
+                ArtistName.Text = Art.ArtistName;
+            }
         }
     }
 }
