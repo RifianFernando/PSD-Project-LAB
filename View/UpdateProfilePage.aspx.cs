@@ -18,6 +18,7 @@ namespace KpopZtation.View
             String Email = Session["User"].ToString();
 
             Customer c = CustomerController.GetDataById(CustomerController.GetIdByEmail(Email));
+
             if (!IsPostBack)
             {
                 UpdateName.Text = c.CustomerName;

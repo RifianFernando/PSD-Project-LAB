@@ -1,4 +1,5 @@
 ﻿using KpopZtation.Handler;
+using KpopZtation.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,6 +32,11 @@ namespace KpopZtation.Controller
                 return "File size must be less than 2MB!";
             }
             return "";
+        }
+
+        public static List<Artist> GetAllArtistData()
+        {
+            return ArtistHandler.GetAllArtistData();
         }
     }
 }
