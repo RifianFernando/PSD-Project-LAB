@@ -48,7 +48,7 @@
                 </asp:Label>
             </a>
          <%}else{%>
-            <a class="cta" href="../View/RegisterPage.aspx">
+            <a class="cta" href="../View/HomePage.aspx">
                 <asp:Label ID="Label3" runat="server" Text="Label">
                     Logout
                 </asp:Label>

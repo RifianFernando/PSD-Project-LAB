@@ -41,5 +41,10 @@ namespace KpopZtation.Handler
         {
             return ArtistRepository.ValidateUniqueArtistName(Name);
         }
+
+        public static List<Artist> GetAllArtistData()
+        {
+            return ArtistRepository.GetAllArtistData();
+        }
     }
 }
