@@ -28,17 +28,14 @@ namespace KpopZtation.View
             SuccessLabel.Text = ArtistController.InsertArtist(ArtistName, ArtistImage, ImageSize);
             if(SuccessLabel.Text.Equals("Successfully insert new Artist"))
             {
-                if (InsertArtistImage.HasFile)
-                {
-                    String FolderDirectory = "~/Storage/Public/Images/Artists/";
-                    String ImageFolder = Server.MapPath(FolderDirectory + InsertArtistImage.FileName);
+                    String FolderDirectory = Server.MapPath("~/Storage/Public/Images/Artists/");
+                    String ImageFolder = Server.MapPath("~/Storage/Public/Images/Artists/" + InsertArtistImage.FileName);
                     if (!Directory.Exists(FolderDirectory))
                     {
                         Directory.CreateDirectory(FolderDirectory);
                     }
-                        
+              
                     InsertArtistImage.SaveAs(ImageFolder);
-                }
             }
         }
     }
