@@ -5,16 +5,17 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.IO;
 
 namespace KpopZtation.View
 {
     public partial class InsertArtistPage : System.Web.UI.Page
     {
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
-
         protected void InsertArtistButton_Click(object sender, EventArgs e)
         {
             String ArtistName = InsertArtistName.Text;
@@ -29,8 +30,14 @@ namespace KpopZtation.View
             {
                 if (InsertArtistImage.HasFile)
                 {
-                    String ImagePath = Server.MapPath("~/Storage/Public/Images/Artists/" + InsertArtistImage.FileName);
-                    InsertArtistImage.SaveAs(ImagePath);
+                    String FolderDirectory = "~/Storage/Public/Images/Artists/";
+                    String ImageFolder = Server.MapPath(FolderDirectory + InsertArtistImage.FileName);
+                    if (!Directory.Exists(FolderDirectory))
+                    {
+                        Directory.CreateDirectory(FolderDirectory);
+                    }
+                        
+                    InsertArtistImage.SaveAs(ImageFolder);
                 }
             }
         }
