@@ -27,7 +27,7 @@
             <br />
 
             <asp:Label ID="LabelImage" runat="server" Text="Album Image"></asp:Label><br />
-            <asp:FileUpload id="FileUpload" runat="server" />
+            <asp:FileUpload id="InsertAlbumImage" runat="server" />
             <asp:Label ID="WarningAlbumImage" runat="server" Text="" ForeColor="Red"></asp:Label><br />
             <br />
             

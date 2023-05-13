@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using KpopZtation.Controller;
 using KpopZtation.Middleware;
+using System.IO;
 
 namespace KpopZtation.View
 {
@@ -21,8 +22,8 @@ namespace KpopZtation.View
             String AlbumName = InsertAlbumName.Text;
             String AlbumDesc = InsertAlbumDescription.Text;
             String AlbumPrice = InsertAlbumPrice.Text;
-            String AlbumImage = FileUpload.FileName;
-            int ImageSize = FileUpload.PostedFile.ContentLength;
+            String AlbumImage = InsertAlbumImage.FileName;
+            int ImageSize = InsertAlbumImage.PostedFile.ContentLength;
             String AlbumStock = InsertAlbumStock.Text;
 
             WarningAlbumName.Text = AlbumController.ValidateAlbumName(AlbumName);
@@ -31,6 +32,18 @@ namespace KpopZtation.View
             WarningAlbumImage.Text = AlbumController.ValidateAlbumImage(AlbumImage, ImageSize);
             WarningAlbumStock.Text = AlbumController.ValidateAlbumStock(AlbumStock);
 
+            if (SuccessLabel.Text.Equals("Successfully insert new Artist"))
+            {
+                String FolderDirectory = Server.MapPath("~/Storage/Public/Images/Albums/");
+                String ImageFolder = Server.MapPath("~/Storage/Public/Images/Albums/" + InsertAlbumImage.FileName);
+
+                if (!Directory.Exists(FolderDirectory))
+                {
+                    Directory.CreateDirectory(FolderDirectory);
+                }
+
+                InsertAlbumImage.SaveAs(ImageFolder);
+            }
 
         }
     }
