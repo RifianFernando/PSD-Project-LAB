@@ -9,7 +9,7 @@
         <br />
         <asp:Label ID="ArtistName" runat="server" Text="Label"></asp:Label>
         <asp:Image ID="ArtistImage" runat="server"/>
-
+        
     </div>
 
 </asp:Content>
