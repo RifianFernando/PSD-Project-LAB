@@ -29,8 +29,8 @@ namespace KpopZtation.View
            
             if(SuccessLabel.Text.Equals("Successfully insert new Artist"))
             {
-                String FolderDirectory = "~/Storage/Public/Images/Artists/";
-                String ImageFolder = Server.MapPath(FolderDirectory + ArtistImage);
+                String FolderDirectory = Server.MapPath("~/Storage/Public/Images/Artists/");
+                String ImageFolder = Server.MapPath("~/Storage/Public/Images/Artists/" + ArtistImage);
 
                 if (!Directory.Exists(FolderDirectory))
                 {
