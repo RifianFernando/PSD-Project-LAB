@@ -90,6 +90,7 @@
       <LastGenOutput>KpopDatabaseModel.cs</LastGenOutput>
     </Content>
     <Content Include="SQLQueryGabungan.sql" />
+    <Content Include="Styling\ArtistDetailSyle.css" />
     <Content Include="Styling\Navbar.css" />
     <Content Include="View\ArtistDetailPage.aspx" />
     <Content Include="View\HomePage.aspx" />
