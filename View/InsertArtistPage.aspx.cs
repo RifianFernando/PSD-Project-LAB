@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.IO;
+using KpopZtation.Middleware;
 
 namespace KpopZtation.View
 {
@@ -14,7 +15,7 @@ namespace KpopZtation.View
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            SessionMiddleware.isLogin(Page);
         }
         protected void InsertArtistButton_Click(object sender, EventArgs e)
         {

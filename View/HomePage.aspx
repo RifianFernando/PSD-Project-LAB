@@ -18,7 +18,10 @@
                 <%foreach (var art in artists)
                     { %>
                 <tr>
-                    <td><asp:Image ID="Image1" runat="server" /></td>
+                    <td>
+                        <%--<asp:Image ID="Image1" runat="server" src='<%# "https://localhost:44302/" + art.ArtistImage %>'/>--%>
+                        <img src='<%= "https://localhost:44302/Storage/Public/Images/Artists/" + art.ArtistImage %>'/>
+                    </td>
                     <td><%= art.ArtistName%></td>
                 </tr>
                 <%}%>

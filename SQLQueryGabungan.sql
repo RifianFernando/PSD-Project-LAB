@@ -50,4 +50,4 @@ CREATE TABLE TransactionDetail(
 
 INSERT INTO Customer VALUES ('Rifian', 'RifianAdmin@gmail.com', 'lipi123', 'Male', 'Kanting Lorong Street', 'Admin');
 INSERT INTO Customer VALUES ('Glennix', 'GlennixAdmin@gmail.com', 'GG123', 'Male', 'Green Garden Street', 'Admin');
-INSERT INTO Customer VALUES ('Dixon', 'Dixon@gmail.com', 'krastelaM', 'Male', 'PerbatasanTangsel Street', 'Customer');
+INSERT INTO Customer VALUES ('Dixon', 'Dixon@gmail.com', 'krastelaM', 'Male', 'PerbatasanTangsel Street', 'CST');
