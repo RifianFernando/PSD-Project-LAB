@@ -30,5 +30,21 @@ namespace KpopZtation.View
                 ViewState["Cookie"] = "Guest";
             }
         }
+
+        protected void Logout(object sender, EventArgs e)
+        {
+            Session.Remove("User");
+            Response.Redirect("HomePage.aspx");
+        }
+
+        protected void Login(object sender, EventArgs e)
+        {
+            Response.Redirect("LoginPage.aspx");
+        }
+
+        protected void Register(object sender, EventArgs e)
+        {
+            Response.Redirect("RegisterPage.aspx");
+        }
     }
 }

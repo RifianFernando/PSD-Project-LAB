@@ -37,7 +37,11 @@ header {
     background-color: gray;
 }
 
-button {
+.button-auth {
+    justify-content: center;
+}
+
+.button {
     border-style: none;
     border-color: inherit;
     border-width: medium;
@@ -45,6 +49,9 @@ button {
     background-color: black;
     border-radius: 40px;
     cursor: pointer;
+    font-weight: bold;
+    font-size: 20px;
+    color: antiquewhite;
 }
 
 button:hover {

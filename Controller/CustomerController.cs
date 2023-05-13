@@ -182,7 +182,7 @@ namespace KpopZtation.Controller
         public static bool ValidateAdmin(String Email)
         {
             String Role = CustomerHandler.GetRoleByEmail(Email);
-            if ( Role == "Admin")
+            if (Role == "Admin")
             {
                 return true;
             }

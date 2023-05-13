@@ -37,22 +37,12 @@
         </nav>
         <%if (Data == "Guest")
             {%>
-            <a class="cta" href="../View/LoginPage.aspx">
-                <asp:Label ID="Label1" runat="server" Text="Label">
-                    Login
-                </asp:Label>
-            </a>
-            <a class="cta" href="../View/RegisterPage.aspx">
-                <asp:Label ID="Label2" runat="server" Text="Label">
-                    Register
-                </asp:Label>
-            </a>
+            <div CssClass="button-auth">
+                <asp:Button ID="Button_Login" runat="server" CssClass="button" Text="Login" OnClick="Login" />
+                <asp:Button ID="Button_Register" runat="server" CssClass="button" Text="Register" OnClick="Register" />
+            </div>
          <%}else{%>
-            <a class="cta" href="../View/HomePage.aspx">
-                <asp:Label ID="Label3" runat="server" Text="Label">
-                    Logout
-                </asp:Label>
-            </a>
+                <asp:Button ID="Button_Logout" runat="server" CssClass="button" Text="Logout" OnClick="Logout" />
             <%} %>
         </header>
         </div>

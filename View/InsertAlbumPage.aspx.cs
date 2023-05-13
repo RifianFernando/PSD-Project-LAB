@@ -15,6 +15,17 @@ namespace KpopZtation.View
         protected void Page_Load(object sender, EventArgs e)
         {
             SessionMiddleware.isLogin(Page);
+            if (Session["User"] != null)
+            {
+                String Email = Session["User"].ToString();
+                bool isAdmin = CustomerController.ValidateAdmin(Email);
+                if (isAdmin == true)
+                {
+                    Response.Write("Welcome, Admin!");
+                    return;
+                }
+            }
+            Response.Redirect("HomePage.aspx");
         }
 
         protected void InsertAlbumButton_Click(object sender, EventArgs e)
