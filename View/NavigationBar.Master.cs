@@ -10,7 +10,6 @@ namespace KpopZtation.View
 {
     public partial class NavigationBar : System.Web.UI.MasterPage
     {
-        private string Cookie;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["User"] != null)
@@ -19,18 +18,16 @@ namespace KpopZtation.View
                 bool isAdmin = CustomerController.ValidateAdmin(Email);
                 if (isAdmin == true)
                 {
-                    Cookie = "Admin";
+                    ViewState["Cookie"] = "Admin";
                 }
                 else
                 {
-                    Cookie = "Customer";
-
-                    
+                    ViewState["Cookie"] = "Customer";
                 }
             }
             else
             {
-                Cookie = "Guest";
+                ViewState["Cookie"] = "Guest";
             }
         }
     }
