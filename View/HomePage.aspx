@@ -19,7 +19,7 @@
                 <%foreach (var art in artists)
                     { %>
                 <tr>
-                    <td></td>
+                    <td><asp:Image ID="ArtistImage" runat="server" ImageUrl="../Artist/<%= art %>"/></td>
                     <td><%= art.ArtistName%></td>
                 </tr>
                 <%}%>
