@@ -34,6 +34,25 @@ namespace KpopZtation.Controller
             return "";
         }
 
+        public static String InsertArtist(String Name, String Image, int ImageSize)
+        {
+            String name = ValidateArtistName(Name);
+            String image = ValidateArtistImage(Image, ImageSize);
+
+            bool validate = name.Equals("") && image.Equals("");
+
+            if (validate == true)
+            {
+                ArtistHandler.InsertArtist(Name, Image);
+
+                return "Successfully insert new Artist";
+            }
+            else
+            {
+                return "Insert Failed";
+            }
+        }
+
         public static List<Artist> GetAllArtistData()
         {
             return ArtistHandler.GetAllArtistData();

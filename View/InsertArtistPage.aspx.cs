@@ -23,6 +23,8 @@ namespace KpopZtation.View
 
             WarningArtistName.Text = ArtistController.ValidateArtistName(ArtistName);
             WarningArtistImage.Text = ArtistController.ValidateArtistImage(ArtistImage,ImageSize);
+
+            SuccessLabel.Text = ArtistController.InsertArtist(ArtistName, ArtistImage, ImageSize);
         }
     }
 }

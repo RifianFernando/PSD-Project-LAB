@@ -4,10 +4,11 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     
     <div style="padding = 50px">
+
         <h1>Home Page</h1>
         <br />
 
-        <table style="width: 50vw">
+        <table style="width: 50vw" border="1">
             <thead>
                 <tr>
                     <th>Image</th>
