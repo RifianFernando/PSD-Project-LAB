@@ -25,6 +25,14 @@ namespace KpopZtation.View
             WarningArtistImage.Text = ArtistController.ValidateArtistImage(ArtistImage,ImageSize);
 
             SuccessLabel.Text = ArtistController.InsertArtist(ArtistName, ArtistImage, ImageSize);
+            if(SuccessLabel.Text.Equals("Successfully insert new Artist"))
+            {
+                if (InsertArtistImage.HasFile)
+                {
+                    String ImagePath = Server.MapPath("~/Storage/Public/Images/Artists/" + InsertArtistImage.FileName);
+                    InsertArtistImage.SaveAs(ImagePath);
+                }
+            }
         }
     }
 }

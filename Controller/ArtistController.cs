@@ -57,5 +57,7 @@ namespace KpopZtation.Controller
         {
             return ArtistHandler.GetAllArtistData();
         }
+
+       
     }
 }
