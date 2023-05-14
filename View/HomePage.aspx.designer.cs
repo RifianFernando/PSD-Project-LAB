@@ -15,13 +15,13 @@ namespace KpopZtation.View
     {
 
         /// <summary>
-        /// DeleteButton control.
+        /// ArtistDataList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button DeleteButton;
+        protected global::System.Web.UI.WebControls.DataList ArtistDataList;
 
         /// <summary>
         /// Test control.

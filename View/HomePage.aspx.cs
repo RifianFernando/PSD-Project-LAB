@@ -15,12 +15,20 @@ namespace KpopZtation.View
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            artists = ArtistController.GetAllArtistData();
+            if (!IsPostBack)
+            {
+                // Retrieve the list of artists and bind it to the DataList control
+                List<Artist> artists = ArtistController.GetAllArtistData();
+                ArtistDataList.DataSource = artists;
+                ArtistDataList.DataBind();
+            }
+            //artists = ArtistController.GetAllArtistData();
         }
 
         protected void DeleteButton_Click(object sender, EventArgs e)
         {
-            string artistName = DeleteButton.CommandArgument;
+            Button deleteButton = (Button)sender;
+            string artistName = deleteButton.CommandArgument;
             Test.Text = artistName;
             Response.Write(artistName);
         }

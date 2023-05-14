@@ -16,21 +16,20 @@
                 </tr>
             </thead>
             <tbody>
-                <% foreach (var art in artists)
-                    { %>
+                <asp:DataList runat="server" ID="ArtistDataList" RepeatLayout="Table">
+                    <ItemTemplate>
                 <tr>
                     <td style="width: 10vw">
-                        <img src='<%= "https://localhost:44302/Storage/Public/Images/Artists/" + art.ArtistImage %>' style="width: 10vw; height: auto" />
+                        <img src='<%# "https://localhost:44302/Storage/Public/Images/Artists/" + Eval("ArtistImage") %>' style="width: 10vw; height: auto" />
                     </td>
-                    <td style="padding-left: 20px"><%= art.ArtistName%></td>
+                    <td style="padding-left: 20px"><%# Eval("ArtistName")%></td>
                     <td>
-                        <asp:Button ID="DeleteButton" runat="server" Text="Delete" CommandName="Delete" OnClick="DeleteButton_Click" />
-                        <%
-                            DeleteButton.CommandArgument = art.ArtistID.ToString();
-                        %>
+                        <asp:Button ID="DeleteButton" runat="server" Text="Delete" OnClick="DeleteButton_Click" CommandArgument='<%# Eval("ArtistName") %>'/>
+                      
                     </td>
                 </tr>
-                <% } %>
+                    </ItemTemplate>
+                </asp:DataList>
             </tbody>
         </table>
         <asp:Label ID="Test" runat="server" Text="uiwsdfhgwuisdfhw"></asp:Label>
