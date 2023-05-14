@@ -3,8 +3,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    
-    <div style="display: flex; flex-direction: column; justify-content: center; align-items:center; padding-top: 30px">
+
+    <div style="padding: 50px">
         <h1>Home Page</h1>
         <br />
 
@@ -20,11 +20,15 @@
                     <td>
                         <asp:Button ID="DeleteButton" runat="server" Text="Delete" OnClick="DeleteButton_Click" CommandArgument='<%# Eval("ArtistID") %>'/>
                     </td>
+                    <td>
+                        <asp:Button ID="UpdateButton" runat="server" Text="Update" OnClick="UpdateButton_Click" CommandArgument='<%# Eval("ArtistID") %>'/>
+                    </td>
                 </tr>
                     </ItemTemplate>
                 </asp:DataList>
             </tbody>
         </table>
+
     </div>
 
 </asp:Content>
