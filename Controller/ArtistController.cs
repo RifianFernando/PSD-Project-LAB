@@ -53,6 +53,13 @@ namespace KpopZtation.Controller
             }
         }
 
+        public static void DeleteArtist(int ID)
+        {
+            ArtistHandler.DeleteArtist(ID);
+
+            return;
+        }
+
         public static List<Artist> GetAllArtistData()
         {
             return ArtistHandler.GetAllArtistData();

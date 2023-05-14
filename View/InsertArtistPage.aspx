@@ -3,7 +3,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-            <asp:Label ID="LabelArtistName" runat="server" Text="Album Image"></asp:Label><br />
+            <asp:Label ID="LabelArtistName" runat="server" Text="Arist Name"></asp:Label><br />
             <asp:TextBox ID="InsertArtistName" runat="server"></asp:TextBox><br />
             <asp:Label ID="WarningArtistName" runat="server" Text="" ForeColor="Red"></asp:Label><br />
             <br />

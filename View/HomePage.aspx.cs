@@ -28,9 +28,10 @@ namespace KpopZtation.View
         protected void DeleteButton_Click(object sender, EventArgs e)
         {
             Button deleteButton = (Button)sender;
-            string artistName = deleteButton.CommandArgument;
-            Test.Text = artistName;
-            Response.Write(artistName);
+            string ArtistID = deleteButton.CommandArgument;
+            int ID = int.Parse(ArtistID);
+            ArtistController.DeleteArtist(ID);
+            Response.Redirect("HomePage.aspx");
         }
 
         protected void UpdateButton_Click(object sender, EventArgs e)
