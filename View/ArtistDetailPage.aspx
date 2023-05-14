@@ -7,7 +7,7 @@
         <asp:DataList runat="server">
             <ItemTemplate>
                 <div class="card-container">
-                    <div class> </div>
+                    <div> </div>
                 </div>
             </ItemTemplate>
         </asp:DataList>
