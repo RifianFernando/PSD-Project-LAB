@@ -17,5 +17,10 @@ namespace KpopZtation.View
         {
             artists = ArtistController.GetAllArtistData();
         }
+
+        protected void DeleteButton_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

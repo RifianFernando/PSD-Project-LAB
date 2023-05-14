@@ -3,31 +3,24 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     
-    <div style="padding: 50px">
+    <div style="display: flex; flex-direction: column; justify-content: center; align-items:center; padding-top: 30px">
         <h1>Home Page</h1>
         <br />
 
-        <table style="width: 50vw">
-            <thead>
-                <tr>
-                    <th>Image</th>
-                    <th>Name</th>
-                </tr>
-            </thead>
+        <table>
             <tbody>
                 <%foreach (var art in artists)
                     { %>
                 <tr>
-                    <td>
-                        <%--<asp:Image ID="Image1" runat="server" src='<%# "https://localhost:44302/" + art.ArtistImage %>'/>--%>
-                        <img src='<%= "https://localhost:44302/Storage/Public/Images/Artists/" + art.ArtistImage %>'/>
+                    <td style="width: 10vw">
+                        <img src='<%= "https://localhost:44302/Storage/Public/Images/Artists/" + art.ArtistImage %>' style="width: 10vw; height: auto"/>
                     </td>
-                    <td><%= art.ArtistName%></td>
+                    <td style="padding-left: 50px; width: 20vw"><%= art.ArtistName%></td>
+                    <td><asp:Button ID="DeleteButton" runat="server" Text="Delete" OnClick="DeleteButton_Click"/></td>
                 </tr>
                 <%}%>
             </tbody>
         </table>
-
     </div>
 
 </asp:Content>
