@@ -12,7 +12,7 @@ namespace KpopZtation.View
         protected void Page_Load(object sender, EventArgs e)
         {
             int id = int.Parse(Request.QueryString["ID"]);
-            Test.Text = id.ToString();
+
         }
     }
 }
