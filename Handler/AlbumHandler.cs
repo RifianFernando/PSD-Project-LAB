@@ -48,5 +48,9 @@ namespace KpopZtation.Handler
 
             return;
         }
+        public static List<Album> GetAllAlbumData()
+        {
+            return AlbumRepository.GetAllAlbumData();
+        }
     }
 }

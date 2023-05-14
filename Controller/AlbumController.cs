@@ -1,4 +1,5 @@
 ﻿using KpopZtation.Handler;
+using KpopZtation.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -99,6 +100,10 @@ namespace KpopZtation.Controller
             {
                 return "Failed to add album!";
             }
+        }
+        public static List<Album> GetAllAlbumData()
+        {
+            return AlbumHandler.GetAllAlbumData();
         }
     }
 }

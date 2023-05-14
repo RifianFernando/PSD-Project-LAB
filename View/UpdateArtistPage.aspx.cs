@@ -1,4 +1,5 @@
-﻿using System;
+﻿using KpopZtation.Controller;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -14,5 +15,7 @@ namespace KpopZtation.View
             int id = int.Parse(Request.QueryString["ID"]);
 
         }
+
+
     }
 }

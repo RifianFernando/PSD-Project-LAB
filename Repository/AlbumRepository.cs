@@ -43,5 +43,10 @@ namespace KpopZtation.Repository
 
             return null;
         }
+
+        public static List<Album> GetAllAlbumData()
+        {
+            return (from albumdb in db.Albums select albumdb).ToList();
+        }
     }
 }
