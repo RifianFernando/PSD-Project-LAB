@@ -12,12 +12,12 @@
             <tbody>
                 <asp:DataList runat="server" ID="ArtistDataList" RepeatLayout="Table">
                     <ItemTemplate>
-                <tr>
+                <tr style="border: 1px solid black;">
                     <td style="width: 10vw">
                         <img src='<%# "https://localhost:44302/Storage/Public/Images/Artists/" + Eval("ArtistImage") %>' style="width: 10vw; height: auto" />
                     </td>
                     <td  style="padding-left: 50px; width: 20vw"><%# Eval("ArtistName")%></td>
-                    <td>
+                    <td style="width: 5vw;">
                         <asp:Button ID="DeleteButton" runat="server" Text="Delete" OnClick="DeleteButton_Click" CommandArgument='<%# Eval("ArtistID") %>'/>
                     </td>
                 </tr>
