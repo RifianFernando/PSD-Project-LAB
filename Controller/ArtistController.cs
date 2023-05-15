@@ -60,12 +60,34 @@ namespace KpopZtation.Controller
             return;
         }
 
+        public static String ValidateUpdateName(String NewName, String Name)
+        {
+            if (NewName.Equals(""))
+            {
+                return "Artist Name must not be empty";
+            }
+            else if (NewName.Equals(Name))
+            {
+                return "";
+            }
+            else if (!ArtistHandler.FindUniqueArtist(NewName))
+            {
+                return "Artist name already exist";
+            }
+            return "";
+        }
+
         public static String ValidateUpdateImage(String ArtistImage, int ImageSize)
         {
-            if (ImageSize > 2097152)
+            if (ArtistImage.Equals(""))
+            {
+                return "No New Image Uploaded";
+            }
+            else if (ImageSize > 2097152)
             {
                 return "File size must be less than 2MB!";
             }
+
             return "";
         }
 
@@ -79,16 +101,24 @@ namespace KpopZtation.Controller
             return ArtistHandler.GetIdByName(Name);
         }
 
-        public static String UpdateArtist(int ID, String Name, String Image, int ImageSize)
+        public static String UpdateArtist(int ID, String NewName, String Name, String NewImage, String Image, int ImageSize)
         {
-            String name = ValidateArtistName(Name);
-            String image = ValidateArtistImage(Image, ImageSize);
+            String name = ValidateUpdateName(NewName, Name);
+            String image = ValidateUpdateImage(NewImage, ImageSize);
 
-            bool validate = name.Equals("") && image.Equals("");
+            bool noNewImage = name.Equals("") && image.Equals("No New Image Uploaded");
 
-            if (validate == true)
+            bool validateAll = name.Equals("") && image.Equals("");
+
+            if(noNewImage == true)
             {
-                ArtistHandler.UpdateArtist(ID, Name, Image);
+                ArtistHandler.UpdateArtist(ID, NewName, Image);
+
+                return "Update saved!";
+            }
+            else if (validateAll == true)
+            {
+                ArtistHandler.UpdateArtist(ID, NewName, NewImage);
 
                 return "Update saved!";
             }

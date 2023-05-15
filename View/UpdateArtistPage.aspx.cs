@@ -3,6 +3,7 @@ using KpopZtation.Middleware;
 using KpopZtation.Model;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -31,6 +32,7 @@ namespace KpopZtation.View
                     {
                         UpdateArtistName.Text = a.ArtistName;
                         ArtistImage.ImageUrl = "https://localhost:44302/Storage/Public/Images/Artists/" + a.ArtistImage;
+                        ArtistImageName.Text = a.ArtistImage;
                     }
 
                     return;
@@ -41,16 +43,37 @@ namespace KpopZtation.View
 
         protected void UpdateArtistButton_Click(object sender, EventArgs e)
         {
-            String ArtistName = UpdateArtistName.Text;
-            String ArtistImage = UpdateArtistImage.FileName;
-            int ImageSize = UpdateArtistImage.PostedFile.ContentLength;
-
             int id = int.Parse(Request.QueryString["ID"]);
 
-            WarningArtistName.Text = ArtistController.ValidateArtistName(ArtistName);
-            WarningArtistImage.Text = ArtistController.ValidateArtistImage(ArtistImage, ImageSize);
+            Artist a = ArtistController.GetDataById(id);
 
-            SuccessLabel.Text = ArtistController.UpdateArtist(id, ArtistName, ArtistImage, ImageSize);
+            String ArtistName = a.ArtistName;
+            String ArtistImage = a.ArtistImage;
+
+            String NewArtistName = UpdateArtistName.Text;
+            String NewArtistImage = UpdateArtistImage.FileName;
+            int ImageSize = UpdateArtistImage.PostedFile.ContentLength;
+
+            WarningArtistName.Text = ArtistController.ValidateUpdateName(NewArtistName, ArtistName);
+            WarningArtistImage.Text = ArtistController.ValidateUpdateImage(ArtistImage, ImageSize);
+
+            SuccessLabel.Text = ArtistController.UpdateArtist(id, NewArtistName, ArtistName, NewArtistImage, ArtistImage, ImageSize);
+
+            if (SuccessLabel.Text.Equals("Update saved!"))
+            {
+                if (UpdateArtistImage.HasFile)
+                {
+                    String FolderDirectory = Server.MapPath("~/Storage/Public/Images/Artists/");
+                    String ImageFolder = Server.MapPath("~/Storage/Public/Images/Artists/" + NewArtistImage);
+
+                    if (!Directory.Exists(FolderDirectory))
+                    {
+                        Directory.CreateDirectory(FolderDirectory);
+                    }
+
+                    UpdateArtistImage.SaveAs(ImageFolder);
+                }
+            }
         }
     }
 }
