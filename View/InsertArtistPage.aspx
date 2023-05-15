@@ -17,5 +17,4 @@
             <asp:Button ID="InsertArtistButton" runat="server" Text="Insert Artist" OnClick="InsertArtistButton_Click"/><br />
             <asp:Label ID="SuccessLabel" runat="server" Text="" ForeColor="Green"></asp:Label><br />
 
-            <asp:Image ID="ArtistImage1" runat="server" />
 </asp:Content>

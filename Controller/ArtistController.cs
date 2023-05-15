@@ -60,6 +60,42 @@ namespace KpopZtation.Controller
             return;
         }
 
+        public static String ValidateUpdateImage(String ArtistImage, int ImageSize)
+        {
+            if (ImageSize > 2097152)
+            {
+                return "File size must be less than 2MB!";
+            }
+            return "";
+        }
+
+        public static Artist GetDataById(int ID)
+        {
+            return ArtistHandler.GetDataById(ID);
+        }
+
+        public static int GetIdByName(String Name)
+        {
+            return ArtistHandler.GetIdByName(Name);
+        }
+
+        public static String UpdateArtist(int ID, String Name, String Image, int ImageSize)
+        {
+            String name = ValidateArtistName(Name);
+            String image = ValidateArtistImage(Image, ImageSize);
+
+            bool validate = name.Equals("") && image.Equals("");
+
+            if (validate == true)
+            {
+                ArtistHandler.UpdateArtist(ID, Name, Image);
+
+                return "Update saved!";
+            }
+
+            return "Update failed!";
+        }
+
         public static List<Artist> GetAllArtistData()
         {
             return ArtistHandler.GetAllArtistData();
