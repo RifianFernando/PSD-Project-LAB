@@ -4,7 +4,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <div style="padding: 50px">
+    <div style="padding: 50px; display:flex; flex-direction:column; align-items:center; justify-content:center">
         <h1>Home Page</h1>
         <br />
 
