@@ -111,9 +111,11 @@
     <Compile Include="Factory\AlbumFactory.cs" />
     <Compile Include="Factory\ArtistFactory.cs" />
     <Compile Include="Factory\CustomerFactory.cs" />
+    <Compile Include="Factory\TransactionFactory.cs" />
     <Compile Include="Handler\AlbumHandler.cs" />
     <Compile Include="Handler\ArtistHandler.cs" />
     <Compile Include="Handler\CustomerHandler.cs" />
+    <Compile Include="Handler\TransactionHandler.cs" />
     <Compile Include="Middleware\SessionMiddleware.cs" />
     <Compile Include="Model\Album.cs">
       <DependentUpon>KpopDatabaseModel.tt</DependentUpon>
@@ -153,6 +155,7 @@
     <Compile Include="Repository\ArtistRepository.cs" />
     <Compile Include="Repository\Connect.cs" />
     <Compile Include="Repository\CustomerRepository.cs" />
+    <Compile Include="Repository\TransactionRepository.cs" />
     <Compile Include="View\AlbumDetailPage.aspx.cs">
       <DependentUpon>AlbumDetailPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
