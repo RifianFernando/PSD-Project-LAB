@@ -20,11 +20,10 @@
                     <td  style="padding-left: 50px; width: 20vw"><%# Eval("AlbumStock")%></td>
 
                     <td style="width: 5vw;">
-                        <asp:Button ID="CartButton" runat="server" Text="Add to Cart" OnClick="CartButton_Click" CommandArgument='<%# Eval("AlbumID") %>'/>
+                            <asp:Button ID="CartButton" runat="server" Text="Add to Cart" OnClick="CartButton_Click" CommandArgument='<%# Eval("AlbumID") %>'/>
                     </td>
-                    <td style="width: 5vw;">
-                        <asp:Button ID="ConfirmButton" runat="server" Text="Confirm" OnClick="ConfirmButton_Click" CommandArgument='<%# Eval("AlbumID") %>'/>
-                    </td>
+                   
+                    
                 </tr>
                     </ItemTemplate>
                 </asp:DataList>
@@ -32,4 +31,8 @@
         </table>
 
     </div>
+    <asp:Label ID="QtyText" runat="server" Text="Insert Quantity" Visible="false"></asp:Label>
+    <asp:TextBox ID="Quantity" runat="server" Visible="false"></asp:TextBox>
+    <asp:Button ID="ConfirmButton" Visible="false" runat="server" Text="Confirm" OnClick="ConfirmButton_Click"/>
+    <asp:Label ID="Success" runat="server" Text="" Visible="false"></asp:Label>
 </asp:Content>
