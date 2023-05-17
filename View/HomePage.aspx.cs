@@ -40,7 +40,7 @@ namespace KpopZtation.View
                 ArtistDataList.DataSource = artists;
                 ArtistDataList.DataBind();
             }
-            //artists = ArtistController.GetAllArtistData();
+
         }
 
         protected void DeleteButton_Click(object sender, EventArgs e)
@@ -63,8 +63,6 @@ namespace KpopZtation.View
 
         protected void UpdateButton_Click(object sender, EventArgs e)
         {
-
-
             if (Session["User"] != null)
             {
                 String Email = Session["User"].ToString();
@@ -79,9 +77,14 @@ namespace KpopZtation.View
             }
         }
 
-        protected void ButtonClicked_Click(object sender, EventArgs e)
+        protected void RedirectToArtistDetail(object sender, DataListCommandEventArgs e)
         {
-            Response.Redirect("HomePage.aspx");
+            TableRow artistRow = (TableRow)sender;
+
+            String ArtistID = e.CommandArgument.ToString();
+            int ID = int.Parse(ArtistID);
+
+            Response.Redirect("~/View/UpdateArtistPage.aspx?id=" + ID);
         }
     }
 }
