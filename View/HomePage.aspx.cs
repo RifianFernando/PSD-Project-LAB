@@ -45,20 +45,28 @@ namespace KpopZtation.View
 
         protected void UpdateButton_Click(object sender, EventArgs e)
         {
-
-
             if (Session["User"] != null)
             {
                 String Email = Session["User"].ToString();
                 bool isAdmin = CustomerController.ValidateAdmin(Email);
                 if (isAdmin == true)
                 {
-                    Button deleteButton = (Button)sender;
-                    string ArtistID = deleteButton.CommandArgument;
+                    Button updateButton = (Button)sender;
+                    string ArtistID = updateButton.CommandArgument;
                     int ID = int.Parse(ArtistID);
                     Response.Redirect("~/View/UpdateArtistPage.aspx?id=" + ID);
                 }
             }
+        }
+
+        protected void RedirectToArtistDetail(object sender, DataListCommandEventArgs e)
+        {
+            TableRow artistRow = (TableRow)sender;
+
+            String ArtistID = e.CommandArgument.ToString();
+            int ID = int.Parse(ArtistID);
+
+            Response.Redirect("~/View/UpdateArtistPage.aspx?id=" + ID);
         }
     }
 }
