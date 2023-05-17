@@ -15,6 +15,24 @@ namespace KpopZtation.View
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["User"] != null)
+            {
+                String Email = Session["User"].ToString();
+                bool isAdmin = CustomerController.ValidateAdmin(Email);
+                if (isAdmin == true)
+                {
+                    ViewState["Cookie"] = "Admin";
+                }
+                else
+                {
+                    ViewState["Cookie"] = "Customer";
+                }
+            }
+            else
+            {
+                ViewState["Cookie"] = "Guest";
+            }
+
             if (!IsPostBack)
             {
                 // Retrieve the list of artists and bind it to the DataList control
@@ -45,8 +63,6 @@ namespace KpopZtation.View
 
         protected void UpdateButton_Click(object sender, EventArgs e)
         {
-
-
             if (Session["User"] != null)
             {
                 String Email = Session["User"].ToString();
@@ -59,6 +75,16 @@ namespace KpopZtation.View
                     Response.Redirect("~/View/UpdateArtistPage.aspx?id=" + ID);
                 }
             }
+        }
+
+        protected void RedirectToArtistDetail(object sender, DataListCommandEventArgs e)
+        {
+            TableRow artistRow = (TableRow)sender;
+
+            String ArtistID = e.CommandArgument.ToString();
+            int ID = int.Parse(ArtistID);
+
+            Response.Redirect("~/View/UpdateArtistPage.aspx?id=" + ID);
         }
     }
 }
