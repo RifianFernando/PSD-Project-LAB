@@ -9,7 +9,7 @@ namespace KpopZtation.Repository
     public class AlbumRepository
     {
 
-        public static KpopDatabaseEntities db = new KpopDatabaseEntities();
+        public static KpopDatabaseEntities db = Connect.getInstance();
 
         public static String InsertAlbum(Album album)
         {
