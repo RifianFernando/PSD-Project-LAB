@@ -35,7 +35,7 @@
     </div>
     <script>
         function rowClicked(row) {
-            location.href="LoginPage.aspx"
+            location.href="ArtistDetailPage.aspx"
         }
     </script>
 </asp:Content>
