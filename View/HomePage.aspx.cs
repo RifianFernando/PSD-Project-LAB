@@ -71,8 +71,8 @@ namespace KpopZtation.View
                 bool isAdmin = CustomerController.ValidateAdmin(Email);
                 if (isAdmin == true)
                 {
-                    Button deleteButton = (Button)sender;
-                    string ArtistID = deleteButton.CommandArgument;
+                    Button updateButton = (Button)sender;
+                    string ArtistID = updateButton.CommandArgument;
                     int ID = int.Parse(ArtistID);
                     Response.Redirect("~/View/UpdateArtistPage.aspx?id=" + ID);
                 }
