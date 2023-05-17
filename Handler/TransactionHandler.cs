@@ -22,5 +22,7 @@ namespace KpopZtation.Handler
 
             return;
         }
+
+        public static void GetTransactionHistory()
     }
 }
