@@ -10,10 +10,9 @@
        
         <table>
             <tbody>
-                 <asp:Button ID="ButtonClicked" runat="server" Text="Button"  style="opacity: 0;" OnClick="ButtonClicked_Click"/>
                 <asp:DataList runat="server" ID="ArtistDataList" RepeatLayout="Table">
                     <ItemTemplate>
-                <tr style="border: 1px solid black;" id="ArtistDetail<%# Eval("ArtistID") %>" onclick="handleTableRowClick('<%# Eval("ArtistID") %>')">
+                <tr style="border: 1px solid black;" onclick="rowClicked(this)">
                     <td style="width: 10vw">
                         <img src='<%# "https://localhost:44302/Storage/Public/Images/Artists/" + Eval("ArtistImage") %>' style="width: 10vw; height: auto" />
                     </td>
@@ -26,7 +25,6 @@
                         </td>
                         <td>
                             <asp:Button ID="UpdateButton" runat="server" Text="Update" OnClick="UpdateButton_Click" CommandArgument='<%# Eval("ArtistID") %>'/>
-                            <button onclick="UpdateButton_Click">click aje</button>
                         </td>
                     <% } %>
                 </tr>
@@ -35,14 +33,9 @@
             </tbody>
         </table>
     </div>
-
     <script>
-        function handleTableRowClick(artistID) {
-
-            var button = document.getElementById('ButtonClicked');
-            button.click();
+        function rowClicked(row) {
+            location.href="LoginPage.aspx"
         }
-
     </script>
-
 </asp:Content>
