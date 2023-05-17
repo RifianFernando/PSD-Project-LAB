@@ -25,5 +25,24 @@ namespace KpopZtation.Repository
 
             return null;
         }
+
+        //public static List<TransactionHeader> GetTransactionHistory()
+        //{
+        //    return (from th in db.TransactionHeaders
+        //            join td in db.TransactionDetails on th.TransactionID equals td.TransactionID
+        //            join c in db.Customers on th.CustomerID equals c.CustomerID
+        //            join ab in db.Albums on td.AlbumID equals ab.AlbumID
+        //            select new 
+        //            {
+        //                TransactionID = th.TransactionID,
+        //                TransactionDate = th.TransactionDate,
+        //                CustomerName = c.CustomerName,
+        //                AlbumPicture = ab.AlbumImage,
+        //                AlbumName = ab.AlbumName,
+        //                AlbumQuantity = td.Qty,
+        //                AlbumPrice = ab.AlbumPrice,
+
+        //            }).ToList();
+        //}
     }
 }
