@@ -22,10 +22,10 @@
                                     </td>
                                     <td  style="padding-left: 50px; width: 20vw"><%# Eval("AlbumName")%></td>
                                     <td>
-                                        <asp:Button ID="DeleteAlbumButton" runat="server" Text="Delete" OnClick="DeleteButton_Click" CommandArgument='<%# Eval("AlbumID") %>'/>
+                                        <asp:Button ID="DeleteButton" runat="server" Text="Delete" OnClick="DeleteButton_Click" CommandArgument='<%# Eval("AlbumID") %>'/>
                                     </td>
                                     <td>
-                                        <asp:Button ID="UpdateAlbumButton" runat="server" Text="Update" OnClick="UpdateButton_Click" CommandArgument='<%# Eval("AlbumID") %>'/>
+                                        <asp:Button ID="UpdateButton" runat="server" Text="Update" OnClick="UpdateButton_Click" CommandArgument='<%# Eval("AlbumID") %>'/>
                                     </td>
                                 </tr>
                             </ItemTemplate>
