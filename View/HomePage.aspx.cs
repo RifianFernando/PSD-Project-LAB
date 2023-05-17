@@ -27,19 +27,38 @@ namespace KpopZtation.View
 
         protected void DeleteButton_Click(object sender, EventArgs e)
         {
-            Button deleteButton = (Button)sender;
-            string ArtistID = deleteButton.CommandArgument;
-            int ID = int.Parse(ArtistID);
-            ArtistController.DeleteArtist(ID);
-            Response.Redirect("HomePage.aspx");
+
+            if (Session["User"] != null)
+            {
+                String Email = Session["User"].ToString();
+                bool isAdmin = CustomerController.ValidateAdmin(Email);
+                if (isAdmin == true)
+                {
+                    Button deleteButton = (Button)sender;
+                    string ArtistID = deleteButton.CommandArgument;
+                    int ID = int.Parse(ArtistID);
+                    ArtistController.DeleteArtist(ID);
+                    Response.Redirect("HomePage.aspx");
+                }
+            }
         }
 
         protected void UpdateButton_Click(object sender, EventArgs e)
         {
-            Button deleteButton = (Button)sender;
-            string ArtistID = deleteButton.CommandArgument;
-            int ID = int.Parse(ArtistID);
-            Response.Redirect("~/View/UpdateArtistPage.aspx?id=" + ID);
+
+
+            if (Session["User"] != null)
+            {
+                String Email = Session["User"].ToString();
+                bool isAdmin = CustomerController.ValidateAdmin(Email);
+                if (isAdmin == true)
+                {
+                    Button deleteButton = (Button)sender;
+                    string ArtistID = deleteButton.CommandArgument;
+                    int ID = int.Parse(ArtistID);
+                    Response.Redirect("~/View/UpdateArtistPage.aspx?id=" + ID);
+                }
+            }
         }
     }
 }
