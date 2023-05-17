@@ -9,25 +9,41 @@ using System.Web.UI.WebControls;
 
 namespace KpopZtation.View
 {
-    public partial class HomePage : System.Web.UI.Page
+    public partial class AlbumDetailPage : System.Web.UI.Page
     {
-        public List<Artist> artists = new List<Artist>();
+
 
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
                 // Retrieve the list of artists and bind it to the DataList control
-                List<Artist> artists = ArtistController.GetAllArtistData();
-                ArtistDataList.DataSource = artists;
-                ArtistDataList.DataBind();
+                List<Album> Albums = AlbumController.GetAllAlbumData();
+                AlbumDataList.DataSource = Albums;
+                AlbumDataList.DataBind();
+            }
+
+        }
+        protected void CartButton_Click(object sender, EventArgs e)
+        {
+            if (Session["User"] != null)
+            {
+                String Email = Session["User"].ToString();
+                bool isAdmin = CustomerController.ValidateAdmin(Email);
+                if (isAdmin == true)
+                {
+                    Button deleteButton = (Button)sender;
+                    string ArtistID = deleteButton.CommandArgument;
+                    int ID = int.Parse(ArtistID);
+                    ArtistController.DeleteArtist(ID);
+                    Response.Redirect("HomePage.aspx");
+                }
             }
 
         }
 
-        protected void DeleteButton_Click(object sender, EventArgs e)
+        protected void ConfirmButton_Click(object sender, EventArgs e)
         {
-
             if (Session["User"] != null)
             {
                 String Email = Session["User"].ToString();
@@ -42,23 +58,4 @@ namespace KpopZtation.View
                 }
             }
         }
-
-        protected void UpdateButton_Click(object sender, EventArgs e)
-        {
-
-
-            if (Session["User"] != null)
-            {
-                String Email = Session["User"].ToString();
-                bool isAdmin = CustomerController.ValidateAdmin(Email);
-                if (isAdmin == true)
-                {
-                    Button updateButton = (Button)sender;
-                    string ArtistID = updateButton.CommandArgument;
-                    int ID = int.Parse(ArtistID);
-                    Response.Redirect("~/View/UpdateArtistPage.aspx?id=" + ID);
-                }
-            }
-        }
-    }
 }

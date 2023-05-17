@@ -92,7 +92,9 @@
     <Content Include="SQLQueryGabungan.sql" />
     <Content Include="Styling\ArtistDetailSyle.css" />
     <Content Include="Styling\Navbar.css" />
+    <Content Include="View\AlbumDetailPage.aspx" />
     <Content Include="View\ArtistDetailPage.aspx" />
+    <Content Include="View\CartPage.aspx" />
     <Content Include="View\HomePage.aspx" />
     <Content Include="View\InsertAlbumPage.aspx" />
     <Content Include="View\InsertArtistPage.aspx" />
@@ -151,12 +153,26 @@
     <Compile Include="Repository\ArtistRepository.cs" />
     <Compile Include="Repository\Connect.cs" />
     <Compile Include="Repository\CustomerRepository.cs" />
+    <Compile Include="View\AlbumDetailPage.aspx.cs">
+      <DependentUpon>AlbumDetailPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\AlbumDetailPage.aspx.designer.cs">
+      <DependentUpon>AlbumDetailPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="View\ArtistDetailPage.aspx.cs">
       <DependentUpon>ArtistDetailPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="View\ArtistDetailPage.aspx.designer.cs">
       <DependentUpon>ArtistDetailPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\CartPage.aspx.cs">
+      <DependentUpon>CartPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\CartPage.aspx.designer.cs">
+      <DependentUpon>CartPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\HomePage.aspx.cs">
       <DependentUpon>HomePage.aspx</DependentUpon>
