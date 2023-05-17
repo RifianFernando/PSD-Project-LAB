@@ -46,13 +46,14 @@ namespace KpopZtation.View
         protected void ConfirmButton_Click(object sender, EventArgs e)
         {
             string QtyString = QtyText.Text;
-            CartController.
+
             if (Success.Text == "Album has been inserted to the cart")
             {
                 ConfirmButton.Visible = false;
                 Quantity.Visible = false;
                 QtyText.Visible = false;
-                CartController.InsertCart();
+                int QuantityInt;
+                CartController.InsertCart(CustomerID, AlbumID, Quantity);
             }
             
         }
