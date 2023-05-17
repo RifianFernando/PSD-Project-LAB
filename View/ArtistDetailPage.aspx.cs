@@ -37,7 +37,7 @@ namespace KpopZtation.View
             Button deleteButton = (Button)sender;
             string ArtistID = deleteButton.CommandArgument;
             int ID = int.Parse(ArtistID);
-            Response.Redirect("~/View/UpdateArtistPage.aspx?id=" + ID);
+            Response.Redirect("~/View/UpdateArtistPage.aspx?ID=" + ID);
         }
     }
 }
