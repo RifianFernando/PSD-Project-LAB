@@ -45,13 +45,16 @@ namespace KpopZtation.View
         }
         protected void ConfirmButton_Click(object sender, EventArgs e)
         {
-            ConfirmButton.Visible = false;
-            Quantity.Visible = false;
-            QtyText.Visible = false;
-            Success.Text = "Album has been inserted to the cart";
-            int Qty = int.Parse(QtyText.Text);
-            if(int.)
-            CartController.InsertCart();
+            string QtyString = QtyText.Text;
+            CartController.
+            if (Success.Text == "Album has been inserted to the cart")
+            {
+                ConfirmButton.Visible = false;
+                Quantity.Visible = false;
+                QtyText.Visible = false;
+                CartController.InsertCart();
+            }
+            
         }
     }
 }
