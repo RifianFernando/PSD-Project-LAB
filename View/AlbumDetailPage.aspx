@@ -34,5 +34,5 @@
     <asp:Label ID="QtyText" runat="server" Text="Insert Quantity" Visible="false"></asp:Label>
     <asp:TextBox ID="Quantity" runat="server" Visible="false"></asp:TextBox>
     <asp:Button ID="ConfirmButton" Visible="false" runat="server" Text="Confirm" OnClick="ConfirmButton_Click"/>
-    <asp:Label ID="Success" runat="server" Text="" Visible="false"></asp:Label>
+    <asp:Label ID="Success" runat="server" Text=""></asp:Label>
 </asp:Content>

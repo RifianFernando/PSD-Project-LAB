@@ -8,16 +8,13 @@ namespace KpopZtation.Controller
 {
     public class CartController
     {
-        public static String ValidateQty(String QtyString)
+        public static bool ValidateQty(String QtyString)
         {
-            foreach (char chck in QtyString)
+            if (!QtyString.All(char.IsDigit) )
             {
-                if (!char.IsDigit(chck))
-                {
-
-                }
+                return false;
             }
-            return "";
+            return true;
         }
         public static void InsertCart(int CustomerID, int AlbumID, int Quantity)
         {

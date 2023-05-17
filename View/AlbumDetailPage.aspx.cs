@@ -47,13 +47,20 @@ namespace KpopZtation.View
         {
             string QtyString = QtyText.Text;
 
-            if (Success.Text == "Album has been inserted to the cart")
+            if (CartController.ValidateQty(QtyString))
             {
                 ConfirmButton.Visible = false;
                 Quantity.Visible = false;
                 QtyText.Visible = false;
-                int QuantityInt;
-                CartController.InsertCart(CustomerID, AlbumID, Quantity);
+                int QuantityInt = int.Parse(QtyString);
+                CartController.InsertCart(CustomerID, AlbumID, QuantityInt);
+                Success.ForeColor = System.Drawing.Color.Green;
+                Success.Text = "Album has been added to cart";
+            }
+            else
+            {
+                Success.ForeColor = System.Drawing.Color.Red;
+                Success.Text = "Quantity must be integer";
             }
             
         }
