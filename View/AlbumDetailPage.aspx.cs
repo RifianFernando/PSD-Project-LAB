@@ -45,7 +45,7 @@ namespace KpopZtation.View
         }
         protected void ConfirmButton_Click(object sender, EventArgs e)
         {
-            string QtyString = QtyText.Text;
+            string QtyString = Quantity.Text;
 
             if (CartController.ValidateQty(QtyString))
             {

@@ -10,11 +10,11 @@ namespace KpopZtation.Controller
     {
         public static bool ValidateQty(String QtyString)
         {
-            if (!QtyString.All(char.IsDigit) )
+            if (QtyString.All(char.IsDigit))
             {
-                return false;
+                return true;
             }
-            return true;
+            return false;
         }
         public static void InsertCart(int CustomerID, int AlbumID, int Quantity)
         {
