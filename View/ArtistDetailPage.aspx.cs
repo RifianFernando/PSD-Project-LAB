@@ -23,7 +23,7 @@ namespace KpopZtation.View
             ArtistDataList.DataSource = artists;
             ArtistDataList.DataBind();
         }
-        protected void DeleteAlbumButton_Click(object sender, EventArgs e)
+        protected void DeleteButton_Click(object sender, EventArgs e)
         {
             Button deleteButton = (Button)sender;
             string ArtistID = deleteButton.CommandArgument;
@@ -32,7 +32,7 @@ namespace KpopZtation.View
             Response.Redirect("HomePage.aspx");
         }
 
-        protected void UpdateAlbumButton_Click(object sender, EventArgs e)
+        protected void UpdateButton_Click(object sender, EventArgs e)
         {
             Button deleteButton = (Button)sender;
             string ArtistID = deleteButton.CommandArgument;
