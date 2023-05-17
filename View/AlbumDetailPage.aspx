@@ -3,7 +3,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div style="padding: 50px; display:flex; flex-direction:column; align-items:center; justify-content:center">
-        <h1>Home Page</h1>
+        <h1>Album Detail</h1>
         <br />
 
         <table>
@@ -11,11 +11,11 @@
                 <asp:DataList runat="server" ID="AlbumDataList" RepeatLayout="Table">
                     <ItemTemplate>
                 <tr style="border: 1px solid black;">
-                    <td  style="padding-left: 50px; width: 20vw"><%# Eval("AlbumName")%></td>
+                    <td  style="padding-left: 50px; width: 10vw"><%# Eval("AlbumName")%></td>
 
                     <td  style="padding-left: 50px; width: 20vw"><%# Eval("AlbumDescription")%></td>
 
-                    <td  style="padding-left: 50px; width: 20vw"><%# Eval("AlbumPrice")%></td>
+                    <td  style="padding-left: 50px; width: 10vw"><%# Eval("AlbumPrice")%></td>
 
                     <td  style="padding-left: 50px; width: 20vw"><%# Eval("AlbumStock")%></td>
 
