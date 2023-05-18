@@ -57,5 +57,10 @@ namespace KpopZtation.View
             }
 
         }
+
+        protected void RedirectPage(object sender, EventArgs e)
+        {
+            Response.Redirect("ArtistDetailPage.aspx");
+        }
     }
 }

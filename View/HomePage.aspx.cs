@@ -86,5 +86,10 @@ namespace KpopZtation.View
 
             Response.Redirect("~/View/UpdateArtistPage.aspx?id=" + ID);
         }
+
+        protected void InsertArtist_Button_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ArtistDetailPage.aspx");
+        }
     }
 }
