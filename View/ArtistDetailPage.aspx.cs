@@ -14,9 +14,9 @@ namespace KpopZtation.View
         public List<Album> albums = new List<Album>();
         protected void Page_Load(object sender, EventArgs e)
         {
+            int id = int.Parse(Request.QueryString["ID"]);
 
-
-            Artist a = ArtistController.GetDataById();
+            Artist a = ArtistController.GetDataById(id);
 
             if (!IsPostBack)
             {
@@ -24,25 +24,25 @@ namespace KpopZtation.View
                 ArtistName.Text = a.ArtistName;
             }
 
-            List<Album> albums = AlbumController.GetAllAlbumData();
+            List<Album> albums = AlbumController.GetAllArtistAlbumData(id);
             AlbumDataList.DataSource = albums;
             AlbumDataList.DataBind();
         }
         protected void DeleteButton_Click(object sender, EventArgs e)
         {
             Button deleteButton = (Button)sender;
-            string ArtistID = deleteButton.CommandArgument;
-            int ID = int.Parse(ArtistID);
-            ArtistController.DeleteArtist(ID);
+            string AlbumID = deleteButton.CommandArgument;
+            int ID = int.Parse(AlbumID);
+            AlbumController.DeleteAlbum(ID);
             Response.Redirect("HomePage.aspx");
         }
 
         protected void UpdateButton_Click(object sender, EventArgs e)
         {
-            Button deleteButton = (Button)sender;
-            string ArtistID = deleteButton.CommandArgument;
-            int ID = int.Parse(ArtistID);
-            Response.Redirect("~/View/UpdateArtistPage.aspx?ID=" + ID);
+            Button updateButton = (Button)sender;
+            string AlbumID = updateButton.CommandArgument;
+            int ID = int.Parse(AlbumID);
+            Response.Redirect("~/View/UpdateAlbumPage.aspx?ID=" + ID);
         }
     }
 }

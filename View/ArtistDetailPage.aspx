@@ -2,11 +2,11 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div>
+    <div style="padding: 50px; display:flex; flex-direction:column; align-items:center; justify-content:center">
         <h1>Artist Detail</h1>
 
-        <div>
-            <asp:Image ID="ArtistImage" runat="server" /><br />
+        <div style="display:flex; flex-direction:column; align-items:center; justify-content:center">
+            <asp:Image ID="ArtistImage" runat="server" style="width: 30vw; height: auto; padding-bottom: 10px"/><br />
             <asp:Label ID="ArtistName" runat="server" Text=""></asp:Label>
         </div>
 

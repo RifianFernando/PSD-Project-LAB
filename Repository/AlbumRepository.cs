@@ -44,9 +44,9 @@ namespace KpopZtation.Repository
             return null;
         }
 
-        public static List<Album> GetAllAlbumData()
+        public static List<Album> GetAllArtistAlbumData(int ID)
         {
-            return (from albumdb in db.Albums select albumdb).ToList();
+            return (from albumdb in db.Albums where ID == albumdb.ArtistID select albumdb).ToList();
         }
     }
 }

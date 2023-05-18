@@ -101,9 +101,21 @@ namespace KpopZtation.Controller
                 return "Failed to add album!";
             }
         }
-        public static List<Album> GetAllAlbumData()
+        public static List<Album> GetAllArtistAlbumData(int ID)
         {
-            return AlbumHandler.GetAllAlbumData();
+            return AlbumHandler.GetAllArtistAlbumData(ID);
+        }
+
+        public static String DeleteAlbum(int ID)
+        {
+            AlbumHandler.DeleteAlbum(ID);
+
+            return null;
+        }
+
+        public static Album GetDataById(int ID)
+        {
+            return AlbumHandler.GetDataById(ID);
         }
     }
 }

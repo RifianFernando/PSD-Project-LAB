@@ -15,12 +15,16 @@ namespace KpopZtation.View
         int AlbumID;
         protected void Page_Load(object sender, EventArgs e)
         {
+            int id = int.Parse(Request.QueryString["ID"]);
+
+            Album ab = AlbumController.GetDataById(id);
+
             if (!IsPostBack)
             {
-                // Retrieve the list of artists and bind it to the DataList control
-                List<Album> Albums = AlbumController.GetAllAlbumData();
-                AlbumDataList.DataSource = Albums;
-                AlbumDataList.DataBind();
+                AlbumName.Text = ab.AlbumName;
+                AlbumDesc.Text = ab.AlbumDescription;
+                AlbumPrice.Text = ab.AlbumPrice.ToString();
+                AlbumStock.Text = ab.AlbumStock.ToString();
             }
 
         }
@@ -39,7 +43,6 @@ namespace KpopZtation.View
                     Button cartButton = (Button)sender;
                     AlbumID = int.Parse(cartButton.CommandArgument);
                     CustomerID = CustomerController.GetIdByEmail(Email);
-
                 }
             }
         }
