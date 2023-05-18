@@ -15,12 +15,30 @@ namespace KpopZtation.View
     {
 
         /// <summary>
-        /// ArtistDataList control.
+        /// ArtistImage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DataList ArtistDataList;
+        protected global::System.Web.UI.WebControls.Image ArtistImage;
+
+        /// <summary>
+        /// ArtistName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label ArtistName;
+
+        /// <summary>
+        /// AlbumDataList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DataList AlbumDataList;
     }
 }

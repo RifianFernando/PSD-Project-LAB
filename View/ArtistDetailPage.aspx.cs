@@ -11,17 +11,22 @@ namespace KpopZtation.View
 {
     public partial class ArtistDetailPage : System.Web.UI.Page
     {
-        public List<Artist> artists = new List<Artist>();
         public List<Album> albums = new List<Album>();
         protected void Page_Load(object sender, EventArgs e)
         {
-            List<Artist> artists = ArtistController.GetAllArtistData();
-            ArtistDataList.DataSource = artists;
-            ArtistDataList.DataBind();
+
+
+            Artist a = ArtistController.GetDataById();
+
+            if (!IsPostBack)
+            {
+                ArtistImage.ImageUrl = "https://localhost:44302/Storage/Public/Images/Artists/" + a.ArtistImage;
+                ArtistName.Text = a.ArtistName;
+            }
 
             List<Album> albums = AlbumController.GetAllAlbumData();
-            ArtistDataList.DataSource = artists;
-            ArtistDataList.DataBind();
+            AlbumDataList.DataSource = albums;
+            AlbumDataList.DataBind();
         }
         protected void DeleteButton_Click(object sender, EventArgs e)
         {
