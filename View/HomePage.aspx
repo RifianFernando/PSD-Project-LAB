@@ -7,17 +7,18 @@
     <div style="padding: 50px; display:flex; flex-direction:column; align-items:center; justify-content:center">
         <h1>Home Page</h1>
         <br />
-       
+        
+        <%String Data = ViewState["Cookie"].ToString(); %>
+        <% if (Data == "Admin"){ %>
+                <asp:Button ID="InsertArtist_Button" runat="server" Text="Insert Artist" onclick="InsertArtist_Button_Click"/>
+        <% } %>
+
         <table>
             <tbody>
-                    <%String Data = ViewState["Cookie"].ToString(); %>
-                    <% if (Data == "Admin"){ %>
-                            <asp:Button ID="InsertArtist_Button" runat="server" Text="Insert Artist" onclick="InsertArtist_Button_Click"/>
-                    <% } %>
                 <asp:DataList runat="server" ID="ArtistDataList" RepeatLayout="Table">
                     <ItemTemplate>
-                <tr style="border: 1px solid black;" onclick="rowClicked(<%# Eval("ArtistID")%>)">
-                    <td style="width: 10vw">
+                <tr style="border: 1px solid black; width: 10vw" onclick="rowClicked(<%# Eval("ArtistID")%>)">
+                    <td>
                         <img src='<%# "https://localhost:44302/Storage/Public/Images/Artists/" + Eval("ArtistImage") %>' style="width: 10vw; height: auto" />
                     </td>
                     <%String Data = ViewState["Cookie"].ToString(); %>

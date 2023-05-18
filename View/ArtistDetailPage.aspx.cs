@@ -21,6 +21,25 @@ namespace KpopZtation.View
             {
                 Response.Redirect("HomePage.aspx");
             }
+
+            if (Session["User"] != null)
+            {
+                String Email = Session["User"].ToString();
+                bool isAdmin = CustomerController.ValidateAdmin(Email);
+                if (isAdmin == true)
+                {
+                    ViewState["Cookie"] = "Admin";
+                }
+                else
+                {
+                    ViewState["Cookie"] = "Customer";
+                }
+            }
+            else
+            {
+                ViewState["Cookie"] = "Guest";
+            }
+
             int id = int.Parse(idQueryString);
 
             Artist a = ArtistController.GetDataById(id);
@@ -29,11 +48,11 @@ namespace KpopZtation.View
             {
                 ArtistImage.ImageUrl = "https://localhost:44302/Storage/Public/Images/Artists/" + a.ArtistImage;
                 ArtistName.Text = a.ArtistName;
-            }
 
-            List<Album> albums = AlbumController.GetAllArtistAlbumData(id);
-            AlbumDataList.DataSource = albums;
-            AlbumDataList.DataBind();
+                List<Album> albums = AlbumController.GetAllArtistAlbumData(id);
+                AlbumDataList.DataSource = albums;
+                AlbumDataList.DataBind();
+            }
         }
         protected void DeleteButton_Click(object sender, EventArgs e)
         {
@@ -41,7 +60,6 @@ namespace KpopZtation.View
             string AlbumID = deleteButton.CommandArgument;
             int ID = int.Parse(AlbumID);
             AlbumController.DeleteAlbum(ID);
-            Response.Redirect("HomePage.aspx");
         }
 
         protected void UpdateButton_Click(object sender, EventArgs e)
@@ -50,6 +68,12 @@ namespace KpopZtation.View
             string AlbumID = updateButton.CommandArgument;
             int ID = int.Parse(AlbumID);
             Response.Redirect("~/View/UpdateAlbumPage.aspx?ID=" + ID);
+        }
+
+        protected void InsertAlbum_Button_Click(object sender, EventArgs e)
+        {
+            int ID = int.Parse(Request.QueryString["ID"]);
+            Response.Redirect("~/View/InsertAlbumPage.aspx?ID=" + ID);
         }
     }
 }

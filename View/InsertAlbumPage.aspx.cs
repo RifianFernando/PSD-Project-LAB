@@ -30,6 +30,7 @@ namespace KpopZtation.View
 
         protected void InsertAlbumButton_Click(object sender, EventArgs e)
         {
+            int ArtId = int.Parse(Request.QueryString["ID"]);
             String AlbumName = InsertAlbumName.Text;
             String AlbumDesc = InsertAlbumDescription.Text;
             String AlbumPrice = InsertAlbumPrice.Text;
@@ -43,7 +44,9 @@ namespace KpopZtation.View
             WarningAlbumImage.Text = AlbumController.ValidateAlbumImage(AlbumImage, ImageSize);
             WarningAlbumStock.Text = AlbumController.ValidateAlbumStock(AlbumStock);
 
-            if (SuccessLabel.Text.Equals("Successfully insert new Artist"))
+            SuccessLabel.Text = AlbumController.AddAlbum(ArtId, AlbumName, AlbumDesc, AlbumPrice, AlbumStock, AlbumImage, ImageSize);
+
+            if (SuccessLabel.Text.Equals("Album Added Successfully!"))
             {
                 String FolderDirectory = Server.MapPath("~/Storage/Public/Images/Albums/");
                 String ImageFolder = Server.MapPath("~/Storage/Public/Images/Albums/" + InsertAlbumImage.FileName);
@@ -56,11 +59,6 @@ namespace KpopZtation.View
                 InsertAlbumImage.SaveAs(ImageFolder);
             }
 
-        }
-
-        protected void RedirectPage(object sender, EventArgs e)
-        {
-            Response.Redirect("ArtistDetailPage.aspx");
         }
     }
 }
