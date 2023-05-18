@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using KpopZtation.Middleware;
 
 namespace KpopZtation.View
 {
@@ -14,7 +15,13 @@ namespace KpopZtation.View
         public List<Album> albums = new List<Album>();
         protected void Page_Load(object sender, EventArgs e)
         {
-            int id = int.Parse(Request.QueryString["ID"]);
+            SessionMiddleware.isLogin(Page);
+            string idQueryString = Request.QueryString["ID"];
+            if (string.IsNullOrEmpty(idQueryString))
+            {
+                Response.Redirect("HomePage.aspx");
+            }
+            int id = int.Parse(idQueryString);
 
             Artist a = ArtistController.GetDataById(id);
 

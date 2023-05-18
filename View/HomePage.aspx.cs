@@ -89,7 +89,7 @@ namespace KpopZtation.View
 
         protected void InsertArtist_Button_Click(object sender, EventArgs e)
         {
-            Response.Redirect("ArtistDetailPage.aspx");
+            Response.Redirect("InsertArtistPage.aspx");
         }
     }
 }
