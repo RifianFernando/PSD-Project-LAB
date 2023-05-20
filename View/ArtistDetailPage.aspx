@@ -7,7 +7,7 @@
         <br />
 
         <div style="display:flex; flex-direction:column; align-items:center; justify-content:center">
-            <asp:Image ID="ArtistImage" runat="server" style="width: 25vw; height: auto; padding-bottom: 10px"/><br />
+            <asp:Image ID="ArtistImage" runat="server" style="width: 25vw; height: auto;"/><br />
             <asp:Label ID="ArtistName" runat="server" Text="" style="padding-bottom: 10px"></asp:Label>
         </div>
 
@@ -23,7 +23,7 @@
                 <tbody>
                     <asp:DataList runat="server" ID="AlbumDataList" RepeatLayout="Table">
                         <ItemTemplate>
-                            <tr style="border: 1px solid black; width: 10vw">
+                            <tr style="border: 1px solid black; width: 10vw" onclick="rowClicked(<%# Eval("AlbumID")%>)">
                                 <td style="width: 10vw">
                                     <img src='<%# "https://localhost:44302/Storage/Public/Images/Albums/" + Eval("AlbumImage") %>' style="width: 10vw; height: auto" />
                                 </td>
@@ -40,6 +40,10 @@
                 </tbody>
             </table>
         </div>
-
+        <script>
+        function rowClicked(AlbumID) {
+            location.href="AlbumDetailPage.aspx?id=" + AlbumID;
+        }
+        </script>
     </div>
 </asp:Content>

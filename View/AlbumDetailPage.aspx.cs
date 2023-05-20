@@ -21,6 +21,7 @@ namespace KpopZtation.View
 
             if (!IsPostBack)
             {
+                AlbumImage.ImageUrl = "https://localhost:44302/Storage/Public/Images/Albums/" + ab.AlbumImage;
                 AlbumName.Text = ab.AlbumName;
                 AlbumDesc.Text = ab.AlbumDescription;
                 AlbumPrice.Text = ab.AlbumPrice.ToString();

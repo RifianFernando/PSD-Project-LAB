@@ -77,16 +77,6 @@ namespace KpopZtation.View
             }
         }
 
-        protected void RedirectToArtistDetail(object sender, DataListCommandEventArgs e)
-        {
-            TableRow artistRow = (TableRow)sender;
-
-            String ArtistID = e.CommandArgument.ToString();
-            int ID = int.Parse(ArtistID);
-
-            Response.Redirect("~/View/UpdateArtistPage.aspx?id=" + ID);
-        }
-
         protected void InsertArtist_Button_Click(object sender, EventArgs e)
         {
             Response.Redirect("InsertArtistPage.aspx");
