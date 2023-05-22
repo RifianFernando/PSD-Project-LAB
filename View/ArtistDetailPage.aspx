@@ -24,7 +24,7 @@
                     <asp:DataList runat="server" ID="AlbumDataList" RepeatLayout="Table">
                         <ItemTemplate>
                             <tr style="border: 1px solid black; width: 10vw" onclick="rowClicked(<%# Eval("AlbumID")%>)">
-                                <td style="width: 10vw">
+                                <td>
                                     <img src='<%# "https://localhost:44302/Storage/Public/Images/Albums/" + Eval("AlbumImage") %>' style="width: 10vw; height: auto" />
                                 </td>
                                 <td  style="padding-left: 50px; width: 20vw"><%# Eval("AlbumName")%></td>
