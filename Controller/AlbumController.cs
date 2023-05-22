@@ -72,7 +72,7 @@ namespace KpopZtation.Controller
         {
             if (AlbumImage.Equals(""))
             {
-                return " Album Image must be filled!";
+                return "Album Image must be filled!";
             }
             else if (ImageSize > 2097152)
             {

@@ -57,6 +57,8 @@ namespace KpopZtation.View
                 }
 
                 InsertAlbumImage.SaveAs(ImageFolder);
+
+                Response.Redirect("ArtistDetailPage.aspx?=" + ArtId);
             }
 
         }

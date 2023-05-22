@@ -56,7 +56,7 @@ namespace KpopZtation.View
                     string ArtistID = deleteButton.CommandArgument;
                     int ID = int.Parse(ArtistID);
                     ArtistController.DeleteArtist(ID);
-                    Response.Redirect("HomePage.aspx");
+                    Response.Redirect(Request.RawUrl);
                 }
             }
         }
