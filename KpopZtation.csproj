@@ -110,6 +110,7 @@
     <Compile Include="Controller\ArtistController.cs" />
     <Compile Include="Controller\CartController.cs" />
     <Compile Include="Controller\CustomerController.cs" />
+    <Compile Include="Controller\TransactionController.cs" />
     <Compile Include="Factory\AlbumFactory.cs" />
     <Compile Include="Factory\ArtistFactory.cs" />
     <Compile Include="Factory\CartFactory.cs" />
