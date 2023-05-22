@@ -28,7 +28,7 @@ namespace KpopZtation.Controller
             {
                 return "Album Description must be filled!";
             }
-            else if (AlbumDescription.Length <255)
+            else if (AlbumDescription.Length > 255)
             {
                 return "Album Description must be less than 255 characters!";
             }
@@ -61,9 +61,9 @@ namespace KpopZtation.Controller
 
             int AlbumStock = int.Parse(AlbumStockString);
 
-            if (AlbumStock != 0)
+            if (AlbumStock == 0)
             {
-                return "The address must ends with street";
+                return "Stock must be more than 0";
             }
 
             return "";
@@ -72,7 +72,7 @@ namespace KpopZtation.Controller
         {
             if (AlbumImage.Equals(""))
             {
-                return " Album Image must be filled!";
+                return "Album Image must be filled!";
             }
             else if (ImageSize > 2097152)
             {
@@ -82,7 +82,7 @@ namespace KpopZtation.Controller
             return "";
         }
 
-        public static String AddAlbum(String AlbumName, String AlbumDesc, String AlbumPrice, String AlbumStock, String AlbumImage, int ImageSize)
+        public static String AddAlbum(int ArtID, String AlbumName, String AlbumDesc, String AlbumPrice, String AlbumStock, String AlbumImage, int ImageSize)
         {
             string name = ValidateAlbumName(AlbumName);
             string desc = ValidateAlbumDescription(AlbumDesc);
@@ -94,6 +94,11 @@ namespace KpopZtation.Controller
 
             if(validate == true)
             {
+                int PriceInt = int.Parse(AlbumPrice);
+                int StockInt = int.Parse(AlbumStock);
+
+                AlbumHandler.InsertAlbum(ArtID, AlbumName, AlbumImage, PriceInt, StockInt, AlbumDesc);
+
                 return "Album Added Successfully!";
             }
             else

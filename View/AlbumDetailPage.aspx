@@ -6,6 +6,9 @@
         <h1>Album Detail</h1>
         <br />
 
+        <asp:Image ID="AlbumImage" runat="server" style="width: 15vw; height: auto;"/><br />
+        <br />
+
         <table>
             <tbody>
                 <tr">
@@ -27,10 +30,14 @@
             </tbody>
         </table>
 
+        <br />
+
         <asp:Button ID="CartButton" runat="server" Text="Add to Cart" OnClick="CartButton_Click" CommandArgument='<%# Eval("AlbumID") %>'/>
 
+        <br />
         <asp:Label ID="QtyText" runat="server" Text="Insert Quantity" Visible="false"></asp:Label>
         <asp:TextBox ID="Quantity" runat="server" Visible="false"></asp:TextBox>
+        <br />
         <asp:Button ID="ConfirmButton" Visible="false" runat="server" Text="Confirm" OnClick="ConfirmButton_Click"/>
         <asp:Label ID="Success" runat="server" Text=""></asp:Label>
 

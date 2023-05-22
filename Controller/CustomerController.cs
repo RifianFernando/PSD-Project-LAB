@@ -188,5 +188,10 @@ namespace KpopZtation.Controller
             }
             return false;
         }
+
+        public static void DeleteAccount(int ID)
+        {
+            CustomerHandler.DeleteAccount(ID);
+        }
     }
 }

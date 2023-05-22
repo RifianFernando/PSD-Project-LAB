@@ -56,7 +56,7 @@ namespace KpopZtation.View
                     string ArtistID = deleteButton.CommandArgument;
                     int ID = int.Parse(ArtistID);
                     ArtistController.DeleteArtist(ID);
-                    Response.Redirect("HomePage.aspx");
+                    Response.Redirect(Request.RawUrl);
                 }
             }
         }
@@ -75,16 +75,6 @@ namespace KpopZtation.View
                     Response.Redirect("~/View/UpdateArtistPage.aspx?id=" + ID);
                 }
             }
-        }
-
-        protected void RedirectToArtistDetail(object sender, DataListCommandEventArgs e)
-        {
-            TableRow artistRow = (TableRow)sender;
-
-            String ArtistID = e.CommandArgument.ToString();
-            int ID = int.Parse(ArtistID);
-
-            Response.Redirect("~/View/UpdateArtistPage.aspx?id=" + ID);
         }
 
         protected void InsertArtist_Button_Click(object sender, EventArgs e)
