@@ -49,5 +49,13 @@ namespace KpopZtation.View
 
             SuccessLabel.Text = CustomerController.UpdateCustomerProfile(ID, Name, Email, UserEmail, Gender, Address, Password);
         }
+
+        protected void DeleteButton_Click(object sender, EventArgs e)
+        {
+            String Email = Session["User"].ToString();
+
+            int ID = CustomerController.GetIdByEmail(Email);
+            CustomerController.DeleteAccount(ID);
+        }
     }
 }

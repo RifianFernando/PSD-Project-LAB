@@ -62,5 +62,12 @@ namespace KpopZtation.Handler
         {
             return CustomerRepository.GetDataById(CustomerRepository.GetIdByEmail(Email)).CustomerRole.ToString();
         }
+
+        public static void DeleteAccount(int ID)
+        {
+            Customer c = GetDataById(ID);
+
+            CustomerRepository.DeleteAccount(c);
+        }
     }
 }
