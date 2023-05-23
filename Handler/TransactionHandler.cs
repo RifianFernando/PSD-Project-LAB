@@ -1,5 +1,6 @@
 ﻿using KpopZtation.Factory;
 using KpopZtation.Model;
+using KpopZtation.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,9 +24,9 @@ namespace KpopZtation.Handler
             return;
         }
 
-        public static void GetTransactionHistory()
+        public static List<TransactionHeader> GetTransactionHistory(int ID)
         {
-
+            return TransactionRepository.GetTransactionHistory(ID);
         }
     }
 }

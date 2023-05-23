@@ -28,7 +28,12 @@ namespace KpopZtation.View
             WarningAddress.Text = CustomerController.ValidateRegisterAddress(RegAddress);
             WarningPassword.Text = CustomerController.ValidateRegisterPassword(RegPassword);
 
-            SuccessLabel.Text = CustomerController.AddCustomer(RegName, RegEmail, RegGender, RegAddress, RegPassword);    
+            SuccessLabel.Text = CustomerController.AddCustomer(RegName, RegEmail, RegGender, RegAddress, RegPassword);
+
+            if(SuccessLabel.Text.Equals("Register Success!"))
+            {
+                Response.Redirect("LoginPage.aspx");
+            }
         }
     }
 }

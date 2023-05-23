@@ -17,7 +17,7 @@
         <h1 class="navbar-title">KpopZtation</h1>
         <nav>
         <ul class="list">
-            <li><a href="#">Home</a></li>
+            <li><a href="HomePage.aspx">Home</a></li>
             <%String Data = ViewState["Cookie"].ToString(); %>
             <% if (Data == "Customer") { %>
                 <li id="ListItem1" Visible="false">
@@ -29,7 +29,7 @@
                     <a href="#">Transaction</a>
                 </li>
                 <li id="ListItem3" Visible="false">
-                    <a href="#">Update Profile</a>
+                    <a href="UpdateProfilePage.aspx">Update Profile</a>
                 </li>
             <%}%>
         </ul>
