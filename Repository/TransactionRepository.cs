@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Data.SqlClient;
 
 namespace KpopZtation.Repository
 {
@@ -26,23 +27,47 @@ namespace KpopZtation.Repository
             return null;
         }
 
-        //public static List<TransactionHeader> GetTransactionHistory()
-        //{
-        //    return (from th in db.TransactionHeaders
-        //            join td in db.TransactionDetails on th.TransactionID equals td.TransactionID
-        //            join c in db.Customers on th.CustomerID equals c.CustomerID
-        //            join ab in db.Albums on td.AlbumID equals ab.AlbumID
-        //            select new 
-        //            {
-        //                TransactionID = th.TransactionID,
-        //                TransactionDate = th.TransactionDate,
-        //                CustomerName = c.CustomerName,
-        //                AlbumPicture = ab.AlbumImage,
-        //                AlbumName = ab.AlbumName,
-        //                AlbumQuantity = td.Qty,
-        //                AlbumPrice = ab.AlbumPrice,
+        public static List<TransactionHeader> GetTransactionHistory(int ID)
+        {
+            List<TransactionHeader> transactionHistory = new List<TransactionHeader>();
 
-        //            }).ToList();
-        //}
+            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Path\To\Your\Database.mdf;Integrated Security=True";
+            string query = @"
+                SELECT th.TransactionID, th.TransactionDate, c.CustomerName, ab.AlbumImage, ab.AlbumName, td.Qty, ab.AlbumPrice
+                FROM TransactionHeaders th
+                JOIN TransactionDetails td ON th.TransactionID = td.TransactionID
+                JOIN Customers c ON th.CustomerID = c.CustomerID
+                JOIN Albums ab ON td.AlbumID = ab.AlbumID
+                WHERE th.CustomerID = " + ID;
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            TransactionHeader transaction = new TransactionHeader
+                            {
+                                TransactionID = (int)reader["TransactionID"],
+                                TransactionDate = (DateTime)reader["TransactionDate"],
+                                CustomerName = (string)reader["CustomerName"],
+                                AlbumPicture = (string)reader["AlbumImage"],
+                                AlbumName = (string)reader["AlbumName"],
+                                AlbumQuantity = (int)reader["Qty"],
+                                AlbumPrice = (decimal)reader["AlbumPrice"]
+                            };
+
+                            transactionHistory.Add(transaction);
+                        }
+                    }
+                }
+            }
+
+            return transactionHistory;
+        }
     }
 }
