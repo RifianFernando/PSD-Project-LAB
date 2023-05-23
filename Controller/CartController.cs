@@ -22,11 +22,14 @@ namespace KpopZtation.Controller
             CartHandler.InsertCart(CustomerID, AlbumID, Quantity);
             return;
         }
+<<<<<<< HEAD
 
-        public static List<Cart> GetAllCartData(int ID)
+        public static List<Cart> GetAllCartData(int id)
         {
             return CartHandler.GetAllCartData(id);
         }
 
+=======
+>>>>>>> ea0d03a7305b988ce811aa449433b2b938eb2493
     }
 }
