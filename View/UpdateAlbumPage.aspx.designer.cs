@@ -42,24 +42,6 @@ namespace KpopZtation.View
         protected global::System.Web.UI.WebControls.FileUpload UpdateAlbumImage;
 
         /// <summary>
-        /// AlbumImageName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label AlbumImageName;
-
-        /// <summary>
-        /// WarningAlbumImage control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label WarningAlbumImage;
-
-        /// <summary>
         /// LabelAlbumName control.
         /// </summary>
         /// <remarks>

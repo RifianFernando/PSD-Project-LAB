@@ -69,24 +69,6 @@ namespace KpopZtation.View
         protected global::System.Web.UI.WebControls.FileUpload UpdateArtistImage;
 
         /// <summary>
-        /// ArtistImageName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ArtistImageName;
-
-        /// <summary>
-        /// WarningArtistImage control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label WarningArtistImage;
-
-        /// <summary>
         /// UpdateArtistButton control.
         /// </summary>
         /// <remarks>

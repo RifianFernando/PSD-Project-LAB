@@ -10,8 +10,6 @@
         <asp:Label ID="LabelAlbumImage" runat="server" Text="Album Image"></asp:Label><br />
         <asp:Image ID="AlbumImage" runat="server" style="width: 10vw; height: auto"/><br />
         <asp:FileUpload id="UpdateAlbumImage" runat="server" accept=".jpg, .jpeg, .png, .jfif" /><br />
-        <asp:Label ID="AlbumImageName" runat="server" Text=""></asp:Label><br />
-        <asp:Label ID="WarningAlbumImage" runat="server" Text="" ForeColor="Red"></asp:Label><br />
         <br />
 
         <asp:Label ID="LabelAlbumName" runat="server" Text="Album Name"></asp:Label><br />

@@ -39,7 +39,6 @@ namespace KpopZtation.View
                     {
                         UpdateArtistName.Text = a.ArtistName;
                         ArtistImage.ImageUrl = "https://localhost:44302/Storage/Public/Images/Artists/" + a.ArtistImage;
-                        ArtistImageName.Text = a.ArtistImage;
                     }
 
                     return;
@@ -62,7 +61,6 @@ namespace KpopZtation.View
             int ImageSize = UpdateArtistImage.PostedFile.ContentLength;
 
             WarningArtistName.Text = ArtistController.ValidateUpdateName(NewArtistName, ArtistName);
-            WarningArtistImage.Text = ArtistController.ValidateUpdateImage(ArtistImage, ImageSize);
 
             SuccessLabel.Text = ArtistController.UpdateArtist(id, NewArtistName, ArtistName, NewArtistImage, ArtistImage, ImageSize);
 
@@ -79,6 +77,8 @@ namespace KpopZtation.View
                     }
 
                     UpdateArtistImage.SaveAs(ImageFolder);
+
+                    Response.Redirect("HomePage.aspx");
                 }
             }
         }

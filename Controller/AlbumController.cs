@@ -54,9 +54,9 @@ namespace KpopZtation.Controller
         
         public static String ValidateAlbumStock(String AlbumStockString)
         {
-            if (AlbumStockString == null)
+            if (AlbumStockString.Equals(""))
             {
-                return "Address must be filled!";
+                return "Stock must be filled!";
             }
 
             int AlbumStock = int.Parse(AlbumStockString);
@@ -149,27 +149,35 @@ namespace KpopZtation.Controller
             String stock = ValidateAlbumStock(AlbumStock);
             String desc = ValidateAlbumDescription(AlbumDesc);
 
-            bool noNewImage = name.Equals("") && image.Equals("No New Image Uploaded") && desc.Equals("") && price.Equals("") && stock.Equals("");
+            bool noNewImage = name.Equals("") && image.Equals("No New Album Image Uploaded") && desc.Equals("") && price.Equals("") && stock.Equals("");
 
             bool validateAll = name.Equals("") && image.Equals("") && desc.Equals("") && price.Equals("") && stock.Equals("");
 
-            int PriceInt = int.Parse(AlbumPrice);
-            int StockInt = int.Parse(AlbumStock);
+            int PriceInt;
+            int StockInt;
 
             if (noNewImage == true)
             {
+                PriceInt = int.Parse(AlbumPrice);
+                StockInt = int.Parse(AlbumStock);
+
                 AlbumHandler.UpdateAlbum(ID, Name, Image, PriceInt, StockInt, AlbumDesc);
 
                 return "Update saved!";
             }
             else if (validateAll == true)
             {
+                PriceInt = int.Parse(AlbumPrice);
+                StockInt = int.Parse(AlbumStock);
+
                 AlbumHandler.UpdateAlbum(ID, Name, NewImage, PriceInt, StockInt, AlbumDesc);
 
                 return "Update saved!";
             }
-
-            return "Update failed!";
+            else
+            {
+                return "Update failed!";
+            }
         }
     }
 }

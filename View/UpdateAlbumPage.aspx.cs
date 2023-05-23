@@ -15,8 +15,15 @@ namespace KpopZtation.View
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            int id = int.Parse(Request.QueryString["ID"]);
             SessionMiddleware.isLogin(Page);
+
+            string idQueryString = Request.QueryString["ID"];
+            if (string.IsNullOrEmpty(idQueryString))
+            {
+                Response.Redirect("HomePage.aspx");
+            }
+
+            int id = int.Parse(Request.QueryString["ID"]);
 
             if (Session["User"] != null)
             {
@@ -58,7 +65,6 @@ namespace KpopZtation.View
             String AlbumDesc = UpdateAlbumDescription.Text;
 
             WarningAlbumName.Text = AlbumController.ValidateAlbumName(AlbumName);
-            WarningAlbumImage.Text = AlbumController.ValidateUpdateImage(AlbumImage, ImageSize);
             WarningAlbumPrice.Text = AlbumController.ValidateAlbumPrice(AlbumPrice);
             WarningAlbumStock.Text = AlbumController.ValidateAlbumStock(AlbumStock);
             WarningAlbumDescription.Text = AlbumController.ValidateAlbumDescription(AlbumDesc);
