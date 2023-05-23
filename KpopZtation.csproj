@@ -103,7 +103,6 @@
     <Content Include="View\TransactionHistory.aspx" />
     <Content Include="View\UpdateArtistPage.aspx" />
     <Content Include="View\UpdateProfilePage.aspx" />
-    <Content Include="View\ViewCartPage.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -246,13 +245,6 @@
     </Compile>
     <Compile Include="View\UpdateProfilePage.aspx.designer.cs">
       <DependentUpon>UpdateProfilePage.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="View\ViewCartPage.aspx.cs">
-      <DependentUpon>ViewCartPage.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="View\ViewCartPage.aspx.designer.cs">
-      <DependentUpon>ViewCartPage.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
