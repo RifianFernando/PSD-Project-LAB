@@ -16,7 +16,7 @@ namespace KpopZtation.Repository
 
             return null;
         }
-        public static List<Cart> GetAllArtistData()
+        public static List<Cart> GetAllCartItemData()
         {
             return (from cartdb in db.Carts select cartdb).ToList();
         }
