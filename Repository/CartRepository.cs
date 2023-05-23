@@ -16,7 +16,7 @@ namespace KpopZtation.Repository
 
             return null;
         }
-        public static List<Cart> GetAllCartItemData()
+        public static List<Cart> GetAllCartItemData(int id)
         {
             return (from cartdb in db.Carts where id == cartdb.CustomerID select cartdb).ToList();
         }
