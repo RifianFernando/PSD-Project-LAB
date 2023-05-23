@@ -18,5 +18,9 @@ namespace KpopZtation.Handler
 
             return;
         }
+        public static List<Cart> GetAllCartData(int id)
+        {
+            return CartRepository.GetAllCartData(id);
+        }
     }
 }
