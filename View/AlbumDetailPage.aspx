@@ -34,7 +34,7 @@
 
         
         <%String Data = ViewState["Cookie"].ToString(); %>
-        <% if (Data == "Admin"){ %>
+        <% if (Data != "Admin"){ %>
                 <asp:Button ID="CartButton" runat="server" Text="Add to Cart" OnClick="CartButton_Click"/>
         <% } %>
         <br />

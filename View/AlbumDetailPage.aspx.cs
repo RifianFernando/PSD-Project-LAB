@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using KpopZtation.Middleware;
 
 namespace KpopZtation.View
 {
@@ -13,8 +14,29 @@ namespace KpopZtation.View
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            SessionMiddleware.isLogin(Page);
+            if (string.IsNullOrEmpty(Request.QueryString["ID"]))
+            {
+                Response.Redirect("ArtistDetailPage.aspx");
+            }
             int id = int.Parse(Request.QueryString["ID"]);
-
+            if (Session["User"] != null)
+            {
+                String Email = Session["User"].ToString();
+                bool isAdmin = CustomerController.ValidateAdmin(Email);
+                if (isAdmin == true)
+                {
+                    ViewState["Cookie"] = "Admin";
+                }
+                else
+                {
+                    ViewState["Cookie"] = "Customer";
+                }
+            }
+            else
+            {
+                ViewState["Cookie"] = "Guest";
+            }
             Album ab = AlbumController.GetDataById(id);
 
             if (!IsPostBack)
