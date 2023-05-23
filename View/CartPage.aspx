@@ -11,7 +11,7 @@
                 <tbody>
                     <asp:DataList runat="server" ID="AlbumDataList" RepeatLayout="Table">
                         <ItemTemplate>
-                            <tr style="border: 1px solid black; width: 10vw" onclick="rowClicked(<%# Eval("AlbumID")%>)">
+                            <tr style="border: 1px solid black; width: 10vw" onclick="rowClicked(<%# Eval("CustomerID")%>)">
                                 <td  style="padding-left: 50px; width: 20vw"><%# Eval("CustomerID")%></td>
                                 <td  style="padding-left: 50px; width: 20vw"><%# Eval("AlbumID")%></td>
                                 <td  style="padding-left: 50px; width: 20vw"><%# Eval("Qty")%></td>
