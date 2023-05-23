@@ -66,7 +66,6 @@ namespace KpopZtation.View
                 Success.ForeColor = System.Drawing.Color.Red;
                 Success.Text = "Quantity must be integer";
             }
-            
         }
     }
 }

@@ -60,6 +60,8 @@ namespace KpopZtation.View
             string AlbumID = deleteButton.CommandArgument;
             int ID = int.Parse(AlbumID);
             AlbumController.DeleteAlbum(ID);
+
+            Response.Redirect(Request.RawUrl);
         }
 
         protected void UpdateButton_Click(object sender, EventArgs e)

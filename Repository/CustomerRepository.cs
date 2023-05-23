@@ -85,5 +85,12 @@ namespace KpopZtation.Repository
             return null;
         }
 
+        public static String DeleteAccount(Customer c)
+        {
+            db.Customers.Remove(c);
+            db.SaveChanges();
+
+            return null;
+        }
     }
 }

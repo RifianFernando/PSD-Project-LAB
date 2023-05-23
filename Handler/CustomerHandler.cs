@@ -12,7 +12,7 @@ namespace KpopZtation.Handler
     {
         public static void InsertCustomer(String name, String email, String gender, String address, String password)
         {
-            Customer user = CustomerFactory.CreateCustomer(name, email, password, gender, address, "Customer");
+            Customer user = CustomerFactory.CreateCustomer(name, email, password, gender, address, "CST");
 
             CustomerRepository.InsertCustomer(user);
 
@@ -61,6 +61,13 @@ namespace KpopZtation.Handler
         public static String GetRoleByEmail(String Email)
         {
             return CustomerRepository.GetDataById(CustomerRepository.GetIdByEmail(Email)).CustomerRole.ToString();
+        }
+
+        public static void DeleteAccount(int ID)
+        {
+            Customer c = GetDataById(ID);
+
+            CustomerRepository.DeleteAccount(c);
         }
     }
 }
