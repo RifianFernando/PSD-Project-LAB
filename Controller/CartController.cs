@@ -23,9 +23,9 @@ namespace KpopZtation.Controller
             return;
         }
 
-        public static List<Cart> GetAllCartitemData(int id)
+        public static List<Cart> GetAllCartItemData(int id)
         {
-            return CartHandler.GetAllCartData(id);
+            return CartHandler.GetAllCartItemData(id);
         }
     }
 }

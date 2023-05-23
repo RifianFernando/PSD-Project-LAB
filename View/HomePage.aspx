@@ -17,7 +17,7 @@
             <tbody>
                 <asp:DataList runat="server" ID="ArtistDataList" RepeatLayout="Table">
                     <ItemTemplate>
-                <tr style="border: 1px solid black; width: 10vw" onclick="rowClicked(<%# Eval("ArtistID")%>)">
+                <tr style="border: 1px solid black" onclick="rowClicked(<%# Eval("ArtistID")%>)">
                     <td>
                         <img src='<%# "https://localhost:44302/Storage/Public/Images/Artists/" + Eval("ArtistImage") %>' style="width: 10vw; height: auto" />
                     </td>
@@ -25,7 +25,7 @@
                     <td  style="padding-left: 50px; width: 20vw"><%# Eval("ArtistName")%></td>
                     <% if (Data == "Admin")
                             { %>
-                        <td style="width: 5vw;">
+                        <td style="width: auto;">
                             <asp:Button ID="DeleteButton" runat="server" Text="Delete" OnClick="DeleteButton_Click" CommandArgument='<%# Eval("ArtistID") %>'/>
                         </td>
                         <td>
