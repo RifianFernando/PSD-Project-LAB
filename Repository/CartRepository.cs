@@ -9,12 +9,12 @@ namespace KpopZtation.Repository
     public class CartRepository
     {
         public static KpopDatabaseEntities db = Connect.getInstance();
-        public static void InsertCart(Cart c)
+        public static String InsertCart(Cart c)
         {
             db.Carts.Add(c);
             db.SaveChanges();
 
-            return;
+            return null;
         }
         public static List<Cart> GetAllArtistData()
         {

@@ -21,6 +21,5 @@ namespace KpopZtation.Controller
             CartHandler.InsertCart(CustomerID, AlbumID, Quantity);
             return;
         }
-
     }
 }

@@ -12,8 +12,6 @@ namespace KpopZtation.View
 {
     public partial class AlbumDetailPage : System.Web.UI.Page
     {
-        int CustomerID;
-        int AlbumID;
         protected void Page_Load(object sender, EventArgs e)
         {
             SessionMiddleware.isLogin(Page);
@@ -38,18 +36,15 @@ namespace KpopZtation.View
 
         protected void CartButton_Click(object sender, EventArgs e)
         {
-            ConfirmButton.Visible = true;
-            Quantity.Visible = true;
-            QtyText.Visible = true;
             if (Session["User"] != null)
             {
                 String Email = Session["User"].ToString();
                 bool isAdmin = CustomerController.ValidateAdmin(Email);
                 if (isAdmin == false)
                 {
-                    Button cartButton = (Button)sender;
-                    AlbumID = int.Parse(cartButton.CommandArgument);
-                    CustomerID = CustomerController.GetIdByEmail(Email);
+                    ConfirmButton.Visible = true;
+                    Quantity.Visible = true;
+                    QtyText.Visible = true;
                 }
             }
         }
@@ -62,8 +57,13 @@ namespace KpopZtation.View
                 ConfirmButton.Visible = false;
                 Quantity.Visible = false;
                 QtyText.Visible = false;
+
+                int CustomerID = CustomerController.GetIdByEmail(Session["User"].ToString());
+                int AlbumID = int.Parse(Request.QueryString["ID"]);
                 int QuantityInt = int.Parse(QtyString);
+
                 CartController.InsertCart(CustomerID, AlbumID, QuantityInt);
+
                 Success.ForeColor = System.Drawing.Color.Green;
                 Success.Text = "Album has been added to cart";
             }
