@@ -15,6 +15,11 @@ namespace KpopZtation.View
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            string idQueryString = Request.QueryString["ID"];
+            if (string.IsNullOrEmpty(idQueryString))
+            {
+                Response.Redirect("HomePage.aspx");
+            }
             int id = int.Parse(Request.QueryString["ID"]);
             SessionMiddleware.isLogin(Page);
 
