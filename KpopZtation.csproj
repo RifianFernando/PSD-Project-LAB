@@ -101,6 +101,7 @@
     <Content Include="View\LoginPage.aspx" />
     <Content Include="View\RegisterPage.aspx" />
     <Content Include="View\TransactionHistory.aspx" />
+    <Content Include="View\UpdateAlbumPage.aspx" />
     <Content Include="View\UpdateArtistPage.aspx" />
     <Content Include="View\UpdateProfilePage.aspx" />
     <Content Include="Web.config" />
@@ -231,6 +232,13 @@
     </Compile>
     <Compile Include="View\TransactionHistory.aspx.designer.cs">
       <DependentUpon>TransactionHistory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\UpdateAlbumPage.aspx.cs">
+      <DependentUpon>UpdateAlbumPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\UpdateAlbumPage.aspx.designer.cs">
+      <DependentUpon>UpdateAlbumPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\UpdateArtistPage.aspx.cs">
       <DependentUpon>UpdateArtistPage.aspx</DependentUpon>

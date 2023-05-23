@@ -122,5 +122,60 @@ namespace KpopZtation.Controller
         {
             return AlbumHandler.GetDataById(ID);
         }
+        public static Album GetDataByArtistId(int ID)
+        {
+            return AlbumHandler.GetDataByArtistId(ID);
+        }
+        public static String ValidateUpdateAlbumName(String NewName, String Name)
+        {
+            if (NewName.Equals(""))
+            {
+                return "Album Name must not be empty";
+            }
+            else if (NewName.Equals(Name))
+            {
+                return "";
+            }
+            return "";
+        }
+
+        public static String ValidateUpdateImage(String AlbumImage, int ImageSize)
+        {
+            if (AlbumImage.Equals(""))
+            {
+                return "No New Album Image Uploaded";
+            }
+            else if (ImageSize > 2097152)
+            {
+                return "File size must be less than 2MB!";
+            }
+
+            return "";
+        }
+
+        public static String UpdateAlbum (int ID, String NewName, String Name, String NewImage, String Image, int ImageSize)
+        {
+            String name = ValidateUpdateAlbumName(NewName, Name);
+            String image = ValidateUpdateImage(NewImage, ImageSize);
+
+            bool noNewImage = name.Equals("") && image.Equals("No New Image Uploaded");
+
+            bool validateAll = name.Equals("") && image.Equals("");
+
+            if (noNewImage == true)
+            {
+                AlbumHandler.UpdateAlbum(ID, NewName, Image);
+
+                return "Update saved!";
+            }
+            else if (validateAll == true)
+            {
+                AlbumHandler.UpdateAlbum(ID, NewName, NewImage);
+
+                return "Update saved!";
+            }
+
+            return "Update failed!";
+        }
     }
 }

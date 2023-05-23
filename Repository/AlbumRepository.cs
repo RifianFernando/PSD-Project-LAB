@@ -24,6 +24,11 @@ namespace KpopZtation.Repository
             return (from data in db.Albums where ID == data.AlbumID select data).FirstOrDefault();
         }
 
+        public static Album GetDataByArtistId(int ID)
+        {
+            return (from data in db.Albums where ID == data.ArtistID select data).FirstOrDefault();
+        }
+
         public static String DeleteAlbum(Album ab)
         {
             db.Albums.Remove(ab);
@@ -47,6 +52,14 @@ namespace KpopZtation.Repository
         public static List<Album> GetAllArtistAlbumData(int ID)
         {
             return (from albumdb in db.Albums where ID == albumdb.ArtistID select albumdb).ToList();
+        }
+        public static String UpdateAlbum(Album Al, String NewName, String NewImage)
+        {
+            Al.AlbumName = NewName;
+            Al.AlbumImage = NewImage;
+            db.SaveChanges();
+
+            return null;
         }
     }
 }
