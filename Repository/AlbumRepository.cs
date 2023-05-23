@@ -37,14 +37,15 @@ namespace KpopZtation.Repository
             return null;
         }
 
-        public static String UpdateAlbum(Album ab, int NewArtID, String NewName, String NewImage, int NewPrice, int NewStock, String NewDesc)
+        public static String UpdateAlbum(Album ab, String NewName, String NewImage, int NewPrice, int NewStock, String NewDesc)
         {
-            ab.ArtistID = NewArtID;
             ab.AlbumName = NewName;
             ab.AlbumImage = NewImage;
             ab.AlbumPrice = NewPrice;
             ab.AlbumStock = NewStock;
             ab.AlbumDescription = NewDesc;
+
+            db.SaveChanges();
 
             return null;
         }

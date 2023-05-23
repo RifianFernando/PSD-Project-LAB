@@ -33,7 +33,7 @@ namespace KpopZtation.Handler
         {
             Album ab = AlbumRepository.GetDataById(ID);
 
-            AlbumRepository.UpdateAlbum(ab, NewArtID, NewName, NewImage, NewPrice, NewStock, NewDesc);
+            AlbumRepository.UpdateAlbum(ab, NewName, NewImage, NewPrice, NewStock, NewDesc);
 
             return;
         }
@@ -44,7 +44,7 @@ namespace KpopZtation.Handler
 
             int stockLeft = ab.AlbumStock - Purchase;
 
-            AlbumRepository.UpdateAlbum(ab, NewArtID, NewName, NewImage, NewPrice, stockLeft, NewDesc);
+            AlbumRepository.UpdateAlbum(ab, NewName, NewImage, NewPrice, stockLeft, NewDesc);
 
             return;
         }
@@ -61,11 +61,11 @@ namespace KpopZtation.Handler
             return AlbumRepository.GetDataByArtistId(ID);
         }
 
-        public static void UpdateAlbum(int ID, String NewName, String NewImage)
+        public static void UpdateAlbum(int ID, String NewName, String NewImage, int NewPrice, int NewStock, String NewDesc)
         {
-            Album Al = AlbumRepository.GetDataById(ID);
+            Album ab = AlbumRepository.GetDataById(ID);
 
-            AlbumRepository.UpdateAlbum(Al, NewName, NewImage);
+            AlbumRepository.UpdateAlbum(ab, NewName, NewImage, NewPrice, NewStock, NewDesc);
 
             return;
         }

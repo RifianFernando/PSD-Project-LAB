@@ -29,7 +29,7 @@
         <asp:Label ID="WarningAlbumStock" runat="server" Text="" ForeColor="Red"></asp:Label><br />
         <br />
 
-        <asp:Label ID="LabelAlbumDescription" runat="server" Text="Password"></asp:Label><br />
+        <asp:Label ID="LabelAlbumDescription" runat="server" Text="Album Description"></asp:Label><br />
         <asp:TextBox ID="UpdateAlbumDescription" runat="server"></asp:TextBox><br />
         <asp:Label ID="WarningAlbumDescription" runat="server" Text="" ForeColor="Red"></asp:Label><br />
         <br />

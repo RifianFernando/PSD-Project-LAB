@@ -26,15 +26,15 @@ namespace KpopZtation.View
                 {
                     Response.Write("Welcome, Admin!");
 
-                    Album Al = AlbumController.GetDataByArtistId(id);
+                    Album Al = AlbumController.GetDataById(id);
 
                     if (!IsPostBack)
                     {
                         UpdateAlbumName.Text = Al.AlbumName;
-                        AlbumImage.ImageUrl = "https://localhost:44302/Storage/Public/Images/Artists/" + Al.AlbumImage;
+                        AlbumImage.ImageUrl = "https://localhost:44302/Storage/Public/Images/Albums/" + Al.AlbumImage;
                         UpdateAlbumPrice.Text = Al.AlbumPrice.ToString();
                         UpdateAlbumStock.Text = Al.AlbumStock.ToString();
-                        UpdateAlbumDescription.Text = Al.AlbumDescription;           
+                        UpdateAlbumDescription.Text = Al.AlbumDescription;
                     }
 
                     return;
@@ -46,19 +46,24 @@ namespace KpopZtation.View
         {
             int id = int.Parse(Request.QueryString["ID"]);
 
-            Album Al = AlbumController.GetDataByArtistId(id);
+            Album Al = AlbumController.GetDataById(id);
 
-            String AlbumName = Al.AlbumName;
             String AlbumImage = Al.AlbumImage;
 
-            String NewAlbumName = UpdateAlbumName.Text;
+            String AlbumName = UpdateAlbumName.Text;
             String NewAlbumImage = UpdateAlbumImage.FileName;
             int ImageSize = UpdateAlbumImage.PostedFile.ContentLength;
+            String AlbumPrice = UpdateAlbumPrice.Text;
+            String AlbumStock = UpdateAlbumStock.Text;
+            String AlbumDesc = UpdateAlbumDescription.Text;
 
-            WarningAlbumName.Text = AlbumController.ValidateUpdateAlbumName(NewAlbumName, AlbumName);
+            WarningAlbumName.Text = AlbumController.ValidateAlbumName(AlbumName);
             WarningAlbumImage.Text = AlbumController.ValidateUpdateImage(AlbumImage, ImageSize);
+            WarningAlbumPrice.Text = AlbumController.ValidateAlbumPrice(AlbumPrice);
+            WarningAlbumStock.Text = AlbumController.ValidateAlbumStock(AlbumStock);
+            WarningAlbumDescription.Text = AlbumController.ValidateAlbumDescription(AlbumDesc);
 
-            SuccessLabel.Text = AlbumController.UpdateAlbum(id, NewAlbumName, AlbumName, NewAlbumImage, AlbumImage, ImageSize);
+            SuccessLabel.Text = AlbumController.UpdateAlbum(id, AlbumName, NewAlbumImage, AlbumImage, ImageSize, AlbumPrice, AlbumStock, AlbumDesc);
 
             if (SuccessLabel.Text.Equals("Update saved!"))
             {
