@@ -56,6 +56,9 @@ namespace KpopZtation.View
 
             int ID = CustomerController.GetIdByEmail(Email);
             CustomerController.DeleteAccount(ID);
+
+            Session.Remove("User");
+            Response.Redirect("HomePage.aspx");
         }
     }
 }

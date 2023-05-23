@@ -6,8 +6,10 @@
     <div>
         <h1>Update Profile</h1>
         <br />
-
+        <br />
         <asp:Button ID="DeleteButton" runat="server" Text="Delete Account" onclick="DeleteButton_Click"/>
+        <br />
+        <br />
 
         <asp:Label ID="LabelName" runat="server" Text="Name"></asp:Label><br />
         <asp:TextBox ID="UpdateName" runat="server"></asp:TextBox><br />
