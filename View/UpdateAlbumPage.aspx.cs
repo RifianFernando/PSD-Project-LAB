@@ -64,8 +64,8 @@ namespace KpopZtation.View
             {
                 if (UpdateAlbumImage.HasFile)
                 {
-                    String FolderDirectory = Server.MapPath("~/Storage/Public/Images/Artists/");
-                    String ImageFolder = Server.MapPath("~/Storage/Public/Images/Artists/" + NewAlbumImage);
+                    String FolderDirectory = Server.MapPath("~/Storage/Public/Images/Albums/");
+                    String ImageFolder = Server.MapPath("~/Storage/Public/Images/Albums/" + NewAlbumImage);
 
                     if (!Directory.Exists(FolderDirectory))
                     {
