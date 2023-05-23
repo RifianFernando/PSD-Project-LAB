@@ -25,7 +25,7 @@ namespace KpopZtation.View
             int id = CustomerController.GetIdByEmail(Email);   
             if (!IsPostBack)
             {
-                List<Cart> carts = CartController.GetAllCartitemData(id);
+                List<Cart> carts = CartController.GetAllCartItemData(id);
                 AlbumDataList.DataSource = carts;
                 AlbumDataList.DataBind();
             }
