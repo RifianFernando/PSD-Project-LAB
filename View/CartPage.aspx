@@ -12,16 +12,9 @@
                     <asp:DataList runat="server" ID="AlbumDataList" RepeatLayout="Table">
                         <ItemTemplate>
                             <tr style="border: 1px solid black; width: 10vw" onclick="rowClicked(<%# Eval("AlbumID")%>)">
-                                <td>
-                                    <img src='<%# "https://localhost:44302/Storage/Public/Images/Albums/" + Eval("AlbumImage") %>' style="width: 10vw; height: auto" />
-                                </td>
-                                <td  style="padding-left: 50px; width: 20vw"><%# Eval("AlbumName")%></td>
-                                <td>
-                                    <asp:Button ID="DeleteButton" runat="server" Text="Delete" OnClick="DeleteButton_Click" CommandArgument='<%# Eval("AlbumID") %>'/>
-                                </td>
-                                <td>
-                                    <asp:Button ID="UpdateButton" runat="server" Text="Update" OnClick="UpdateButton_Click" CommandArgument='<%# Eval("AlbumID") %>'/>
-                                </td>
+                                <td  style="padding-left: 50px; width: 20vw"><%# Eval("CustomerID")%></td>
+                                <td  style="padding-left: 50px; width: 20vw"><%# Eval("AlbumID")%></td>
+                                <td  style="padding-left: 50px; width: 20vw"><%# Eval("Qty")%></td>
                             </tr>
                         </ItemTemplate>
                     </asp:DataList>
