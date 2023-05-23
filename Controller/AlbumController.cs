@@ -84,11 +84,11 @@ namespace KpopZtation.Controller
 
         public static String AddAlbum(int ArtID, String AlbumName, String AlbumDesc, String AlbumPrice, String AlbumStock, String AlbumImage, int ImageSize)
         {
-            string name = ValidateAlbumName(AlbumName);
-            string desc = ValidateAlbumDescription(AlbumDesc);
-            string price = ValidateAlbumPrice(AlbumPrice);
-            string stock = ValidateAlbumStock(AlbumStock);
-            string image = ValidateAlbumImage(AlbumImage, ImageSize);
+            String name = ValidateAlbumName(AlbumName);
+            String desc = ValidateAlbumDescription(AlbumDesc);
+            String price = ValidateAlbumPrice(AlbumPrice);
+            String stock = ValidateAlbumStock(AlbumStock);
+            String image = ValidateAlbumImage(AlbumImage, ImageSize);
 
             bool validate = name.Equals("") && desc.Equals("") && price.Equals("") && stock.Equals("") && image.Equals("");
 
@@ -126,18 +126,6 @@ namespace KpopZtation.Controller
         {
             return AlbumHandler.GetDataByArtistId(ID);
         }
-        public static String ValidateUpdateAlbumName(String NewName, String Name)
-        {
-            if (NewName.Equals(""))
-            {
-                return "Album Name must not be empty";
-            }
-            else if (NewName.Equals(Name))
-            {
-                return "";
-            }
-            return "";
-        }
 
         public static String ValidateUpdateImage(String AlbumImage, int ImageSize)
         {
@@ -153,24 +141,30 @@ namespace KpopZtation.Controller
             return "";
         }
 
-        public static String UpdateAlbum (int ID, String NewName, String Name, String NewImage, String Image, int ImageSize)
+        public static String UpdateAlbum (int ID, String Name, String NewImage, String Image, int ImageSize, String AlbumPrice, String AlbumStock, String AlbumDesc)
         {
-            String name = ValidateUpdateAlbumName(NewName, Name);
+            String name = ValidateAlbumName(Name);
             String image = ValidateUpdateImage(NewImage, ImageSize);
+            String price = ValidateAlbumPrice(AlbumPrice);
+            String stock = ValidateAlbumStock(AlbumStock);
+            String desc = ValidateAlbumDescription(AlbumDesc);
 
-            bool noNewImage = name.Equals("") && image.Equals("No New Image Uploaded");
+            bool noNewImage = name.Equals("") && image.Equals("No New Image Uploaded") && desc.Equals("") && price.Equals("") && stock.Equals("");
 
-            bool validateAll = name.Equals("") && image.Equals("");
+            bool validateAll = name.Equals("") && image.Equals("") && desc.Equals("") && price.Equals("") && stock.Equals("");
+
+            int PriceInt = int.Parse(AlbumPrice);
+            int StockInt = int.Parse(AlbumStock);
 
             if (noNewImage == true)
             {
-                AlbumHandler.UpdateAlbum(ID, NewName, Image);
+                AlbumHandler.UpdateAlbum(ID, Name, Image, PriceInt, StockInt, AlbumDesc);
 
                 return "Update saved!";
             }
             else if (validateAll == true)
             {
-                AlbumHandler.UpdateAlbum(ID, NewName, NewImage);
+                AlbumHandler.UpdateAlbum(ID, Name, NewImage, PriceInt, StockInt, AlbumDesc);
 
                 return "Update saved!";
             }
