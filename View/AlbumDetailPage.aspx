@@ -32,8 +32,11 @@
 
         <br />
 
-        <asp:Button ID="CartButton" runat="server" Text="Add to Cart" OnClick="CartButton_Click"/>
-
+        
+        <%String Data = ViewState["Cookie"].ToString(); %>
+        <% if (Data == "Admin"){ %>
+                <asp:Button ID="CartButton" runat="server" Text="Add to Cart" OnClick="CartButton_Click"/>
+        <% } %>
         <br />
         <asp:Label ID="QtyText" runat="server" Text="Insert Quantity" Visible="false"></asp:Label>
         <asp:TextBox ID="Quantity" runat="server" Visible="false"></asp:TextBox>
