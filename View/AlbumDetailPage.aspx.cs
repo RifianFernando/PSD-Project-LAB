@@ -20,7 +20,23 @@ namespace KpopZtation.View
                 Response.Redirect("ArtistDetailPage.aspx");
             }
             int id = int.Parse(Request.QueryString["ID"]);
-
+            if (Session["User"] != null)
+            {
+                String Email = Session["User"].ToString();
+                bool isAdmin = CustomerController.ValidateAdmin(Email);
+                if (isAdmin == true)
+                {
+                    ViewState["Cookie"] = "Admin";
+                }
+                else
+                {
+                    ViewState["Cookie"] = "Customer";
+                }
+            }
+            else
+            {
+                ViewState["Cookie"] = "Guest";
+            }
             Album ab = AlbumController.GetDataById(id);
 
             if (!IsPostBack)
