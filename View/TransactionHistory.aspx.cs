@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using KpopZtation.Middleware;
 using KpopZtation.Controller;
+using KpopZtation.Model;
 
 namespace KpopZtation.View
 {
@@ -25,23 +26,14 @@ namespace KpopZtation.View
                     Response.Redirect("HomePage.aspx");
                 }
             }
-            //-----------------------------//
 
-
-            
-
-            //Artist a = ArtistController.GetDataById(id);
-
-            //if (!IsPostBack)
-            //{
-            //    ArtistImage.ImageUrl = "https://localhost:44302/Storage/Public/Images/Artists/" + a.ArtistImage;
-            //    ArtistName.Text = a.ArtistName;
-            //}
-
-            //List<Album> albums = AlbumController.GetAllArtistAlbumData(id);
-            //AlbumDataList.DataSource = albums;
-            //AlbumDataList.DataBind();
-
+            if (!IsPostBack)
+            {
+                int id = int.Parse(Session["User"].ToString());
+                List<TransactionHeader> transactions = TransactionController.GetTransactionHistoryByID(id);
+                TransactionHistoryDataList.DataSource = transactions;
+                TransactionHistoryDataList.DataBind();
+            }
         }
     }
 }
