@@ -25,10 +25,10 @@ namespace KpopZtation.Repository
 
             if (EmailData == null)
             {
-                return false;
+                return true;
             }
 
-            return true;
+            return false;
         }
         public static bool FindLoginEmail(String Email)
         {

@@ -18,19 +18,29 @@
         <nav>
         <ul class="list">
             <li><a href="HomePage.aspx">Home</a></li>
-            <%String Data = ViewState["Cookie"].ToString(); %>
-            <% if (Data == "Customer") { %>
-                <li id="ListItem1" Visible="false">
-                    <a href="#">Cart</a>
-                </li>
+            <%String Data = ViewState["Cookie"].ToString();
+            if (Data == "Customer") { %>
+            <li id="ListItem1" Visible="false">
+                <a href="CartPage.aspx">Cart</a>
+            </li>
             <%}
-                if(Data != "Guest"){%>
-                <li id="ListItem2" Visible="false">
-                    <a href="#">Transaction</a>
-                </li>
-                <li id="ListItem3" Visible="false">
-                    <a href="UpdateProfilePage.aspx">Update Profile</a>
-                </li>
+
+            if(Data == "Admin"){%>
+            <li id="ListItem2" Visible="false">
+                <a href="TransactionReportPage.aspx">Transaction</a>
+            </li>
+            <%}
+
+            if(Data == "Customer"){%>
+            <li id="ListItem4" Visible="false">
+                <a href="TransactionHistory.aspx">Transaction</a>
+            </li>
+            <%}
+
+            if(Data != "Guest"){%>
+            <li id="ListItem3" Visible="false">
+                <a href="UpdateProfilePage.aspx">Update Profile</a>
+            </li>
             <%}%>
         </ul>
             

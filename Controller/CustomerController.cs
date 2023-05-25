@@ -28,7 +28,7 @@ namespace KpopZtation.Controller
             {
                 return "Email must be filled!";
             }
-            else if (CustomerHandler.FindUniqueEmail(RegEmail) == true)
+            else if (CustomerHandler.FindUniqueEmail(RegEmail) == false)
             {
                 return "Email has been registered!";
             }

@@ -1,7 +1,10 @@
 ﻿using KpopZtation.Controller;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Web;
-using KpopZtation.Middleware;
+using System.Web.UI;
+using System.Web.UI.WebControls;
 
 namespace KpopZtation.View
 {
@@ -18,7 +21,7 @@ namespace KpopZtation.View
             String Password = LoginPassword.Text;
 
             WarningLoginEmail.Text = CustomerController.ValidateEmailLogin(Email);
-            WarningLoginPassword.Text = CustomerController.ValidatePasswordLogin(Email,Password);
+            WarningLoginPassword.Text = CustomerController.ValidatePasswordLogin(Email, Password);
 
             bool isValid = WarningLoginEmail.Text.Equals("") && WarningLoginPassword.Text.Equals("");
 
@@ -31,10 +34,6 @@ namespace KpopZtation.View
                 Response.Cookies.Add(userCookie);
 
                 Response.Redirect("HomePage.aspx");
-            }
-            else
-            {
-
             }
         }
     }

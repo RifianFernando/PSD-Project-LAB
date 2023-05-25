@@ -14,6 +14,7 @@ namespace KpopZtation.View
         {
 
         }
+
         protected void Register_Click(object sender, EventArgs e)
         {
             String RegName = RegisterName.Text;
@@ -30,7 +31,7 @@ namespace KpopZtation.View
 
             SuccessLabel.Text = CustomerController.AddCustomer(RegName, RegEmail, RegGender, RegAddress, RegPassword);
 
-            if(SuccessLabel.Text.Equals("Register Success!"))
+            if (SuccessLabel.Text.Equals("Register Success!"))
             {
                 Response.Redirect("LoginPage.aspx");
             }

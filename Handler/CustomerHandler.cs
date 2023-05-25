@@ -21,9 +21,7 @@ namespace KpopZtation.Handler
 
         public static bool FindUniqueEmail(String Email)
         {
-            bool email = CustomerRepository.FindUniqueEmail(Email);
-
-            return email;
+            return CustomerRepository.FindUniqueEmail(Email);
         }
 
         public static bool FindLoginEmail(String Email)
