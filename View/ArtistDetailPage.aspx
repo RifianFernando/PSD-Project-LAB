@@ -23,7 +23,7 @@
                 <tbody>
                     <asp:DataList runat="server" ID="AlbumDataList" RepeatLayout="Table">
                         <ItemTemplate>
-                            <tr style="border: 1px solid black; width: 10vw" onclick="rowClicked(<%# Eval("AlbumID")%>)">
+                            <tr style="border: 1px solid black; width: 10vw" onclick="location.href = 'AlbumDetailPage.aspx?id=<%# Eval("AlbumID") %>'">
                                 <td>
                                     <img src='<%# "https://localhost:44302/Storage/Public/Images/Albums/" + Eval("AlbumImage") %>' style="width: 10vw; height: auto" />
                                 </td>
@@ -44,10 +44,5 @@
                 </tbody>
             </table>
         </div>
-        <script>
-        function rowClicked(AlbumID) {
-            location.href="AlbumDetailPage.aspx?id=" + AlbumID;
-        }
-        </script>
     </div>
 </asp:Content>
