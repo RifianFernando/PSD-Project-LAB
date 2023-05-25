@@ -17,7 +17,7 @@
             <tbody>
                 <asp:DataList runat="server" ID="ArtistDataList" RepeatLayout="Table">
                     <ItemTemplate>
-                <tr style="border: 1px solid black" onclick="location.href= 'InsertAlbumPage.aspx'">
+                <tr style="border: 1px solid black" onclick="location.href= 'ArtistDetailPage.aspx?id=<%# Eval("ArtistID") %>'">
                     <td>
                         <img src='<%# "https://localhost:44302/Storage/Public/Images/Artists/" + Eval("ArtistImage") %>' style="width: 10vw; height: auto" />
                     </td>
