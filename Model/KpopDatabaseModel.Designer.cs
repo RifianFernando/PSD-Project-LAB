@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'D:\DATA E\Semester 4\Pattern Software Design\Project\PSD-Project-LAB\Model\KpopDatabaseModel.edmx'. 
+﻿// T4 code generation is enabled for model 'D:\Materi Kuliah\Semester 4\Pattern Software Design\LAB\Project\VS\Model\KpopDatabaseModel.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

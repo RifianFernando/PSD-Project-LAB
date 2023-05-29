@@ -27,10 +27,13 @@ namespace KpopZtation.Repository
             return null;
         }
 
+
         public static List<TransactionHeader> GetTransactionHistory(int ID)
         {
+            
             List<TransactionHeader> transactionHistory = new List<TransactionHeader>();
 
+            /*
             string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Path\To\Your\Database.mdf;Integrated Security=True";
             string query = @"
                 SELECT th.TransactionID, th.TransactionDate, c.CustomerName, ab.AlbumImage, ab.AlbumName, td.Qty, ab.AlbumPrice
@@ -67,6 +70,7 @@ namespace KpopZtation.Repository
                 }
             }
 
+            */
             return transactionHistory;
         }
     }

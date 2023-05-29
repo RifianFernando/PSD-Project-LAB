@@ -14,8 +14,6 @@ namespace KpopZtation.Model
     
     public partial class TransactionHeader
     {
-        internal decimal AlbumPrice;
-
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public TransactionHeader()
         {
@@ -29,9 +27,5 @@ namespace KpopZtation.Model
         public virtual Customer Customer { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TransactionDetail> TransactionDetails { get; set; }
-        public string CustomerName { get; internal set; }
-        public string AlbumPicture { get; internal set; }
-        public string AlbumName { get; internal set; }
-        public int AlbumQuantity { get; internal set; }
     }
 }
