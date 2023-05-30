@@ -12,38 +12,13 @@ namespace KpopZtation.Repository
         public static String InsertCart(Cart c)
         {
             db.Carts.Add(c);
-            Save();
+            db.SaveChanges();
 
             return null;
         }
         public static List<Cart> GetAllCartItemData(int id)
         {
-            return (from cartdb in db.Carts where id == cartdb.CustomerID select cartdb).ToList();
-        }
-
-        public static bool Save()
-        {
-            try
-            {
-                db.SaveChanges();
-                return true;
-            }
-            catch (System.Data.Entity.Validation.DbEntityValidationException ex)
-            {
-                PrintError(ex);
-                return false;
-            }
-        }
-
-        public static void PrintError(System.Data.Entity.Validation.DbEntityValidationException ex)
-        {
-            foreach(var entityValidationErrors in ex.EntityValidationErrors)
-            {
-                foreach(var validationError in entityValidationErrors.ValidationErrors)
-                {
-                    System.Diagnostics.Debug.WriteLine("Property: " + validationError.PropertyName + " error: " + validationError.ErrorMessage);
-                }
-            }
+            return (from cartdb in db.Carts join albumdb in db.Albums on cartdb.AlbumID equals albumdb.AlbumID where id == cartdb.CustomerID select cartdb).ToList();
         }
     }
 }

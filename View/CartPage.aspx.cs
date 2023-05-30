@@ -26,9 +26,19 @@ namespace KpopZtation.View
             if (!IsPostBack)
             {
                 List<Cart> carts = CartController.GetAllCartItemData(id);
-                AlbumDataList.DataSource = carts;
-                AlbumDataList.DataBind();
+                CartDataList.DataSource = carts;
+                CartDataList.DataBind();
             }
+        }
+
+        protected void RemoveButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void CheckOutButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
