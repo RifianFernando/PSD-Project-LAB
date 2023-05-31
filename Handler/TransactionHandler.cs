@@ -10,23 +10,26 @@ namespace KpopZtation.Handler
 {
     public class TransactionHandler
     {
-        public static int InsertTransactionHeader(DateTime TransactionDate, int CustomerID)
-        {
-            TransactionHeader th = TransactionFactory.CreateTransactionHeader(TransactionDate, CustomerID);
-
-            return th.TransactionID;
-        }
-
-        public static void InsertTransactionDetail(int TransactionID, int AlbumID, int Qty)
-        {
-            TransactionDetail td = TransactionFactory.CreateTransactionDetail(TransactionID, AlbumID, Qty);
-
-            return;
-        }
-
         public static List<TransactionHeader> GetTransactionHistory(int ID)
         {
             return TransactionRepository.GetTransactionHistory(ID);
+        }
+
+        public static void CheckOutCartItem(int id)
+        {
+            Cart c = CartRepository.GetCartDataById(id);
+
+            DateTime today = DateTime.Today.Date;
+
+            TransactionHeader th = TransactionFactory.CreateTransactionHeader(today, c.CustomerID);
+            TransactionRepository.InsertTransactionHeader(th);
+
+            int TransactionID = TransactionRepository.GetThIdByCustomerId(c.CustomerID);
+
+            TransactionDetail td = TransactionFactory.CreateTransactionDetail(TransactionID, c.AlbumID, c.Qty);
+            TransactionRepository.InsertTransactionDetail(td);
+
+            CartRepository.RemoveCartItem(c);
         }
     }
 }

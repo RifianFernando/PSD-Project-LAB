@@ -13,5 +13,12 @@ namespace KpopZtation.Controller
         {
             return TransactionHandler.GetTransactionHistory(ID);
         }
+
+        public static String CheckOutCartItem(int id)
+        {
+            TransactionHandler.CheckOutCartItem(id);
+
+            return null;
+        }
     }
 }

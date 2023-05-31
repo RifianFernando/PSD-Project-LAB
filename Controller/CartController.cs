@@ -27,5 +27,15 @@ namespace KpopZtation.Controller
         {
             return CartHandler.GetAllCartItemData(id);
         }
+
+        public static void RemoveCartItem(int id)
+        {
+            CartHandler.RemoveCartItem(id);
+        }
+
+        public static List<int> GetAllCustomerCartAlbumId(int id)
+        {
+            return CartHandler.GetAllCustomerCartAlbumId(id);
+        }
     }
 }

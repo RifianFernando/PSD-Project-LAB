@@ -22,7 +22,7 @@ namespace KpopZtation.View
 
             String Email = Session["User"].ToString();
             bool isAdmin = CustomerController.ValidateAdmin(Email);
-            int id = CustomerController.GetIdByEmail(Email);   
+            int id = CustomerController.GetIdByEmail(Email);
             if (!IsPostBack)
             {
                 List<Cart> carts = CartController.GetAllCartItemData(id);
@@ -33,12 +33,26 @@ namespace KpopZtation.View
 
         protected void RemoveButton_Click(object sender, EventArgs e)
         {
+            Button removeButton = (Button)sender;
+            int AlbumID = int.Parse(removeButton.CommandArgument);
 
+            CartController.RemoveCartItem(AlbumID);
+            Response.Redirect(Request.RawUrl);
         }
 
         protected void CheckOutButton_Click(object sender, EventArgs e)
         {
+            String Email = Session["User"].ToString();
+            int CustomerID = CustomerController.GetIdByEmail(Email);
 
+            List<int> cartData = CartController.GetAllCustomerCartAlbumId(CustomerID);
+
+            foreach (int i in cartData)
+            {
+                TransactionController.CheckOutCartItem(i);
+            }
+
+            Response.Redirect("HomePage.aspx");
         }
     }
 }
