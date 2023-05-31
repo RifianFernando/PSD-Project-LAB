@@ -21,7 +21,7 @@ namespace KpopZtation.View
             {
                 String Email = Session["User"].ToString();
                 bool isAdmin = CustomerController.ValidateAdmin(Email);
-                if (!isAdmin)
+                if (isAdmin)
                 {
                     Response.Redirect("HomePage.aspx");
                 }
@@ -29,7 +29,9 @@ namespace KpopZtation.View
 
             if (!IsPostBack)
             {
-                int id = int.Parse(Session["User"].ToString());
+                String Email = Session["User"].ToString();
+                int id = CustomerController.GetIdByEmail(Email);
+
                 List<TransactionHeader> transactions = TransactionController.GetTransactionHistoryByID(id);
                 TransactionHistoryDataList.DataSource = transactions;
                 TransactionHistoryDataList.DataBind();

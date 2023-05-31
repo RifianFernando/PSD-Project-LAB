@@ -33,11 +33,9 @@ namespace KpopZtation.Repository
         }
 
 
-        public static List<TransactionHeader> GetTransactionHistory(int ID)
+        public static List<TransactionHeader> GetTransactionHistory(int id)
         {
-            
-            List<TransactionHeader> transactionHistory = new List<TransactionHeader>();
-            return transactionHistory;
+            return (from thdb in db.TransactionHeaders join tddb in db.TransactionDetails on thdb.TransactionID equals tddb.TransactionID join cdb in db.Customers on thdb.CustomerID equals cdb.CustomerID join adb in db.Albums on tddb.AlbumID equals adb.AlbumID where id == thdb.CustomerID select thdb).ToList();
         }
     }
 }

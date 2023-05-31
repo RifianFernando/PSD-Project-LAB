@@ -14,13 +14,13 @@
                 <tr style="border: 1px solid black">
                     <td><%# Eval("TransactionID") %></td>
                     <td><%# Eval("TransactionDate") %></td>
-                    <td><%# Eval("CustomerName") %></td>
+                    <td><%# Eval("Customer.CustomerName") %></td>
                     <td>
-                        <img src='<%# "https://localhost:44302/Storage/Public/Images/Albums/" + Eval("AlbumImage") %>' style="width: 5vw; height: auto" />
+                        <img src='<%# "https://localhost:44302/Storage/Public/Images/Albums/" + Eval("TransactionDetails.Album.AlbumImage") %>' style="width: 5vw; height: auto" />
                     </td>
-                    <td><%# Eval("AlbumName") %></td>
-                    <td><%# Eval("Qty") %></td>
-                    <td><%# Eval("AlbumPrice") %></td>
+                    <td><%# Eval("Album.AlbumName") %></td>
+                    <td><%# Eval("TransactionDetail.Qty") %></td>
+                    <td><%# Eval("Album.AlbumPrice") %></td>
                 </tr>
                     </ItemTemplate>
                 </asp:DataList>
