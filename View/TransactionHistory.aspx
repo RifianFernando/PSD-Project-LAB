@@ -11,35 +11,35 @@
             <tbody>
                 <asp:DataList runat="server" ID="TransactionHistoryDataList" RepeatLayout="Table">
                     <ItemTemplate>
-                <tr style="border: 1px solid black">
-                    <td><%# Eval("TransactionID") %></td>
-                    <td><%# ((DateTime)Eval("TransactionDate")).ToString("d") %></td>
-                    <td><%# Eval("Customer.CustomerName") %></td>
-                    <td>
+                <tr style="border: 1px solid black" onclick="location.href= 'TransactionDetailPage.aspx?id=<%# Eval("TransactionID") %>'">
+                    <td style="width: 10vw; text-align:center"><%# Eval("TransactionID") %></td>
+                    <td style="width: 10vw; text-align:center"><%# ((DateTime)Eval("TransactionDate")).ToString("d") %></td>
+                    <td style="border-right: 1px solid black; width:20vw; text-align:center"><%# Eval("Customer.CustomerName") %></td>
+                    <td style="width: 15vw; text-align:center">
                         <asp:Repeater runat="server" DataSource='<%# Eval("TransactionDetails") %>'>
                             <ItemTemplate>
-                                <img src='<%# "https://localhost:44302/Storage/Public/Images/Albums/" + Eval("Album.AlbumImage") %>' style="width: 5vw; height: auto" />
+                                <img src='<%# "https://localhost:44302/Storage/Public/Images/Albums/" + Eval("Album.AlbumImage") %>' style="width: 10vw; height: auto" />
                             </ItemTemplate>
                         </asp:Repeater>
                     </td>
-                    <td>
+                    <td style="width: 15vw;">
                         <asp:Repeater runat="server" DataSource='<%# Eval("TransactionDetails") %>'>
                             <ItemTemplate>
                                 <%# Eval("Album.AlbumName") %>
                             </ItemTemplate>
                         </asp:Repeater>
                     </td>
-                    <td>
+                    <td style="width: 5vw;">
                         <asp:Repeater runat="server" DataSource='<%# Eval("TransactionDetails") %>'>
                             <ItemTemplate>
                                 <%# Eval("Qty") %>
                             </ItemTemplate>
                         </asp:Repeater>
                     </td>
-                    <td>
+                    <td style="width: 10vw;">
                         <asp:Repeater runat="server" DataSource='<%# Eval("TransactionDetails") %>'>
                             <ItemTemplate>
-                                <%# Eval("Album.AlbumPrice") %>
+                                Rp <%# Eval("Album.AlbumPrice") %>
                             </ItemTemplate>
                         </asp:Repeater>
                     </td>
