@@ -15,48 +15,57 @@ namespace KpopZtation.View
     {
 
         /// <summary>
-        /// TransactionID control.
+        /// TransactionIDText control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label TransactionID;
+        protected global::System.Web.UI.WebControls.Label TransactionIDText;
 
         /// <summary>
-        /// TransactionDate control.
+        /// TransactionDateText control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label TransactionDate;
+        protected global::System.Web.UI.WebControls.Label TransactionDateText;
 
         /// <summary>
-        /// AlbumName control.
+        /// AlbumImage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label AlbumName;
+        protected global::System.Web.UI.WebControls.Image AlbumImage;
 
         /// <summary>
-        /// Qty control.
+        /// AlbumNameText control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Qty;
+        protected global::System.Web.UI.WebControls.Label AlbumNameText;
 
         /// <summary>
-        /// AlbumPrice control.
+        /// QtyText control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label AlbumPrice;
+        protected global::System.Web.UI.WebControls.Label QtyText;
+
+        /// <summary>
+        /// AlbumPriceText control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label AlbumPriceText;
     }
 }

@@ -33,7 +33,13 @@ namespace KpopZtation.View
                 TransactionHeader th = TransactionController.GetThByTrId(id);
                 TransactionDetail td = TransactionController.GetTdByTrId(id);
 
+                TransactionIDText.Text = "Transaction ID: " + th.TransactionID.ToString();
+                TransactionDateText.Text = "Transaction Date: " + th.TransactionDate.ToString("d");
 
+                AlbumImage.ImageUrl = "https://localhost:44302/Storage/Public/Images/Albums/" + td.Album.AlbumImage;
+                AlbumNameText.Text = td.Album.AlbumName.ToString();
+                QtyText.Text = td.Qty.ToString();
+                AlbumPriceText.Text = td.Album.AlbumPrice.ToString();
                 
             }
         }
