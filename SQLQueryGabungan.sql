@@ -61,3 +61,9 @@ INSERT INTO TransactionHeader VALUES(
 	Now()
 	/* INI USER ID SESUAIN SAMA TABLE, */
 );
+
+ALTER TABLE TransactionDetail
+  ADD PRIMARY KEY (TransactionID,AlbumID)
+
+ALTER TABLE Cart
+  ADD PRIMARY KEY (CustomerID,AlbumID)
