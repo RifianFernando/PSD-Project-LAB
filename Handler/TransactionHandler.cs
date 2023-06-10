@@ -31,5 +31,15 @@ namespace KpopZtation.Handler
 
             CartRepository.RemoveCartItem(c);
         }
+
+        public static TransactionHeader GetThByTrId(int id)
+        {
+            return TransactionRepository.GetThByTrId(id);
+        }
+
+        public static TransactionDetail GetTdByTrId(int id)
+        {
+            return TransactionRepository.GetTdByTrId(id);
+        }
     }
 }

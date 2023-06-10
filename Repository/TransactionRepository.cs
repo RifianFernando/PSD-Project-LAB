@@ -37,5 +37,15 @@ namespace KpopZtation.Repository
         {
             return (from thdb in db.TransactionHeaders join tddb in db.TransactionDetails on thdb.TransactionID equals tddb.TransactionID join cdb in db.Customers on thdb.CustomerID equals cdb.CustomerID join adb in db.Albums on tddb.AlbumID equals adb.AlbumID where id == thdb.CustomerID select thdb).ToList();
         }
+
+        public static TransactionHeader GetThByTrId(int id)
+        {
+            return (from thdb in db.TransactionHeaders where id == thdb.TransactionID select thdb).FirstOrDefault();
+        }
+
+        public static TransactionDetail GetTdByTrId(int id)
+        {
+            return (from tddb in db.TransactionDetails where id == tddb.TransactionID select tddb).FirstOrDefault();
+        }
     }
 }

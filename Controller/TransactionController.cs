@@ -20,5 +20,15 @@ namespace KpopZtation.Controller
 
             return null;
         }
+
+        public static TransactionHeader GetThByTrId(int id)
+        {
+            return TransactionHandler.GetThByTrId(id);
+        }
+
+        public static TransactionDetail GetTdByTrId(int id)
+        {
+            return TransactionHandler.GetTdByTrId(id);
+        }
     }
 }

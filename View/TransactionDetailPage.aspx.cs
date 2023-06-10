@@ -1,5 +1,6 @@
 ﻿using KpopZtation.Controller;
 using KpopZtation.Middleware;
+using KpopZtation.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,6 +28,12 @@ namespace KpopZtation.View
 
             if (!IsPostBack)
             {
+                int id = int.Parse(Request.QueryString["ID"]);
+
+                TransactionHeader th = TransactionController.GetThByTrId(id);
+                TransactionDetail td = TransactionController.GetTdByTrId(id);
+
+
                 
             }
         }
