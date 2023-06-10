@@ -47,5 +47,10 @@ namespace KpopZtation.Repository
         {
             return (from tddb in db.TransactionDetails where id == tddb.TransactionID select tddb).FirstOrDefault();
         }
+
+        public static List<TransactionHeader> GetAllTransactionHeader()
+        {
+            return db.TransactionHeaders.ToList();
+        }
     }
 }

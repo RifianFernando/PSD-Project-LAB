@@ -1,4 +1,5 @@
-﻿using KpopZtation.Model;
+﻿using KpopZtation.DataSet;
+using KpopZtation.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,6 +28,20 @@ namespace KpopZtation.Factory
             td.Qty = Qty;
 
             return td;
+        }
+
+        public static TransactionReport CreateTransactionReport()
+        {
+            TransactionReport Report = new TransactionReport();
+
+            return Report;
+        }
+
+        public static TransactionReportData CreateReportData()
+        {
+            TransactionReportData Data = new TransactionReportData();
+
+            return Data;
         }
     }
 }

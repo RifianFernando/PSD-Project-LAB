@@ -30,5 +30,10 @@ namespace KpopZtation.Controller
         {
             return TransactionHandler.GetTdByTrId(id);
         }
+
+        public static List<TransactionHeader> GetAllTransactionHeader()
+        {
+            return TransactionHandler.GetAllTransactionHeader();
+        }
     }
 }
