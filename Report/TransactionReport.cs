@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace KpopZtation {
+namespace KpopZtation.Report {
     using System;
     using System.ComponentModel;
     using CrystalDecisions.Shared;
@@ -41,7 +41,7 @@ namespace KpopZtation {
         
         public override string FullResourceName {
             get {
-                return "KpopZtation.TransactionReport.rpt";
+                return "KpopZtation.Report.TransactionReport.rpt";
             }
             set {
                 // Do nothing

@@ -3,6 +3,7 @@ using KpopZtation.DataSet;
 using KpopZtation.Factory;
 using KpopZtation.Middleware;
 using KpopZtation.Model;
+using KpopZtation.Report;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -52,21 +53,14 @@ namespace KpopZtation.View
                 var Header_Row = Table_Header.NewRow();
                 Header_Row["TransactionID"] = th.TransactionID;
                 Header_Row["CustomerID"] = th.CustomerID;
-                Header_Row["TransactionDate"] = th.TransactionDate;
+                Header_Row["TransactionDate"] = th.TransactionDate.ToString("d");
 
                 int GrandTotalValue = 0;
 
                 foreach (TransactionDetail td in th.TransactionDetails)
                 {
                     GrandTotalValue += td.Qty * td.Album.AlbumPrice;
-                }
 
-                Header_Row["GrandTotalValue"] = GrandTotalValue;
-
-                Table_Header.Rows.Add(Header_Row);
-
-                foreach (TransactionDetail td in th.TransactionDetails)
-                {
                     var Detail_Row = Table_Detail.NewRow();
                     Detail_Row["TransactionID"] = td.TransactionID;
                     Detail_Row["AlbumName"] = td.Album.AlbumName;
@@ -76,6 +70,9 @@ namespace KpopZtation.View
 
                     Table_Detail.Rows.Add(Detail_Row);
                 }
+
+                Header_Row["GrandTotalValue"] = GrandTotalValue;
+                Table_Header.Rows.Add(Header_Row);
             }
 
             return Data;

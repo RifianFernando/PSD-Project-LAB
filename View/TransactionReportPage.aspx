@@ -7,7 +7,7 @@
 
     <div>
 
-        <CR:CrystalReportViewer ID="TransactionReportView" runat="server" AutoDataBind="true" />
+        <CR:CrystalReportViewer ID="TransactionReportView" runat="server" AutoDataBind="true"/>
 
     </div>
 
