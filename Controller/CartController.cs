@@ -25,10 +25,18 @@ namespace KpopZtation.Controller
             {
                 return "Sorry the album stock is only " + AlbumStock.ToString() + " left";
             }
-            else
+
+            var checkData = CartHandler.GetCustomerCartInfoByID(CustomerID, AlbumID);
+            if (checkData == null)
             {
                 CartHandler.InsertCart(CustomerID, AlbumID, Quantity);
+                AlbumHandler.UpdateStockAlbum(AlbumID, Quantity);
                 return "Album has been added to cart";
+            }
+            else
+            {
+                //This Will be update the Cart Controller of user
+                return "maaf website belum bisa insert lagi kalo mau update lagi dalam tahap pengembangan"
             }
         }
 
