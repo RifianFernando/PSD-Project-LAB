@@ -78,10 +78,16 @@ namespace KpopZtation.View
                 int AlbumID = int.Parse(Request.QueryString["ID"]);
                 int QuantityInt = int.Parse(QtyString);
 
-                CartController.InsertCart(CustomerID, AlbumID, QuantityInt);
+                Success.Text = CartController.InsertCart(CustomerID, AlbumID, QuantityInt);
 
-                Success.ForeColor = System.Drawing.Color.Green;
-                Success.Text = "Album has been added to cart";
+                if (Success.Text.Equals("Album has been added to cart"))
+                {
+                    Success.ForeColor = System.Drawing.Color.Green;
+                }
+                else
+                {
+                    Success.ForeColor = System.Drawing.Color.Red;
+                }
             }
             else
             {

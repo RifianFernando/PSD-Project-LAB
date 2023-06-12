@@ -17,10 +17,19 @@ namespace KpopZtation.Controller
             }
             return false;
         }
-        public static void InsertCart(int CustomerID, int AlbumID, int Quantity)
+        public static String InsertCart(int CustomerID, int AlbumID, int Quantity)
         {
-            CartHandler.InsertCart(CustomerID, AlbumID, Quantity);
-            return;
+            int AlbumStock = AlbumHandler.GetAlbumStockById(AlbumID);
+
+            if(Quantity > AlbumStock)
+            {
+                return "Sorry the album stock is only " + AlbumStock.ToString() + " left";
+            }
+            else
+            {
+                CartHandler.InsertCart(CustomerID, AlbumID, Quantity);
+                return "Album has been added to cart";
+            }
         }
 
         public static List<Cart> GetAllCartItemData(int id)

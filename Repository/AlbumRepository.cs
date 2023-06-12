@@ -62,5 +62,10 @@ namespace KpopZtation.Repository
 
             return null;
         }
+
+        public static int GetAlbumStockById(int id)
+        {
+            return (from adb in db.Albums where id == adb.AlbumID select adb.AlbumStock).FirstOrDefault();
+        }
     }
 }
