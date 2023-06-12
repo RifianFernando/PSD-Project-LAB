@@ -22,6 +22,12 @@ namespace KpopZtation.Handler
         {
             return CartRepository.GetAllCartItemData(id);
         }
+        public static Cart GetCustomerCartInfoByID(int CustomerID, int AlbumID)
+        {
+            var data = CartRepository.GetCustomerCartInfoByID(CustomerID, AlbumID);
+
+            return data;
+        }
 
         public static void RemoveCartItem(int id)
         {

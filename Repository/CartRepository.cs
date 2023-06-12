@@ -26,6 +26,13 @@ namespace KpopZtation.Repository
             return (from cartdb in db.Carts where id == cartdb.AlbumID select cartdb).FirstOrDefault();
         }
 
+        public static Cart GetCustomerCartInfoByID(int CustomerID, int AlbumID)
+        {
+            return (from cartdb in db.Carts
+                    where cartdb.CustomerID == CustomerID && cartdb.AlbumID == AlbumID
+                    select cartdb).FirstOrDefault();
+        }
+
         public static void RemoveCartItem(Cart c)
         {
             db.Carts.Remove(c);

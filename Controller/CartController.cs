@@ -19,8 +19,17 @@ namespace KpopZtation.Controller
         }
         public static void InsertCart(int CustomerID, int AlbumID, int Quantity)
         {
-            CartHandler.InsertCart(CustomerID, AlbumID, Quantity);
-            return;
+            var checkData = CartHandler.GetCustomerCartInfoByID(CustomerID, AlbumID);
+            if (checkData == null)
+            {
+                CartHandler.InsertCart(CustomerID, AlbumID, Quantity);
+                AlbumHandler.UpdateStockAlbum(AlbumID, Quantity);
+                return;
+            }
+            else
+            {
+                //This Will be update the Cart Controller of user
+            }
         }
 
         public static List<Cart> GetAllCartItemData(int id)
