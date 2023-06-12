@@ -78,5 +78,10 @@ namespace KpopZtation.Handler
 
             return;
         }
+
+        public static int GetAlbumStockById(int id)
+        {
+            return AlbumRepository.GetAlbumStockById(id);
+        }
     }
 }
