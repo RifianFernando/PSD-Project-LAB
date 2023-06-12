@@ -29,9 +29,9 @@ namespace KpopZtation.Handler
             return data;
         }
 
-        public static void RemoveCartItem(int id)
+        public static void RemoveCartItem(int AlbumID, int CustomerID)
         {
-            Cart c = CartRepository.GetCartDataById(id);
+            Cart c = CartRepository.GetCartDataBy2ID(AlbumID, CustomerID);
 
             CartRepository.RemoveCartItem(c);
         }

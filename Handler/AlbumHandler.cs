@@ -46,6 +46,15 @@ namespace KpopZtation.Handler
 
             return;
         }
+        public static void UpdateStockAlbum(int AlbumID)
+        {
+            Album ab = AlbumRepository.GetDataById(AlbumID);
+            var Quantity = CartRepository.GetCartDataById(AlbumID);
+
+            //AlbumRepository.UpdateStockAlbum(ab, Quantity);
+
+            return;
+        }
 
         public static void AlbumQuantityPurchase(int ID, int Purchase, int NewArtID, String NewName, String NewImage, int NewPrice, String NewDesc)
         {

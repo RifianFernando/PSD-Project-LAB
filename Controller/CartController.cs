@@ -36,7 +36,7 @@ namespace KpopZtation.Controller
             else
             {
                 //This Will be update the Cart Controller of user
-                return "maaf website belum bisa insert lagi kalo mau update lagi dalam tahap pengembangan"
+                return "maaf website belum bisa insert lagi kalo mau update lagi dalam tahap pengembangan";
             }
         }
 
@@ -45,9 +45,10 @@ namespace KpopZtation.Controller
             return CartHandler.GetAllCartItemData(id);
         }
 
-        public static void RemoveCartItem(int id)
+        public static void RemoveCartItem(int AlbumID, int CustomerID)
         {
-            CartHandler.RemoveCartItem(id);
+            CartHandler.RemoveCartItem(AlbumID, CustomerID);
+            //AlbumHandler.UpdateStockAlbum(AlbumID);
         }
 
         public static List<int> GetAllCustomerCartAlbumId(int id)
