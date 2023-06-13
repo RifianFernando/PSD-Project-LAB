@@ -25,10 +25,18 @@ namespace KpopZtation.Controller
             {
                 return "Sorry the album stock is only " + AlbumStock.ToString() + " left";
             }
-            else
+
+            var checkData = CartHandler.GetCustomerCartInfoByID(CustomerID, AlbumID);
+            if (checkData == null)
             {
                 CartHandler.InsertCart(CustomerID, AlbumID, Quantity);
+                AlbumHandler.UpdateStockAlbum(AlbumID, Quantity);
                 return "Album has been added to cart";
+            }
+            else
+            {
+                //This Will be update the Cart Controller of user
+                return "maaf website belum bisa insert lagi kalo mau update lagi dalam tahap pengembangan";
             }
         }
 
@@ -37,9 +45,10 @@ namespace KpopZtation.Controller
             return CartHandler.GetAllCartItemData(id);
         }
 
-        public static void RemoveCartItem(int id)
+        public static void RemoveCartItem(int AlbumID, int CustomerID)
         {
-            CartHandler.RemoveCartItem(id);
+            CartHandler.RemoveCartItem(AlbumID, CustomerID);
+            //AlbumHandler.UpdateStockAlbum(AlbumID);
         }
 
         public static List<int> GetAllCustomerCartAlbumId(int id)

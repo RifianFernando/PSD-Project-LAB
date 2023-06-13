@@ -36,7 +36,10 @@ namespace KpopZtation.View
             Button removeButton = (Button)sender;
             int AlbumID = int.Parse(removeButton.CommandArgument);
 
-            CartController.RemoveCartItem(AlbumID);
+            String Email = Session["User"].ToString();
+            int CustomerID = CustomerController.GetIdByEmail(Email);
+
+            CartController.RemoveCartItem(AlbumID, CustomerID);
             Response.Redirect(Request.RawUrl);
         }
 

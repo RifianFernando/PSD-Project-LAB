@@ -50,6 +50,16 @@ namespace KpopZtation.Repository
             return null;
         }
 
+        public static String UpdateStockAlbum(Album ab, int stock)
+        {
+            int NewStock = ab.AlbumStock - stock;
+            ab.AlbumStock = NewStock;
+
+            db.SaveChanges();
+
+            return null;
+        }
+
         public static List<Album> GetAllArtistAlbumData(int ID)
         {
             return (from albumdb in db.Albums where ID == albumdb.ArtistID select albumdb).ToList();
