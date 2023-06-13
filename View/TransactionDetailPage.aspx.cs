@@ -29,9 +29,10 @@ namespace KpopZtation.View
             if (!IsPostBack)
             {
                 int id = int.Parse(Request.QueryString["ID"]);
+                int albumid = int.Parse(Request.QueryString["ALBUMID"]);
 
                 TransactionHeader th = TransactionController.GetThByTrId(id);
-                TransactionDetail td = TransactionController.GetTdByTrId(id);
+                TransactionDetail td = TransactionController.GetTdByTrId(id, albumid);
 
                 TransactionIDText.Text = "Transaction ID: " + th.TransactionID.ToString();
                 TransactionDateText.Text = "Transaction Date: " + th.TransactionDate.ToString("d");

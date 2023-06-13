@@ -35,7 +35,7 @@ namespace KpopZtation.Repository
 
         public static List<TransactionHeader> GetTransactionHistory(int id)
         {
-            return (from thdb in db.TransactionHeaders join tddb in db.TransactionDetails on thdb.TransactionID equals tddb.TransactionID join cdb in db.Customers on thdb.CustomerID equals cdb.CustomerID join adb in db.Albums on tddb.AlbumID equals adb.AlbumID where id == thdb.CustomerID select thdb).ToList();
+            return (from thdb in db.TransactionHeaders where id == thdb.CustomerID select thdb).ToList();
         }
 
         public static TransactionHeader GetThByTrId(int id)
@@ -43,9 +43,9 @@ namespace KpopZtation.Repository
             return (from thdb in db.TransactionHeaders where id == thdb.TransactionID select thdb).FirstOrDefault();
         }
 
-        public static TransactionDetail GetTdByTrId(int id)
+        public static TransactionDetail GetTdByTrId(int id, int AlbumID)
         {
-            return (from tddb in db.TransactionDetails where id == tddb.TransactionID select tddb).FirstOrDefault();
+            return (from tddb in db.TransactionDetails where (id == tddb.TransactionID && AlbumID == tddb.AlbumID) select tddb).FirstOrDefault();
         }
 
         public static List<TransactionHeader> GetAllTransactionHeader()

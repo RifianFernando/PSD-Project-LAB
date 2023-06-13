@@ -15,21 +15,24 @@ namespace KpopZtation.Handler
             return TransactionRepository.GetTransactionHistory(ID);
         }
 
-        public static void CheckOutCartItem(int id)
+        public static void CheckOutCartItem(List<int> cartData, int CustomerID)
         {
-            Cart c = CartRepository.GetCartDataById(id);
-
             DateTime today = DateTime.Today.Date;
 
-            TransactionHeader th = TransactionFactory.CreateTransactionHeader(today, c.CustomerID);
+            TransactionHeader th = TransactionFactory.CreateTransactionHeader(today, CustomerID);
             TransactionRepository.InsertTransactionHeader(th);
 
-            int TransactionID = TransactionRepository.GetThIdByCustomerId(c.CustomerID);
+            int TransactionID = TransactionRepository.GetThIdByCustomerId(CustomerID);
 
-            TransactionDetail td = TransactionFactory.CreateTransactionDetail(TransactionID, c.AlbumID, c.Qty);
-            TransactionRepository.InsertTransactionDetail(td);
+            foreach (int i in cartData)
+            {
+                Cart c = CartRepository.GetCartDataById(i);
 
-            CartRepository.RemoveCartItem(c);
+                TransactionDetail td = TransactionFactory.CreateTransactionDetail(TransactionID, c.AlbumID, c.Qty);
+                TransactionRepository.InsertTransactionDetail(td);
+
+                CartRepository.RemoveCartItem(c);
+            }
         }
 
         public static TransactionHeader GetThByTrId(int id)
@@ -37,9 +40,9 @@ namespace KpopZtation.Handler
             return TransactionRepository.GetThByTrId(id);
         }
 
-        public static TransactionDetail GetTdByTrId(int id)
+        public static TransactionDetail GetTdByTrId(int id, int AlbumID)
         {
-            return TransactionRepository.GetTdByTrId(id);
+            return TransactionRepository.GetTdByTrId(id, AlbumID);
         }
 
         public static List<TransactionHeader> GetAllTransactionHeader()

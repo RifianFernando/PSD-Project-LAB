@@ -47,10 +47,7 @@ namespace KpopZtation.View
 
             List<int> cartData = CartController.GetAllCustomerCartAlbumId(CustomerID);
 
-            foreach (int i in cartData)
-            {
-                TransactionController.CheckOutCartItem(i);
-            }
+            TransactionController.CheckOutCartItem(cartData, CustomerID);
 
             Response.Redirect("HomePage.aspx");
         }

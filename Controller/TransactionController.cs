@@ -14,9 +14,9 @@ namespace KpopZtation.Controller
             return TransactionHandler.GetTransactionHistory(ID);
         }
 
-        public static String CheckOutCartItem(int id)
+        public static String CheckOutCartItem(List<int> cartData, int CustomerID)
         {
-            TransactionHandler.CheckOutCartItem(id);
+            TransactionHandler.CheckOutCartItem(cartData, CustomerID);
 
             return null;
         }
@@ -26,9 +26,9 @@ namespace KpopZtation.Controller
             return TransactionHandler.GetThByTrId(id);
         }
 
-        public static TransactionDetail GetTdByTrId(int id)
+        public static TransactionDetail GetTdByTrId(int id, int AlbumID)
         {
-            return TransactionHandler.GetTdByTrId(id);
+            return TransactionHandler.GetTdByTrId(id, AlbumID);
         }
 
         public static List<TransactionHeader> GetAllTransactionHeader()
