@@ -4,7 +4,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     <div style="padding: 50px; display:flex; flex-direction:column; align-items:center; justify-content:center">
-        <h1>Home Page</h1>
+        <h1>Transaction History Page</h1>
         <br />
         
         <asp:DataList runat="server" ID="TransactionHistoryDataList" RepeatLayout="Flow">
