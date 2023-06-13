@@ -47,8 +47,9 @@ namespace KpopZtation.Controller
 
         public static void RemoveCartItem(int AlbumID, int CustomerID)
         {
-            CartHandler.RemoveCartItem(AlbumID, CustomerID);
-            //AlbumHandler.UpdateStockAlbum(AlbumID);
+            int Quantity = CartHandler.RemoveCartItem(AlbumID, CustomerID);
+            Quantity = -Quantity;
+            AlbumHandler.UpdateStockAlbum(AlbumID, Quantity);
         }
 
         public static List<int> GetAllCustomerCartAlbumId(int id)
