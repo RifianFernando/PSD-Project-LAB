@@ -18,6 +18,16 @@ namespace KpopZtation.Handler
 
             return;
         }
+        
+        public static void UpdateCartUser(int CustomerID, int AlbumID, int Quantity)
+        {
+            Cart cart = CartRepository.GetCartDataBy2ID(AlbumID, CustomerID);
+
+            CartRepository.UpdateCartRepository(cart, Quantity);
+
+            return;
+        }
+
         public static List<Cart> GetAllCartItemData(int id)
         {
             return CartRepository.GetAllCartItemData(id);

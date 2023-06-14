@@ -36,7 +36,9 @@ namespace KpopZtation.Controller
             else
             {
                 //This Will be update the Cart Controller of user
-                return "maaf website belum bisa insert lagi kalo mau update lagi dalam tahap pengembangan";
+                CartHandler.UpdateCartUser(CustomerID, AlbumID, Quantity);
+                AlbumHandler.UpdateStockAlbum(AlbumID, Quantity);
+                return "Album has been added to cart";
             }
         }
 

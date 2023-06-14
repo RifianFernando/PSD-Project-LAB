@@ -16,6 +16,13 @@ namespace KpopZtation.Repository
 
             return null;
         }
+        public static String UpdateCartRepository(Cart cart, int Quantity)
+        {
+            cart.Qty += Quantity;
+            db.SaveChanges();
+
+            return null;
+        }
         public static List<Cart> GetAllCartItemData(int id)
         {
             return (from cartdb in db.Carts join albumdb in db.Albums on cartdb.AlbumID equals albumdb.AlbumID where id == cartdb.CustomerID select cartdb).ToList();
