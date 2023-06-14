@@ -61,7 +61,7 @@ namespace KpopZtation.Controller
             }
             else if (!RegAddress.EndsWith("Street"))
             {
-                return "The address must ends with street";
+                return "The address must ends with Street";
             }
             return "";
         }
