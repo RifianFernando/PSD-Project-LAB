@@ -51,7 +51,7 @@ CREATE TABLE TransactionDetail(
 -- INSERT CUSTOMER USER
 INSERT INTO Customer VALUES ('Rifian', 'RifianAdmin@gmail.com', 'lipi123', 'Male', 'Kanting Lorong Street', 'Admin');
 INSERT INTO Customer VALUES ('Glennix', 'GlennixAdmin@gmail.com', 'GG123', 'Male', 'Green Garden Street', 'Admin');
-INSERT INTO Customer VALUES ('Dixon', 'Dixon@gmail.com', 'krastelaM', 'Male', 'PerbatasanTangsel Street', 'CST');
+INSERT INTO Customer VALUES ('Dixon', 'Dixon@gmail.com', 'ET123', 'Male', 'PerbatasanTangsel Street', 'CST');
 
 -- INSERT Album Detail By Artist
 insert into Album values (/* INI USER ID SESUAIN SAMA TABLE, */ 'Rifian Bergadang', '638058597622333864.jfif','100000','10','lorem ipsum rifian ipsum lorem ipsum rifian dolor')
